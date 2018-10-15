@@ -4,6 +4,11 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
+GET     /fitbuddies                 controllers.HomeController.fitbuddies
+GET     /myprofile                  controllers.HomeController.myprofile
+GET     /myevents                   controllers.HomeController.myevents
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
