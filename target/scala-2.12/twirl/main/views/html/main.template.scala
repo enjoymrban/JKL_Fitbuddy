@@ -48,18 +48,41 @@ Seq[Any](format.raw/*7.32*/("""
         <link rel="stylesheet" media="screen" href=""""),_display_(/*17.54*/routes/*17.60*/.Assets.versioned("lib/bootstrap/css/bootstrap.min.css")),format.raw/*17.116*/("""">
         <link rel="stylesheet" media="screen" href=""""),_display_(/*18.54*/routes/*18.60*/.Assets.versioned("stylesheets/main.css")),format.raw/*18.101*/("""">
         <link rel="stylesheet" href=""""),_display_(/*19.39*/routes/*19.45*/.Assets.versioned("lib/leaflet/leaflet.css")),format.raw/*19.89*/(""""/>
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(/*20.59*/routes/*20.65*/.Assets.versioned("images/favicon.png")),format.raw/*20.104*/("""">
+        <link rel="stylesheet" href=""""),_display_(/*20.39*/routes/*20.45*/.Assets.versioned("lib/material-design-icons/material-icons.css")),format.raw/*20.110*/(""""/>
+        <link rel="stylesheet" href=""""),_display_(/*21.39*/routes/*21.45*/.Assets.versioned("lib/font-awesome/css/all.css")),format.raw/*21.94*/(""""/>
+        <link rel="shortcut icon" type="image/svg" href=""""),_display_(/*22.59*/routes/*22.65*/.Assets.versioned("images/Soccer_ball.svg")),format.raw/*22.108*/("""">
     </head>
     <body>
-        """),format.raw/*24.31*/("""
-        """),_display_(/*25.10*/content),format.raw/*25.17*/("""
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src=""""),_display_(/*27.28*/routes/*27.34*/.Assets.versioned("images/Soccer_ball.svg")),format.raw/*27.77*/("""" width="30" height="30" class="d-inline-block align-top" alt="">
+                Fitbuddy
+            </a>
 
-        """),format.raw/*27.9*/("""<script src=""""),_display_(/*27.23*/routes/*27.29*/.Assets.versioned("lib/jquery/jquery.min.js")),format.raw/*27.74*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*28.23*/routes/*28.29*/.Assets.versioned("lib/popper.js/dist/umd/popper.min.js")),format.raw/*28.86*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*29.23*/routes/*29.29*/.Assets.versioned("lib/bootstrap/js/bootstrap.min.js")),format.raw/*29.83*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*30.23*/routes/*30.29*/.Assets.versioned("lib/sammy/sammy.min.js")),format.raw/*30.72*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*31.23*/routes/*31.29*/.Assets.versioned("lib/leaflet/leaflet.js")),format.raw/*31.72*/(""""></script>
-        <script src=""""),_display_(/*32.23*/routes/*32.29*/.Assets.versioned("javascripts/main.js")),format.raw/*32.69*/("""" type="text/javascript"></script>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="material-icons">menu</i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/fitbuddies">Fit buddies <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" onclick="">Create event</a>
+                    </li>
+                </ul>
+                <a href=""><i class="fas fa-sign-in-alt fa-2x"></i></a>
+            </div>
+        </nav>
+        """),format.raw/*47.31*/("""
+        """),_display_(/*48.10*/content),format.raw/*48.17*/("""
+
+        """),format.raw/*50.9*/("""<script src=""""),_display_(/*50.23*/routes/*50.29*/.Assets.versioned("lib/jquery/jquery.min.js")),format.raw/*50.74*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*51.23*/routes/*51.29*/.Assets.versioned("lib/popper.js/dist/umd/popper.min.js")),format.raw/*51.86*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*52.23*/routes/*52.29*/.Assets.versioned("lib/bootstrap/js/bootstrap.min.js")),format.raw/*52.83*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*53.23*/routes/*53.29*/.Assets.versioned("lib/sammy/sammy.min.js")),format.raw/*53.72*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*54.23*/routes/*54.29*/.Assets.versioned("lib/leaflet/leaflet.js")),format.raw/*54.72*/(""""></script>
+        <script src=""""),_display_(/*55.23*/routes/*55.29*/.Assets.versioned("javascripts/main.js")),format.raw/*55.69*/("""" type="text/javascript"></script>
     </body>
 </html>
 """))
@@ -78,11 +101,11 @@ Seq[Any](format.raw/*7.32*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 15 12:25:41 CEST 2018
+                  DATE: Mon Oct 15 16:09:44 CEST 2018
                   SOURCE: C:/Users/Silvan Knecht/Documents/GitHub/JKL_Fitbuddy/app/views/main.scala.html
-                  HASH: e3cf7435adba1c73c6cff3bd04a2462d3d63c737
-                  MATRIX: 1206->261|1331->291|1361->295|1444->403|1481->413|1516->421|1542->426|1762->619|1777->625|1855->681|1939->738|1954->744|2017->785|2086->827|2101->833|2166->877|2256->940|2271->946|2332->985|2397->1112|2435->1123|2463->1130|2502->1142|2543->1156|2558->1162|2624->1207|2709->1265|2724->1271|2802->1328|2887->1386|2902->1392|2977->1446|3062->1504|3077->1510|3141->1553|3226->1611|3241->1617|3305->1660|3367->1695|3382->1701|3443->1741
-                  LINES: 33->7|38->7|40->9|43->12|44->13|44->13|44->13|48->17|48->17|48->17|49->18|49->18|49->18|50->19|50->19|50->19|51->20|51->20|51->20|54->24|55->25|55->25|57->27|57->27|57->27|57->27|58->28|58->28|58->28|59->29|59->29|59->29|60->30|60->30|60->30|61->31|61->31|61->31|62->32|62->32|62->32
+                  HASH: a97eb18e7144878d70201a8efe151da4bc7cb74e
+                  MATRIX: 1206->261|1331->291|1361->295|1444->403|1481->413|1516->421|1542->426|1762->619|1777->625|1855->681|1939->738|1954->744|2017->785|2086->827|2101->833|2166->877|2236->920|2251->926|2338->991|2408->1034|2423->1040|2493->1089|2583->1152|2598->1158|2663->1201|2862->1373|2877->1379|2941->1422|3986->2529|4024->2540|4052->2547|4091->2559|4132->2573|4147->2579|4213->2624|4298->2682|4313->2688|4391->2745|4476->2803|4491->2809|4566->2863|4651->2921|4666->2927|4730->2970|4815->3028|4830->3034|4894->3077|4956->3112|4971->3118|5032->3158
+                  LINES: 33->7|38->7|40->9|43->12|44->13|44->13|44->13|48->17|48->17|48->17|49->18|49->18|49->18|50->19|50->19|50->19|51->20|51->20|51->20|52->21|52->21|52->21|53->22|53->22|53->22|58->27|58->27|58->27|77->47|78->48|78->48|80->50|80->50|80->50|80->50|81->51|81->51|81->51|82->52|82->52|82->52|83->53|83->53|83->53|84->54|84->54|84->54|85->55|85->55|85->55
                   -- GENERATED --
               */
           

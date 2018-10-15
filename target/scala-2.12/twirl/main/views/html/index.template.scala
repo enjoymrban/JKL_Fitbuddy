@@ -32,9 +32,29 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 
 Seq[Any](format.raw/*1.4*/("""
 
-"""),_display_(/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
-  """),format.raw/*4.3*/("""<h1>Welcome to Play!</h1>
-""")))}),format.raw/*5.2*/("""
+    """),_display_(/*3.6*/main("Fitbuddy")/*3.22*/ {_display_(Seq[Any](format.raw/*3.24*/("""
+        """),format.raw/*4.9*/("""<div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input id="Search Field" type="text" class="form-control input-lg" placeholder="Search for event" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="mapid">
+
+        </div>
+    """)))}),format.raw/*25.6*/("""
 """))
       }
     }
@@ -51,11 +71,11 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 15 09:05:43 CEST 2018
+                  DATE: Mon Oct 15 16:12:16 CEST 2018
                   SOURCE: C:/Users/Silvan Knecht/Documents/GitHub/JKL_Fitbuddy/app/views/index.scala.html
-                  HASH: e7b67f9143e77fd41846670f700f7278d5705eda
-                  MATRIX: 941->1|1037->3|1067->8|1098->31|1137->33|1167->37|1224->65
-                  LINES: 28->1|33->1|35->3|35->3|35->3|36->4|37->5
+                  HASH: 64ae785da2f19fa11a56f867628ae262aa728f8d
+                  MATRIX: 941->1|1037->3|1071->12|1095->28|1134->30|1170->40|2026->866
+                  LINES: 28->1|33->1|35->3|35->3|35->3|36->4|57->25
                   -- GENERATED --
               */
           

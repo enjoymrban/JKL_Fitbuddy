@@ -19,8 +19,9 @@ libraryDependencies ++= Seq(
   // routing for single page app
   "org.webjars" % "sammy" % "0.7.4",
 
-  // Google Icons
+  // Icons
   "org.webjars" % "material-design-icons" % "3.0.1",
+  "org.webjars" % "font-awesome" % "5.3.1",
 
   // leaflet map with tooltips
   "org.webjars" % "leaflet" % "1.3.1"

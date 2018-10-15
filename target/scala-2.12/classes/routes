@@ -2,11 +2,12 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
-GET     /fitbuddies                 controllers.HomeController.fitbuddies
-GET     /myprofile                  controllers.HomeController.myprofile
-GET     /myevents                   controllers.HomeController.myevents
+# SinglePageController - Manages views for single page application
+GET     /                           controllers.SinglePageController.index
+GET     /fitbuddies                 controllers.SinglePageController.fitbuddies
+GET     /myprofile                  controllers.SinglePageController.myprofile
+GET     /myevents                   controllers.SinglePageController.myevents
+
 
 
 
