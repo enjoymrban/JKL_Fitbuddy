@@ -4,7 +4,7 @@
 		module="jkl_fitbuddy_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20181015090949"
+		publication="20181015113612"
 	>
 		<description>
 		JKL_Fitbuddy
@@ -55,5 +55,6 @@
 		<dependency org="org.webjars" name="popper.js" rev="1.12.9" conf="compile->default(compile)"/>
 		<dependency org="org.webjars" name="sammy" rev="0.7.4" conf="compile->default(compile)"/>
 		<dependency org="org.webjars" name="material-design-icons" rev="3.0.1" conf="compile->default(compile)"/>
+		<dependency org="org.webjars" name="leaflet" rev="1.3.1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

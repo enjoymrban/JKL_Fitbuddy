@@ -11,9 +11,17 @@ libraryDependencies += guice
 
 
 libraryDependencies ++= Seq(
+  // for bootstrap
   "org.webjars" % "bootstrap" % "4.0.0",
   "org.webjars" % "jquery" % "3.2.1",
   "org.webjars" % "popper.js" % "1.12.9",
+
+  // routing for single page app
   "org.webjars" % "sammy" % "0.7.4",
-  "org.webjars" % "material-design-icons" % "3.0.1"
+
+  // Google Icons
+  "org.webjars" % "material-design-icons" % "3.0.1",
+
+  // leaflet map with tooltips
+  "org.webjars" % "leaflet" % "1.3.1"
 )

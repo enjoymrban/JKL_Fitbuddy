@@ -158,21 +158,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default]
-[debug] sbt-chain: Checking cache for: dependency: org.webjars#popper.js;1.12.9 {compile=[default, compile, runtime, default(compile), master], runtime=[default, compile, runtime, default(compile), master], test=[default, compile, runtime, default(compile), master], compile-internal=[default, compile, runtime, default(compile), master], runtime-internal=[default, compile, runtime, default(compile), master], test-internal=[default, compile, runtime, default(compile), master]}
-[debug] sbt-chain: module revision found in cache: org.webjars#popper.js;1.12.9
-[debug] 	found org.webjars#popper.js;1.12.9 in sbt-chain
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.akka#akka-parsing_2.12;10.0.14 {compile=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime=[compile, runtime(*), master(compile), runtime, compile(*), master], test=[compile, runtime(*), master(compile), runtime, compile(*), master], compile-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], docs=[compile, runtime(*), master(compile), runtime, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-parsing_2.12;10.0.14
@@ -327,21 +312,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default]
-[debug] sbt-chain: Checking cache for: dependency: org.webjars#sammy;0.7.4 {compile=[default, compile, runtime, default(compile), master], runtime=[default, compile, runtime, default(compile), master], test=[default, compile, runtime, default(compile), master], compile-internal=[default, compile, runtime, default(compile), master], runtime-internal=[default, compile, runtime, default(compile), master], test-internal=[default, compile, runtime, default(compile), master]}
-[debug] sbt-chain: module revision found in cache: org.webjars#sammy;0.7.4
-[debug] 	found org.webjars#sammy;0.7.4 in sbt-chain
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->default]
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.play#twirl-api_2.12;1.3.15 {compile=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], compile-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], docs=[compile, runtime(*), master(compile), runtime, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: com.typesafe.play#twirl-api_2.12;1.3.15
@@ -439,6 +409,21 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default]
+[debug] sbt-chain: Checking cache for: dependency: org.webjars#leaflet;1.3.1 {compile=[default, compile, runtime, default(compile), master], runtime=[default, compile, runtime, default(compile), master], test=[default, compile, runtime, default(compile), master], compile-internal=[default, compile, runtime, default(compile), master], runtime-internal=[default, compile, runtime, default(compile), master], test-internal=[default, compile, runtime, default(compile), master]}
+[debug] sbt-chain: module revision found in cache: org.webjars#leaflet;1.3.1
+[debug] 	found org.webjars#leaflet;1.3.1 in sbt-chain
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
 [debug] sbt-chain: Checking cache for: dependency: javax.xml.bind#jaxb-api;2.3.0 {compile=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime=[compile, runtime(*), master(compile), runtime, compile(*), master], test=[compile, runtime(*), master(compile), runtime, compile(*), master], compile-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], docs=[compile, runtime(*), master(compile), runtime, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: javax.xml.bind#jaxb-api;2.3.0
@@ -825,21 +810,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default]
-[debug] sbt-chain: Checking cache for: dependency: org.webjars#material-design-icons;3.0.1 {compile=[default, compile, runtime, default(compile), master], runtime=[default, compile, runtime, default(compile), master], test=[default, compile, runtime, default(compile), master], compile-internal=[default, compile, runtime, default(compile), master], runtime-internal=[default, compile, runtime, default(compile), master], test-internal=[default, compile, runtime, default(compile), master]}
-[debug] sbt-chain: module revision found in cache: org.webjars#material-design-icons;3.0.1
-[debug] 	found org.webjars#material-design-icons;3.0.1 in sbt-chain
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
 [debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.12.6 {compile=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime=[compile, runtime(*), master(compile), runtime, compile(*), master], test=[compile, runtime(*), master(compile), runtime, compile(*), master], compile-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], scala-tool=[master(*), compile, runtime(*), runtime, compile(*), master], docs=[compile, runtime(*), master(compile), runtime, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.12.6
@@ -979,18 +949,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
@@ -1103,18 +1061,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->compile]
@@ -1187,6 +1133,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
@@ -1467,18 +1425,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
@@ -1608,18 +1554,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->compile]
@@ -1732,18 +1666,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->compile]
@@ -1816,6 +1738,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->compile]
@@ -2096,18 +2030,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->compile]
@@ -2245,18 +2167,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
@@ -2369,18 +2279,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->compile]
@@ -2453,6 +2351,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
@@ -2737,18 +2647,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
@@ -2878,18 +2776,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->compile]
@@ -3002,18 +2888,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->compile]
@@ -3086,6 +2960,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->compile]
@@ -3366,18 +3252,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->compile]
@@ -3577,18 +3451,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [test->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [test->compile]
@@ -3772,18 +3634,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#htmlunit-driver;2.27 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#htmlunit-driver;2.27 [test->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#htmlunit-driver;2.27 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-firefox-driver;3.5.3 [test->compile]
 [debug] sbt-chain: Checking cache for: dependency: org.seleniumhq.selenium#selenium-firefox-driver;3.5.3 {test=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: org.seleniumhq.selenium#selenium-firefox-driver;3.5.3
@@ -3900,6 +3750,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.eclipse.jetty#jetty-io;9.4.5.v20170502 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.eclipse.jetty#jetty-io;9.4.5.v20170502 [test->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.eclipse.jetty#jetty-io;9.4.5.v20170502 [test->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [test->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [test->compile]
@@ -4437,18 +4299,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-remote-driver;3.5.3 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-remote-driver;3.5.3 [test->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-remote-driver;3.5.3 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [test->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [test->compile]
@@ -4603,18 +4453,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
@@ -4727,18 +4565,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->compile]
@@ -4811,6 +4637,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
@@ -5091,18 +4929,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
@@ -5234,18 +5060,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile-internal->compile]
@@ -5358,18 +5172,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile-internal->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile-internal->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile-internal->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile-internal->compile]
@@ -5442,6 +5244,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile-internal->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile-internal->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile-internal->compile]
@@ -5722,18 +5536,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile-internal->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile-internal->compile]
@@ -5867,18 +5669,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
@@ -5991,18 +5781,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->compile]
@@ -6075,6 +5853,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
@@ -6355,18 +6145,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
@@ -6496,18 +6274,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->compile]
@@ -6620,18 +6386,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->compile]
@@ -6704,6 +6458,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->compile]
@@ -6984,18 +6750,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->compile]
@@ -7126,18 +6880,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime-internal->compile]
@@ -7250,18 +6992,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime-internal->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime-internal->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime-internal->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime-internal->compile]
@@ -7334,6 +7064,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime-internal->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime-internal->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime-internal->compile]
@@ -7614,18 +7356,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime-internal->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime-internal->compile]
@@ -7760,18 +7490,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [compile->compile]
@@ -7884,18 +7602,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [compile->compile]
@@ -7968,6 +7674,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [compile->compile]
@@ -8248,18 +7966,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [compile->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [compile->compile]
@@ -8389,18 +8095,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [runtime->compile]
@@ -8513,18 +8207,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->net.jodah#typetools;0.5.0 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->default]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->runtime]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#twirl-api_2.12;1.3.15 [runtime->compile]
@@ -8597,6 +8279,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-actor_2.12;2.5.16 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [runtime->compile]
@@ -8877,18 +8571,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.jboss.logging#jboss-logging;3.3.0.Final [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [runtime->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [runtime->compile]
@@ -9070,18 +8752,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [test->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [test->compile]
@@ -9246,18 +8916,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#htmlunit-driver;2.27 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#htmlunit-driver;2.27 [test->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#htmlunit-driver;2.27 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-firefox-driver;3.5.3 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-firefox-driver;3.5.3 [test->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-firefox-driver;3.5.3 [test->compile]
@@ -9362,6 +9020,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.eclipse.jetty#jetty-io;9.4.5.v20170502 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.eclipse.jetty#jetty-io;9.4.5.v20170502 [test->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.eclipse.jetty#jetty-io;9.4.5.v20170502 [test->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [test->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [test->compile]
@@ -9830,18 +9500,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-remote-driver;3.5.3 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-remote-driver;3.5.3 [test->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-remote-driver;3.5.3 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [test->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [test->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [test->compile]
@@ -10025,18 +9683,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [test-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [test-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.play#filters-helpers_2.12;2.6.19 [test-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#popper.js;1.12.9 [test-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [test-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [test-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->com.typesafe.akka#akka-parsing_2.12;10.0.14 [test-internal->compile]
@@ -10201,18 +9847,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#htmlunit-driver;2.27 [test-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#htmlunit-driver;2.27 [test-internal->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#htmlunit-driver;2.27 [test-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#sammy;0.7.4 [test-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-firefox-driver;3.5.3 [test-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-firefox-driver;3.5.3 [test-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-firefox-driver;3.5.3 [test-internal->compile]
@@ -10317,6 +9951,18 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.eclipse.jetty#jetty-io;9.4.5.v20170502 [test-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.eclipse.jetty#jetty-io;9.4.5.v20170502 [test-internal->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.eclipse.jetty#jetty-io;9.4.5.v20170502 [test-internal->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->default]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->default(compile)]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->runtime]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->compile]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->master]
+[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#leaflet;1.3.1 [test-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [test-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [test-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->javax.xml.bind#jaxb-api;2.3.0 [test-internal->compile]
@@ -10785,18 +10431,6 @@
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-remote-driver;3.5.3 [test-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-remote-driver;3.5.3 [test-internal->compile(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.seleniumhq.selenium#selenium-remote-driver;3.5.3 [test-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->default]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->default(compile)]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->runtime]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->compile]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->master]
-[debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.webjars#material-design-icons;3.0.1 [test-internal->master]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [test-internal->compile]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [test-internal->runtime(*)]
 [debug] == resolving dependencies ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT->org.scala-lang#scala-reflect;2.12.6 [test-internal->compile]
@@ -11351,171 +10985,143 @@
 [debug] circular dependency found: org.seleniumhq.selenium#htmlunit-driver;2.27->net.sourceforge.htmlunit#htmlunit;2.27->...
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 	[NOT REQUIRED] com.fasterxml.jackson.datatype#jackson-datatype-jdk8;2.8.11!jackson-datatype-jdk8.jar(src)
-[debug] 	[NOT REQUIRED] com.google.errorprone#error_prone_annotations;2.0.18!error_prone_annotations.jar(src)
-[debug] 	[NOT REQUIRED] com.google.inject.extensions#guice-assistedinject;4.1.0!guice-assistedinject.jar(src)
-[debug] 	[NOT REQUIRED] com.google.code.findbugs#jsr305;3.0.2!jsr305.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-java_2.12;2.6.19!play-java_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.play#play_2.12;2.6.19!play_2.12.jar(src)
-[debug] 		tried C:\Users\Silvan Knecht\.ivy2\local\org.webjars\popper.js\1.12.9\srcs\popper.js-sources.jar
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-java_2.12;2.6.19!play-java_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.reflections#reflections;0.9.11!reflections.jar(src)
-[debug] 		tried C:\Users\Silvan Knecht\.ivy2\local\org.webjars\sammy\0.7.4\srcs\sammy-sources.jar
-[debug] 		tried C:\Users\Silvan Knecht\.ivy2\local\org.webjars\material-design-icons\3.0.1\srcs\material-design-icons-sources.jar
-[debug] 	[NOT REQUIRED] io.jsonwebtoken#jjwt;0.7.0!jjwt.jar(src)
+[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.8.11!jackson-core.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-akka-http-server_2.12;2.6.19!play-akka-http-server_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.google.j2objc#j2objc-annotations;1.1!j2objc-annotations.jar(src)
-[debug] 	[NOT REQUIRED] org.codehaus.mojo#animal-sniffer-annotations;1.14!animal-sniffer-annotations.jar(src)
-[debug] 	[NOT REQUIRED] org.javassist#javassist;3.21.0-GA!javassist.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-functional_2.12;2.6.10!play-functional_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar(src)
+[debug] 	[NOT REQUIRED] io.jsonwebtoken#jjwt;0.7.0!jjwt.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-json_2.12;2.6.10!play-json_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#filters-helpers_2.12;2.6.19!filters-helpers_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.slf4j#jul-to-slf4j;1.7.25!jul-to-slf4j.jar(src)
-[debug] 	[NOT REQUIRED] commons-io#commons-io;2.5!commons-io.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-parsing_2.12;10.0.14!akka-parsing_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.apache.commons#commons-lang3;3.6!commons-lang3.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-java-forms_2.12;2.6.19!play-java-forms_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http-core_2.12;10.0.14!akka-http-core_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-server_2.12;2.6.19!play-server_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#build-link;2.6.19!build-link.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.webjars#bootstrap;4.0.0!bootstrap.jar(src)
+[debug] 	[NOT REQUIRED] org.codehaus.mojo#animal-sniffer-annotations;1.14!animal-sniffer-annotations.jar(src)
+[debug] 	[NOT REQUIRED] org.reactivestreams#reactive-streams;1.0.2!reactive-streams.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-netty-utils;2.6.19!play-netty-utils.jar(src)
+[debug] 	[NOT REQUIRED] net.jodah#typetools;0.5.0!typetools.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#twirl-api_2.12;1.3.15!twirl-api_2.12.jar(src)
+[debug] 	[NOT REQUIRED] ch.qos.logback#logback-classic;1.2.3!logback-classic.jar(src)
+[debug] 	[NOT REQUIRED] com.fasterxml.jackson.datatype#jackson-datatype-jsr310;2.8.11!jackson-datatype-jsr310.jar(src)
+[debug] 	[NOT REQUIRED] joda-time#joda-time;2.9.9!joda-time.jar(src)
+[debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.25!slf4j-api.jar(src)
+[debug] 	[NOT REQUIRED] com.google.guava#guava;22.0!guava.jar(src)
+[debug] 	[NOT REQUIRED] org.javassist#javassist;3.21.0-GA!javassist.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.12;2.5.16!akka-actor_2.12.jar(src)
+[debug] 		tried C:\Users\Silvan Knecht\.ivy2\local\org.webjars\leaflet\1.3.1\srcs\leaflet-sources.jar
+[debug] 	[NOT REQUIRED] javax.xml.bind#jaxb-api;2.3.0!jaxb-api.jar(src)
+[debug] 		tried https://repo1.maven.org/maven2/org/webjars/leaflet/1.3.1/leaflet-1.3.1-sources.jar
+[debug] 	[NOT REQUIRED] org.springframework#spring-beans;4.3.11.RELEASE!spring-beans.jar(src)
+[debug] 	[NOT REQUIRED] com.fasterxml#classmate;1.3.1!classmate.jar(src)
 [debug] 	[NOT REQUIRED] org.hibernate#hibernate-validator;5.4.1.Final!hibernate-validator.jar(src)
 [debug] 	[NOT REQUIRED] com.google.inject#guice;4.1.0!guice.jar(src)
-[debug] 	[NOT REQUIRED] org.typelevel#macro-compat_2.12;1.1.1!macro-compat_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.slf4j#jcl-over-slf4j;1.7.25!jcl-over-slf4j.jar(src)
-[debug] 	[NOT REQUIRED] javax.xml.bind#jaxb-api;2.3.0!jaxb-api.jar(src)
-[debug] 	[NOT REQUIRED] javax.validation#validation-api;1.1.0.Final!validation-api.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-streams_2.12;2.6.19!play-streams_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.6!scala-parser-combinators_2.12.jar(src)
 [debug] 	[NOT REQUIRED] commons-codec#commons-codec;1.10!commons-codec.jar(src)
-[debug] 	[NOT REQUIRED] com.fasterxml#classmate;1.3.1!classmate.jar(src)
-[debug] 	[NOT REQUIRED] org.jboss.logging#jboss-logging;3.3.0.Final!jboss-logging.jar(src)
-[debug] 	[NOT REQUIRED] commons-logging#commons-logging;1.2!commons-logging.jar(src)
-[debug] 	[NOT REQUIRED] org.fluentlenium#fluentlenium-core;3.3.0!fluentlenium-core.jar(src)
-[debug] 	[NOT REQUIRED] aopalliance#aopalliance;1.0!aopalliance.jar(src)
-[debug] 	[NOT REQUIRED] javax.inject#javax.inject;1!javax.inject.jar(src)
-[debug] 	[NOT REQUIRED] org.webjars.npm#popper.js;1.11.1!popper.js.jar(src)
-[debug] 	[NOT REQUIRED] net.sourceforge.htmlunit#htmlunit;2.27!htmlunit.jar(src)
-[debug] 	[NOT REQUIRED] org.webjars#bootstrap;4.0.0!bootstrap.jar(src)
-[debug] 	[NOT REQUIRED] xerces#xercesImpl;2.11.0!xercesImpl.jar(src)
-[debug] 	[NOT REQUIRED] net.sourceforge.cssparser#cssparser;0.9.23!cssparser.jar(src)
-[debug] 	[NOT REQUIRED] org.apache.httpcomponents#httpclient;4.5.3!httpclient.jar(src)
-[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-annotations;2.8.11!jackson-annotations.jar(src)
-[debug] 	[NOT REQUIRED] javax.transaction#jta;1.1!jta.jar(src)
-[debug] 	[NOT REQUIRED] ch.qos.logback#logback-classic;1.2.3!logback-classic.jar(src)
-[debug] 	[NOT REQUIRED] org.apache.commons#commons-exec;1.3!commons-exec.jar(src)
-[debug] 	[NOT REQUIRED] org.apache.commons#commons-lang3;3.6!commons-lang3.jar(src)
-[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#selenium-support;3.5.3!selenium-support.jar(src)
-[debug] 	[NOT REQUIRED] com.fasterxml.jackson.datatype#jackson-datatype-jsr310;2.8.11!jackson-datatype-jsr310.jar(src)
-[debug] 	[NOT REQUIRED] ch.qos.logback#logback-core;1.2.3!logback-core.jar(src)
-[debug] 	[NOT REQUIRED] net.java.dev.jna#jna;4.1.0!jna.jar(src)
-[debug] 	[NOT REQUIRED] org.eclipse.jetty#jetty-util;9.4.5.v20170502!jetty-util.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.springframework#spring-context;4.3.11.RELEASE!spring-context.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar(src)
-[debug] 	[NOT REQUIRED] org.eclipse.jetty.websocket#websocket-api;9.4.5.v20170502!websocket-api.jar(src)
+[debug] 	[NOT REQUIRED] org.slf4j#jcl-over-slf4j;1.7.25!jcl-over-slf4j.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-logback_2.12;2.6.19!play-logback_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.springframework#spring-core;4.3.11.RELEASE!spring-core.jar(src)
-[debug] 		tried https://repo1.maven.org/maven2/org/webjars/popper.js/1.12.9/popper.js-1.12.9-sources.jar
-[debug] 		tried https://repo1.maven.org/maven2/org/webjars/material-design-icons/3.0.1/material-design-icons-3.0.1-sources.jar
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-slf4j_2.12;2.5.16!akka-slf4j_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-databind;2.8.11.1!jackson-databind.jar(src)
-[debug] 		tried https://repo1.maven.org/maven2/org/webjars/sammy/0.7.4/sammy-0.7.4-sources.jar
+[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-annotations;2.8.11!jackson-annotations.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-protobuf_2.12;2.5.16!akka-protobuf_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe#ssl-config-core_2.12;0.2.4!ssl-config-core_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe#config;1.3.3!config.jar(src)
-[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#selenium-firefox-driver;3.5.3!selenium-firefox-driver.jar(src)
-[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#htmlunit-driver;2.27!htmlunit-driver.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-java8-compat_2.12;0.8.0!scala-java8-compat_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.eclipse.jetty.websocket#websocket-client;9.4.5.v20170502!websocket-client.jar(src)
-[debug] 	[NOT REQUIRED] org.eclipse.jetty.websocket#websocket-common;9.4.5.v20170502!websocket-common.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.6!scala-parser-combinators_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-protobuf_2.12;2.5.16!akka-protobuf_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http-core_2.12;10.0.14!akka-http-core_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-logback_2.12;2.6.19!play-logback_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-akka-http-server_2.12;2.6.19!play-akka-http-server_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#filters-helpers_2.12;2.6.19!filters-helpers_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-parsing_2.12;10.0.14!akka-parsing_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.12;2.5.16!akka-actor_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-streams_2.12;2.6.19!play-streams_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-java-forms_2.12;2.6.19!play-java-forms_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-slf4j_2.12;2.5.16!akka-slf4j_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-server_2.12;2.6.19!play-server_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-netty-utils;2.6.19!play-netty-utils.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.play#play-exceptions;2.6.19!play-exceptions.jar(src)
+[debug] 	[NOT REQUIRED] javax.transaction#jta;1.1!jta.jar(src)
+[debug] 	[NOT REQUIRED] javax.validation#validation-api;1.1.0.Final!validation-api.jar(src)
+[debug] 	[NOT REQUIRED] com.fasterxml.jackson.datatype#jackson-datatype-jdk8;2.8.11!jackson-datatype-jdk8.jar(src)
+[debug] 	[NOT REQUIRED] com.google.errorprone#error_prone_annotations;2.0.18!error_prone_annotations.jar(src)
+[debug] 	[NOT REQUIRED] org.springframework#spring-context;4.3.11.RELEASE!spring-context.jar(src)
+[debug] 	[NOT REQUIRED] aopalliance#aopalliance;1.0!aopalliance.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.play#play-guice_2.12;2.6.19!play-guice_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-test_2.12;2.6.19!play-test_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#build-link;2.6.19!build-link.jar(src)
-[debug] 	[NOT REQUIRED] org.eclipse.jetty#jetty-client;9.4.5.v20170502!jetty-client.jar(src)
+[debug] 	[NOT REQUIRED] com.google.inject.extensions#guice-assistedinject;4.1.0!guice-assistedinject.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-stream_2.12;2.5.16!akka-stream_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar(src)
-[debug] 	[NOT REQUIRED] joda-time#joda-time;2.9.9!joda-time.jar(src)
-[debug] 	[NOT REQUIRED] net.jodah#typetools;0.5.0!typetools.jar(src)
+[debug] 	[NOT REQUIRED] org.webjars#jquery;3.2.1!jquery.jar(src)
+[debug] 	[NOT REQUIRED] ch.qos.logback#logback-core;1.2.3!logback-core.jar(src)
+[debug] 	[NOT REQUIRED] javax.inject#javax.inject;1!javax.inject.jar(src)
+[debug] 	[NOT REQUIRED] org.webjars.npm#popper.js;1.11.1!popper.js.jar(src)
+[debug] 	[NOT REQUIRED] org.jboss.logging#jboss-logging;3.3.0.Final!jboss-logging.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-java8-compat_2.12;0.8.0!scala-java8-compat_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#selenium-support;3.5.3!selenium-support.jar(src)
+[debug] 	[NOT REQUIRED] org.fluentlenium#fluentlenium-core;3.3.0!fluentlenium-core.jar(src)
+[debug] 	[NOT REQUIRED] org.eclipse.jetty.websocket#websocket-api;9.4.5.v20170502!websocket-api.jar(src)
+[debug] 	[NOT REQUIRED] org.apache.commons#commons-exec;1.3!commons-exec.jar(src)
+[debug] 	[NOT REQUIRED] net.sourceforge.htmlunit#htmlunit;2.27!htmlunit.jar(src)
+[debug] 	[NOT REQUIRED] xerces#xercesImpl;2.11.0!xercesImpl.jar(src)
+[debug] 	[NOT REQUIRED] com.google.code.findbugs#jsr305;3.0.2!jsr305.jar(src)
+[debug] 	[NOT REQUIRED] org.eclipse.jetty.websocket#websocket-client;9.4.5.v20170502!websocket-client.jar(src)
+[debug] 	[NOT REQUIRED] commons-logging#commons-logging;1.2!commons-logging.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-test_2.12;2.6.19!play-test_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#htmlunit-driver;2.27!htmlunit-driver.jar(src)
+[debug] 	[NOT REQUIRED] net.sourceforge.cssparser#cssparser;0.9.23!cssparser.jar(src)
+[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#selenium-firefox-driver;3.5.3!selenium-firefox-driver.jar(src)
+[debug] 	[NOT REQUIRED] org.eclipse.jetty#jetty-util;9.4.5.v20170502!jetty-util.jar(src)
+[debug] 	[NOT REQUIRED] org.apache.httpcomponents#httpclient;4.5.3!httpclient.jar(src)
+[debug] 	[NOT REQUIRED] org.eclipse.jetty#jetty-client;9.4.5.v20170502!jetty-client.jar(src)
+[debug] 	[NOT REQUIRED] org.eclipse.jetty.websocket#websocket-common;9.4.5.v20170502!websocket-common.jar(src)
+[debug] 	[NOT REQUIRED] commons-io#commons-io;2.5!commons-io.jar(src)
+[debug] 	[NOT REQUIRED] net.java.dev.jna#jna;4.1.0!jna.jar(src)
+[debug] 	[NOT REQUIRED] org.atteo.classindex#classindex;3.4!classindex.jar(src)
 [debug] 	[NOT REQUIRED] org.w3c.css#sac;1.3!sac.jar(src)
 [debug] 	[NOT REQUIRED] net.sourceforge.htmlunit#neko-htmlunit;2.27!neko-htmlunit.jar(src)
-[debug] 	[NOT REQUIRED] junit#junit;4.12!junit.jar(src)
 [debug] 	[NOT REQUIRED] net.sourceforge.htmlunit#htmlunit-core-js;2.27!htmlunit-core-js.jar(src)
+[debug] 	[NOT REQUIRED] junit#junit;4.12!junit.jar(src)
 [debug] 	[NOT REQUIRED] xalan#serializer;2.7.2!serializer.jar(src)
+[debug] 	[NOT REQUIRED] org.hamcrest#hamcrest-core;1.3!hamcrest-core.jar(src)
+[debug] 	[NOT REQUIRED] org.typelevel#macro-compat_2.12;1.1.1!macro-compat_2.12.jar(src)
+[debug] 	[NOT REQUIRED] xml-apis#xml-apis;1.4.01!xml-apis.jar(src)
+[debug] 	[NOT REQUIRED] xalan#xalan;2.7.2!xalan.jar(src)
+[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#selenium-api;3.5.3!selenium-api.jar(src)
+[debug] 	[NOT REQUIRED] com.google.code.gson#gson;2.8.0!gson.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar(src)
+[debug] 	[NOT REQUIRED] net.java.dev.jna#jna-platform;4.1.0!jna-platform.jar(src)
+[debug] 	[NOT REQUIRED] org.eclipse.jetty#jetty-http;9.4.5.v20170502!jetty-http.jar(src)
+[debug] 	[NOT REQUIRED] com.novocode#junit-interface;0.11!junit-interface.jar(src)
+[debug] 	[NOT REQUIRED] org.apache.httpcomponents#httpcore;4.4.6!httpcore.jar(src)
+[debug] 	[NOT REQUIRED] org.apache.httpcomponents#httpmime;4.5.3!httpmime.jar(src)
+[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#selenium-remote-driver;3.5.3!selenium-remote-driver.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.play#play-docs_2.12;2.6.19!play-docs_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-omnidoc_2.12;2.6.19!play-omnidoc_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.25!slf4j-api.jar(src)
-[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.8.11!jackson-core.jar(src)
-[debug] 	[NOT REQUIRED] org.parboiled#parboiled-java;1.1.7!parboiled-java.jar(src)
-[debug] 	[NOT REQUIRED] org.ow2.asm#asm-util;5.0.3!asm-util.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-doc_2.12;1.8.1!play-doc_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.ow2.asm#asm;5.0.3!asm.jar(src)
-[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#selenium-remote-driver;3.5.3!selenium-remote-driver.jar(src)
 [debug] 	[NOT REQUIRED] org.parboiled#parboiled-core;1.1.7!parboiled-core.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-omnidoc_2.12;2.6.19!play-omnidoc_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.ow2.asm#asm-analysis;5.0.3!asm-analysis.jar(src)
+[debug] 	[NOT REQUIRED] org.ow2.asm#asm;5.0.3!asm.jar(src)
 [debug] 	[NOT REQUIRED] org.pegdown#pegdown;1.6.0!pegdown.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.play#play-doc_2.12;1.8.1!play-doc_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.ow2.asm#asm-util;5.0.3!asm-util.jar(src)
 [debug] 	[NOT REQUIRED] org.ow2.asm#asm-tree;5.0.3!asm-tree.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-json_2.12;2.6.10!play-json_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#play-functional_2.12;2.6.10!play-functional_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.apache.httpcomponents#httpmime;4.5.3!httpmime.jar(src)
-[debug] 	[NOT REQUIRED] org.apache.httpcomponents#httpcore;4.4.6!httpcore.jar(src)
-[debug] 	[NOT REQUIRED] com.novocode#junit-interface;0.11!junit-interface.jar(src)
-[debug] 	[NOT REQUIRED] org.eclipse.jetty#jetty-http;9.4.5.v20170502!jetty-http.jar(src)
-[debug] 	[NOT REQUIRED] com.google.code.gson#gson;2.8.0!gson.jar(src)
-[debug] 	[NOT REQUIRED] net.java.dev.jna#jna-platform;4.1.0!jna-platform.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar(src)
-[debug] 	[NOT REQUIRED] org.hamcrest#hamcrest-core;1.3!hamcrest-core.jar(src)
-[debug] 	[NOT REQUIRED] org.seleniumhq.selenium#selenium-api;3.5.3!selenium-api.jar(src)
-[debug] 	[NOT REQUIRED] xml-apis#xml-apis;1.4.01!xml-apis.jar(src)
-[debug] 	[NOT REQUIRED] xalan#xalan;2.7.2!xalan.jar(src)
+[debug] 	[NOT REQUIRED] org.parboiled#parboiled-java;1.1.7!parboiled-java.jar(src)
 [debug] 	[NOT REQUIRED] org.eclipse.jetty#jetty-io;9.4.5.v20170502!jetty-io.jar(src)
 [debug] 	[NOT REQUIRED] cglib#cglib-nodep;3.2.4!cglib-nodep.jar(src)
-[debug] 	[NOT REQUIRED] org.atteo.classindex#classindex;3.4!classindex.jar(src)
-[debug] 	[NOT REQUIRED] org.springframework#spring-beans;4.3.11.RELEASE!spring-beans.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.play#twirl-api_2.12;1.3.15!twirl-api_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.google.guava#guava;22.0!guava.jar(src)
-[debug] 	[NOT REQUIRED] org.webjars#jquery;3.2.1!jquery.jar(src)
-[debug] 	[NOT REQUIRED] org.reactivestreams#reactive-streams;1.0.2!reactive-streams.jar(src)
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/webjars/material-design-icons/3.0.1/material-design-icons-3.0.1-sources.jar
-[debug] 		tried C:\Users\Silvan Knecht\.sbt\preloaded\org.webjars\material-design-icons\3.0.1\srcs\material-design-icons-sources.jar
-[debug] 		tried file:/C:/Users/Silvan Knecht/.sbt/preloaded/org/webjars/material-design-icons/3.0.1/material-design-icons-3.0.1-sources.jar
-[warn] 	Detected merged artifact: [FAILED     ] org.webjars#material-design-icons;3.0.1!material-design-icons.jar(src):  (0ms).
+[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/webjars/leaflet/1.3.1/leaflet-1.3.1-sources.jar
+[debug] 		tried C:\Users\Silvan Knecht\.sbt\preloaded\org.webjars\leaflet\1.3.1\srcs\leaflet-sources.jar
+[debug] 		tried file:/C:/Users/Silvan Knecht/.sbt/preloaded/org/webjars/leaflet/1.3.1/leaflet-1.3.1-sources.jar
+[warn] 	Detected merged artifact: [FAILED     ] org.webjars#leaflet;1.3.1!leaflet.jar(src):  (0ms).
 [warn] ==== local: tried
 [warn] ==== public: tried
-[warn]   https://repo1.maven.org/maven2/org/webjars/material-design-icons/3.0.1/material-design-icons-3.0.1-sources.jar
+[warn]   https://repo1.maven.org/maven2/org/webjars/leaflet/1.3.1/leaflet-1.3.1-sources.jar
 [warn] ==== local-preloaded-ivy: tried
-[warn]   C:\Users\Silvan Knecht\.sbt\preloaded\org.webjars\material-design-icons\3.0.1\srcs\material-design-icons-sources.jar
+[warn]   C:\Users\Silvan Knecht\.sbt\preloaded\org.webjars\leaflet\1.3.1\srcs\leaflet-sources.jar
 [warn] ==== local-preloaded: tried
-[warn]   file:/C:/Users/Silvan Knecht/.sbt/preloaded/org/webjars/material-design-icons/3.0.1/material-design-icons-3.0.1-sources.jar
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/webjars/popper.js/1.12.9/popper.js-1.12.9-sources.jar
-[debug] 		tried C:\Users\Silvan Knecht\.sbt\preloaded\org.webjars\popper.js\1.12.9\srcs\popper.js-sources.jar
-[debug] 		tried file:/C:/Users/Silvan Knecht/.sbt/preloaded/org/webjars/popper.js/1.12.9/popper.js-1.12.9-sources.jar
-[warn] 	Detected merged artifact: [FAILED     ] org.webjars#popper.js;1.12.9!popper.js.jar(src):  (0ms).
-[warn] ==== local: tried
-[warn] ==== public: tried
-[warn]   https://repo1.maven.org/maven2/org/webjars/popper.js/1.12.9/popper.js-1.12.9-sources.jar
-[warn] ==== local-preloaded-ivy: tried
-[warn]   C:\Users\Silvan Knecht\.sbt\preloaded\org.webjars\popper.js\1.12.9\srcs\popper.js-sources.jar
-[warn] ==== local-preloaded: tried
-[warn]   file:/C:/Users/Silvan Knecht/.sbt/preloaded/org/webjars/popper.js/1.12.9/popper.js-1.12.9-sources.jar
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/webjars/sammy/0.7.4/sammy-0.7.4-sources.jar
-[debug] 		tried C:\Users\Silvan Knecht\.sbt\preloaded\org.webjars\sammy\0.7.4\srcs\sammy-sources.jar
-[debug] 		tried file:/C:/Users/Silvan Knecht/.sbt/preloaded/org/webjars/sammy/0.7.4/sammy-0.7.4-sources.jar
-[warn] 	Detected merged artifact: [FAILED     ] org.webjars#sammy;0.7.4!sammy.jar(src):  (0ms).
-[warn] ==== local: tried
-[warn] ==== public: tried
-[warn]   https://repo1.maven.org/maven2/org/webjars/sammy/0.7.4/sammy-0.7.4-sources.jar
-[warn] ==== local-preloaded-ivy: tried
-[warn]   C:\Users\Silvan Knecht\.sbt\preloaded\org.webjars\sammy\0.7.4\srcs\sammy-sources.jar
-[warn] ==== local-preloaded: tried
-[warn]   file:/C:/Users/Silvan Knecht/.sbt/preloaded/org/webjars/sammy/0.7.4/sammy-0.7.4-sources.jar
-[debug] :: resolution report :: resolve 4220ms :: artifacts dl 1866ms
+[warn]   file:/C:/Users/Silvan Knecht/.sbt/preloaded/org/webjars/leaflet/1.3.1/leaflet-1.3.1-sources.jar
+[debug] :: resolution report :: resolve 2966ms :: artifacts dl 178ms
 [warn] 	::::::::::::::::::::::::::::::::::::::::::::::
 [warn] 	::              FAILED DOWNLOADS            ::
 [warn] 	:: ^ see resolution messages for details  ^ ::
 [warn] 	::::::::::::::::::::::::::::::::::::::::::::::
-[warn] 	:: org.webjars#popper.js;1.12.9!popper.js.jar(src)
-[warn] 	:: org.webjars#sammy;0.7.4!sammy.jar(src)
-[warn] 	:: org.webjars#material-design-icons;3.0.1!material-design-icons.jar(src)
+[warn] 	:: org.webjars#leaflet;1.3.1!leaflet.jar(src)
 [warn] 	::::::::::::::::::::::::::::::::::::::::::::::
 [debug] 	report for ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT compile produced in C:\Users\Silvan Knecht\Documents\GitHub\JKL_Fitbuddy\target\scala-2.12\resolution-cache\reports\ch.ntb-jkl_fitbuddy$sources-compile.xml
 [debug] 	report for ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT runtime produced in C:\Users\Silvan Knecht\Documents\GitHub\JKL_Fitbuddy\target\scala-2.12\resolution-cache\reports\ch.ntb-jkl_fitbuddy$sources-runtime.xml
@@ -11537,4 +11143,4 @@
 [debug] 	report for ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT pom produced in C:\Users\Silvan Knecht\Documents\GitHub\JKL_Fitbuddy\target\scala-2.12\resolution-cache\reports\ch.ntb-jkl_fitbuddy$sources-pom.xml
 [debug] 	report for ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT scala-tool produced in C:\Users\Silvan Knecht\Documents\GitHub\JKL_Fitbuddy\target\scala-2.12\resolution-cache\reports\ch.ntb-jkl_fitbuddy$sources-scala-tool.xml
 [debug] 	report for ch.ntb#jkl_fitbuddy$sources;1.0-SNAPSHOT docs produced in C:\Users\Silvan Knecht\Documents\GitHub\JKL_Fitbuddy\target\scala-2.12\resolution-cache\reports\ch.ntb-jkl_fitbuddy$sources-docs.xml
-[debug] 	resolve done (4220ms resolve - 1866ms download)
+[debug] 	resolve done (2966ms resolve - 178ms download)
