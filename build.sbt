@@ -24,5 +24,8 @@ libraryDependencies ++= Seq(
   "org.webjars" % "font-awesome" % "5.3.1",
 
   // leaflet map with tooltips
-  "org.webjars" % "leaflet" % "1.3.1"
+  "org.webjars" % "leaflet" % "1.3.1",
+
+  // Vue.js
+  "org.webjars" % "vue" % "2.5.16"
 )

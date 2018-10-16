@@ -1,3 +1,25 @@
+let events = [{
+    id: 1,
+    sport: "tennis",
+    date: "16.10.2018",
+    requestedBuddies: "2",
+    location: {
+        lat: 47.480581532215325,
+        long: 9.05
+    }
+
+}, {
+    id: 2,
+    sport: "football",
+    date: "22.10.2018",
+    requestedBuddies: "10",
+    location: {
+        lat: 47.473736163992214,
+        long: 9.03977394104004
+    }
+}];
+
+
 $().ready(() => {
     // when the user visits the site, check geodata
     getLocation();
@@ -50,7 +72,7 @@ function createMap(myLatitude, myLongitude) {
         let popLocation = e.latlng;
         let popup = L.popup()
             .setLatLng(popLocation)
-            .setContent(`<div><button id="createEventButton" class="btn btn-default" type="button">Create Event Here!</button></p></div>`)
+            .setContent(`<div><button id="createEventButton" class="btn btn-default" type="button">Create event here!</button></p></div>`)
             .openOn(map);
 
         $("#createEventButton").click(() => {
@@ -59,7 +81,26 @@ function createMap(myLatitude, myLongitude) {
         })
     });
 
+    placeEventsOnMap(map);
 
+
+}
+
+function placeEventsOnMap(map) {
+
+    for (const i of events) {
+        console.log(i);
+        let {id, location, sport, requestedBuddies} = i;
+        let {lat, long} = location;
+        console.log(lat);
+        let marker = L.marker([lat, long]).addTo(map);
+        marker.bindPopup(`<p>Sport: <b>${sport}</b> | Requested buddies: <b>${requestedBuddies}</b></p>`, {
+            closeOnClick: false,
+            autoClose: false
+        }).openPopup();
+
+
+    }
 
 
 }
