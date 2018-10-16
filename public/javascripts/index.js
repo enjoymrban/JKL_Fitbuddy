@@ -35,7 +35,7 @@ function setPosition(position) {
 
 // create Leaflet Map on index page
 function createMap(myLatitude, myLongitude) {
-    let hallo = L.map('mapid').setView([myLatitude, myLongitude], 15);
+    let map = L.map('mapid').setView([myLatitude, myLongitude], 15);
 
 // Leaflet Map on index page
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZW5qb3ltcmJhbiIsImEiOiJjam5hY3EwcDQwZ2hiM3BwYWQ2dWt4a2x1In0.nlX1GeaPE2DQn3aZH0IJaA', {
@@ -44,6 +44,23 @@ function createMap(myLatitude, myLongitude) {
             '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox.streets'
-    }).addTo(hallo);
+    }).addTo(map);
+
+    map.on('click', function (e) {
+        console.log("hallo");
+        var popLocation = e.latlng;
+        var popup = L.popup()
+            .setLatLng(popLocation)
+            .setContent(`<div><button id="createEventButton" class="btn btn-default" type="button">Create Event Here!</button></p></div>`)
+            .openOn(map);
+
+        $("#createEventButton").click(() => {
+            $("#createEventModal").modal("show");
+            $("#whereEventForm").val(`Lat: ${popLocation.lat} and Long: ${popLocation.lng}`)
+        })
+    });
+
+
+
 
 }
