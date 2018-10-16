@@ -47,9 +47,8 @@ function createMap(myLatitude, myLongitude) {
     }).addTo(map);
 
     map.on('click', function (e) {
-        console.log("hallo");
-        var popLocation = e.latlng;
-        var popup = L.popup()
+        let popLocation = e.latlng;
+        let popup = L.popup()
             .setLatLng(popLocation)
             .setContent(`<div><button id="createEventButton" class="btn btn-default" type="button">Create Event Here!</button></p></div>`)
             .openOn(map);
