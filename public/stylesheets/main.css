@@ -10,11 +10,10 @@ html, body {
 
 #mapid {
     z-index: -1;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     margin: 10px 0 0 0 ;
-
     padding: 0;
 }
 
