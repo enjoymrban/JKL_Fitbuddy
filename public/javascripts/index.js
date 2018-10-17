@@ -1,17 +1,10 @@
-
-
-
 $().ready(() => {
     // when the user visits the site, check geodata
     getLocation();
-    minDate();
-    loadSportOptionsForCreateEventForm();
+
 
 
 });
-
-
-
 
 // get Current Location
 function getLocation() {
@@ -99,8 +92,6 @@ function createMap(myLatitude = 46, myLongitude = 8) {
     });
 
     placeEventsOnMap(map);
-
-
 }
 
 
@@ -120,11 +111,11 @@ function placeEventsOnMap(map) {
         $(`#interestedInEvent${id}`).click(() => {
             for (const e of events) {
                 let eventIndex = myEvents.indexOf(e);
-                if (e.id == id && eventIndex == -1) {
+                if (e.id === id && eventIndex === -1) {
                     myEvents.push(e);
                     //alert(`Event: ${e.sport} has been added to your events`);
                     $(`#interestedInEvent${id}`).text('Im not longer interested');
-                } else if (e.id == id && eventIndex != -1) {
+                } else if (e.id === id && eventIndex !== -1) {
                     //alert(`Event: ${e.sport} has been removed from your events`);
                     myEvents.splice(eventIndex, 1);
                     $(`#interestedInEvent${id}`).text('Im interested');
