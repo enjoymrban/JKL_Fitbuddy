@@ -3,7 +3,6 @@ $().ready(() => {
     getLocation();
 
 
-
 });
 
 // get Current Location
@@ -73,7 +72,8 @@ function createMap(myLatitude = 46, myLongitude = 8) {
             $("#createEventModal").modal("show");
             $(`#sendEventForm`).click(() => {
                 let newEvent = {
-                    id: events.length+1,
+                    id: events.length + 1,
+                    description: $('#descriptionEventForm').val(),
                     sport: $('#sportEventForm').find(":selected").text(),
                     date: $('#dateEventForm').val(),
                     requestedBuddies: $('#amoutBuddiesEventForm').val(),
@@ -81,7 +81,9 @@ function createMap(myLatitude = 46, myLongitude = 8) {
                         lat: $("#whereLatEventForm").val(),
                         long: $("#whereLngEventForm").val()
 
-                    }
+                    },
+                    interested: false,
+                    creator: "me"
                 };
                 events.push(newEvent);
                 $('#createEventModal').modal('toggle');
@@ -110,14 +112,14 @@ function placeEventsOnMap(map) {
 
         $(`#interestedInEvent${id}`).click(() => {
             for (const e of events) {
-                let eventIndex = myEvents.indexOf(e);
+                let eventIndex = e.interested.indexOf("me");
                 if (e.id === id && eventIndex === -1) {
-                    myEvents.push(e);
+                    e.interested.push("me");
                     //alert(`Event: ${e.sport} has been added to your events`);
                     $(`#interestedInEvent${id}`).text('Im not longer interested');
                 } else if (e.id === id && eventIndex !== -1) {
                     //alert(`Event: ${e.sport} has been removed from your events`);
-                    myEvents.splice(eventIndex, 1);
+                    e.interested.splice(eventIndex, 1);
                     $(`#interestedInEvent${id}`).text('Im interested');
                 }
             }

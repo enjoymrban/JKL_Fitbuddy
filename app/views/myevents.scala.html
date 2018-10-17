@@ -1,89 +1,81 @@
 @()
 
-@main("My Events") {
-  <div class="table-responsive-md">
-    <h1>My events</h1>
-    <table id="myEventsTable" class="table">
-      <thead>
-        <tr>
-          <th scope="col">discription</th>
-          <th scope="col">sport</th>
-          <th scope="col">#buddies</th>
-          <th scope="col">delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>mdo</td>
-          <td><i class="fa fa-trash"></i></td>
-        </tr>
-        <tr>
 
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>fat</td>
-          <td><i class="fa fa-trash"></i></td>
-        </tr>
-        <tr>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>twitter</td>
-          <td><i class="fa fa-trash"></i></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
-  <div class="table-responsive-md">
-    <h1>Interested</h1>
-    <table id="myEventsTable" class="table">
-      <thead>
-        <tr>
-          <th scope="col">discription</th>
-          <th scope="col">sport</th>
-          <th scope="col">#buddies</th>
-          <th scope="col">delete</th>
-        </tr>
-      </thead>
-      <tbody>
+@scripts = {
+    <script src="@routes.Assets.versioned("javascripts/myevents.js")" type="text/javascript"></script>
+}
+@main("My Events",scripts) {
+    <div class="table-responsive-md">
+        <h1>My events</h1>
+        <table id="myEventsTable" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">description</th>
+                    <th scope="col">sport</th>
+                    <th scope="col">#buddies</th>
+                    <th scope="col">date</th>
+                    <th scope="col">delete</th>
+                </tr>
+            </thead>
+            <tbody id="myEventsTBody">
 
-      </tbody>
-    </table>
-  </div>
 
-  <div class="table-responsive-md">
-    <h1>Joined</h1>
-    <table id="myEventsTable" class="table">
-      <thead>
-        <tr>
-          <th scope="col">discription</th>
-          <th scope="col">sport</th>
-          <th scope="col">#buddies</th>
-          <th scope="col">delete</th>
-        </tr>
-      </thead>
-      <tbody>
+            </tbody>
+        </table>
+    </div>
 
-      </tbody>
-    </table>
-  </div>
+    <div class="table-responsive-md">
+        <h1>Interested</h1>
+        <table id="myEventsTable" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">description</th>
+                    <th scope="col">sport</th>
+                    <th scope="col">#buddies</th>
+                    <th scope="col">date</th>
+                    <th scope="col">delete</th>
+                </tr>
+            </thead>
+            <tbody id="interestedTBody">
 
-  <div class="table-responsive-md">
-    <h1>Events of my buddies</h1>
-    <table id="myEventsTable" class="table">
-      <thead>
-        <tr>
-          <th scope="col">discription</th>
-          <th scope="col">sport</th>
-          <th scope="col">#buddies</th>
-          <th scope="col">delete</th>
-        </tr>
-      </thead>
-      <tbody>
+            </tbody>
+        </table>
+    </div>
 
-      </tbody>
-    </table>
-  </div>
+    <div class="table-responsive-md">
+        <h1>Joined</h1>
+        <table id="myEventsTable" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">description</th>
+                    <th scope="col">sport</th>
+                    <th scope="col">#buddies</th>
+                    <th scope="col">date</th>
+                    <th scope="col">delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-responsive-md">
+        <h1>Events of my buddies</h1>
+        <table id="myEventsTable" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">description</th>
+                    <th scope="col">sport</th>
+                    <th scope="col">#buddies</th>
+                    <th scope="col">date</th>
+                    <th scope="col">delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
 }
