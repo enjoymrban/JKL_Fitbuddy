@@ -1,6 +1,10 @@
 @()
 
-    @main("Fitbuddy") {
+
+@scripts = {
+    <script src="@routes.Assets.versioned("javascripts/index.js")" type="text/javascript"></script>
+}
+    @main("Fitbuddy", scripts) {
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
