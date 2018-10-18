@@ -9,6 +9,7 @@ let events = [{
         long: "9.05"
     },
     interested: ["me", "max", "peter"],
+    participants: [],
     creator: "max"
 
 }, {
@@ -22,6 +23,7 @@ let events = [{
         long: "9.03977394104004"
     },
     interested: ["max", "me", "peter"],
+    participants: [],
     creator: "max"
 }, {
     id: 3,
@@ -34,6 +36,7 @@ let events = [{
         long: "9.016513824462892"
     },
     interested: ["max", "peter"],
+    participants: [],
     creator: "me"
 }, {
     id: 4,
@@ -46,6 +49,7 @@ let events = [{
         long: "9.016513824462892"
     },
     interested: ["max", "peter"],
+    participants: [],
     creator: "me"
 }, {
     id: 5,
@@ -58,6 +62,7 @@ let events = [{
         long: "9.016513824462892"
     },
     interested: ["max", "peter"],
+    participants: ["me"],
     creator: "max"
 }];
 
