@@ -21,6 +21,8 @@ function setPosition(position) {
     let myLongitude = position.coords.longitude;
 
 
+    console.log(myLatitude + "   " + myLongitude);
+
     createMap(myLatitude, myLongitude);
 
 }
@@ -44,15 +46,14 @@ function showError(error) {
 }
 
 // create Leaflet Map on index page
-function createMap(myLatitude = 46, myLongitude = 8) {
+function createMap(myLatitude = 57, myLongitude = -8) {
+    console.log(myLatitude + "   " + myLongitude);
     let map = L.map('mapid').setView([myLatitude, myLongitude], 15);
 
 // Leaflet Map on index page
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZW5qb3ltcmJhbiIsImEiOiJjam5hY3EwcDQwZ2hiM3BwYWQ2dWt4a2x1In0.nlX1GeaPE2DQn3aZH0IJaA', {
         maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox.streets'
     }).addTo(map);
 
@@ -116,11 +117,11 @@ function placeEventsOnMap(map) {
                 if (e.id === id && eventIndex === -1) {
                     e.interested.push("me");
                     //alert(`Event: ${e.sport} has been added to your events`);
-                    $(`#interestedInEvent${id}`).text('Im not longer interested');
+                    $(`#interestedInEvent${id}`).text("I'm not longer interested");
                 } else if (e.id === id && eventIndex !== -1) {
                     //alert(`Event: ${e.sport} has been removed from your events`);
                     e.interested.splice(eventIndex, 1);
-                    $(`#interestedInEvent${id}`).text('Im interested');
+                    $(`#interestedInEvent${id}`).text("I'm interested!");
                 }
             }
         })

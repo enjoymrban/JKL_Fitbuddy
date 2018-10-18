@@ -5,13 +5,14 @@
 @scripts = {
     <script src="@routes.Assets.versioned("javascripts/myevents.js")" type="text/javascript"></script>
 }
-@main("My Events",scripts) {
+@main("My Events", scripts) {
     <div class="table-responsive-md">
         <h1>My events</h1>
         <table id="myEventsTable" class="table">
             <thead>
                 <tr>
                     <th scope="col">description</th>
+                    <th scope="col">interested</th>
                     <th scope="col">sport</th>
                     <th scope="col">#buddies</th>
                     <th scope="col">date</th>
@@ -77,5 +78,37 @@
 
             </tbody>
         </table>
+    </div>
+    @* Modal shows interested people*@
+    <div class="modal fade" id="interestedModal" tabindex="-1" role="dialog" aria-labelledby="interestedModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="interestedModalTitle">Interested</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="table-responsive-sm">
+                        <table id="interestedUser" class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">interested</th>
+                                    <th scope="col">decline</th>
+                                    <th scope="col">accept</th>
+                                </tr>
+                            </thead>
+                            <tbody id="interestedTBodyModal">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </div>
 }

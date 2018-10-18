@@ -21,7 +21,7 @@ let events = [{
         lat: "47.473736163992214",
         long: "9.03977394104004"
     },
-    interested: ["me", "max", "peter"],
+    interested: ["max", "me", "peter"],
     creator: "max"
 }, {
     id: 3,
@@ -33,10 +33,10 @@ let events = [{
         lat: "47.48714416287697",
         long: "9.016513824462892"
     },
-    interested: [ "max", "peter"],
+    interested: ["max", "peter"],
     creator: "me"
-},{
-    id:4 ,
+}, {
+    id: 4,
     description: "um 17:00 bei der Box",
     sport: "squash",
     date: "22.10.2018",
@@ -47,7 +47,7 @@ let events = [{
     },
     interested: ["max", "peter"],
     creator: "me"
-},{
+}, {
     id: 5,
     description: "bin Anfänger suche Begleitung",
     sport: "badminton",
@@ -57,7 +57,7 @@ let events = [{
         lat: "47.58714416287697",
         long: "9.016513824462892"
     },
-    interested: ["me", "max", "peter"],
+    interested: ["max", "peter"],
     creator: "max"
 }];
 
