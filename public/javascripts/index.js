@@ -1,3 +1,7 @@
+let mapZoom = 15;
+let map;
+let mapCenter = 0;
+
 $().ready(() => {
     // when the user visits the site, check geodata
     getLocation();
@@ -6,6 +10,7 @@ $().ready(() => {
 });
 
 // get Current Location
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(setPosition, showError);
@@ -19,11 +24,9 @@ function getLocation() {
 function setPosition(position) {
     let myLatitude = position.coords.latitude;
     let myLongitude = position.coords.longitude;
-
-
-    console.log(myLatitude + "   " + myLongitude);
-
+    console.log(myLatitude,myLongitude);
     createMap(myLatitude, myLongitude);
+
 
 }
 
@@ -46,9 +49,9 @@ function showError(error) {
 }
 
 // create Leaflet Map on index page
-function createMap(myLatitude = 57, myLongitude = -8) {
-    console.log(myLatitude + "   " + myLongitude);
-    let map = L.map('mapid').setView([myLatitude, myLongitude], 15);
+function createMap(myLatitude,myLongitude) {
+
+    map = L.map('mapid').setView([myLatitude, myLongitude], mapZoom);
 
 // Leaflet Map on index page
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZW5qb3ltcmJhbiIsImEiOiJjam5hY3EwcDQwZ2hiM3BwYWQ2dWt4a2x1In0.nlX1GeaPE2DQn3aZH0IJaA', {
@@ -89,13 +92,28 @@ function createMap(myLatitude = 57, myLongitude = -8) {
                 events.push(newEvent);
                 $('#createEventModal').modal('toggle');
                 placeEventsOnMap(map);
+                setMapCenter();
             });
 
         })
     });
 
     placeEventsOnMap(map);
+    setMapCenter();
+
 }
+
+function setMapCenter() {
+    mapCenter = map.getCenter();
+    console.log(mapCenter.lat);
+    map.panTo(new L.LatLng(mapCenter.lat, mapCenter.long));
+
+
+}
+
+
+
+
 
 
 // Place Markers on the map
