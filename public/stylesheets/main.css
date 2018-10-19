@@ -8,15 +8,48 @@ html, body {
     width: 100%;
 }
 
+/*Navbar*/
+
+/*Maybe remove later*/
+#navbar-notloggedin{
+    margin-right: 15px;
+}
+
+.navbar-login {
+    width: 305px;
+    padding: 10px 10px 0 10px;
+}
+
+.navbar-login-session {
+
+    padding: 0 10px 0 10px;
+
+}
+
+.icon-size {
+    font-size: 87px;
+}
+
+#navbarDropdownLoggedin {
+    right: 0;
+    left: auto;
+}
+
+#loginWithFacebookDiv{
+    border-top: 1px solid grey;
+}
+
 #mapid {
     z-index: -1;
     position: fixed;
     width: 100%;
     height: 100%;
-    margin: 10px 0 0 0 ;
+    margin: 10px 0 0 0;
     padding: 0;
 }
 
+
+/*CHANGE!!!*/
 .container {
     margin-top: 5%;
 }
