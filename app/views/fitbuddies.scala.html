@@ -1,5 +1,65 @@
 @()
 
 @main("Fitbuddies") {
-  <h1>Fitbuddies</h1>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-5">
+                <div class="card" >
+                    <img class="card-img-top" src="@routes.Assets.versioned("images/whitesmile.png")" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 id="buddyName" class="card-title">Max</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <a href="#" class="btn btn-primary">Add buddies</a>
+                                </div>
+                                <div class="col-sm-5">
+                                    <a href="#" class="btn btn-primary">Skip</a>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Buddy</th>
+                            <th scope="col">Remove</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td><i class="fa fa-times"></i></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td><i class="fa fa-times"></i></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td><i class="fa fa-times"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
 }

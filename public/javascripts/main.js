@@ -66,7 +66,10 @@ let events = [{
     creator: "max"
 }];
 
-let sports = ["tennis", "football", "squash", "badminton"];
+let sports = ["tennis", "football", "squash", "badminton", "volleyball"];
+
+
+
 
 
 $().ready(() => {
