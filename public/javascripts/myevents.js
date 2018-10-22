@@ -48,7 +48,7 @@ function buildInterestedTBodyModal(interested, participants) {
     for (const i of interested) {
         let indexOfI = interested.indexOf(i);
         let tableRow = `<tr>
-                        <td>${i}</td>
+                        <td>${i.name}</td>
                         <td><a id="decline${indexOfI}" href="#"><i class="fa fa-times"></i></a></td>
                         <td><a id="accept${indexOfI}" href="#"><i class="fa fa-check"></i></a></td>
                         </tr>`;
@@ -74,7 +74,7 @@ function tableRowTemplateMyEvents(id, description, sport, requestedBuddies, date
                         <td>${description}</td>
                         <td><a id="interested${id}" href="#" data-toggle="modal" data-target="#interestedModal">(${interested.length}) Show </a></td>
                         <td>${sport}</td>
-                        <td>${participants.length + 1} /${requestedBuddies}</td>
+                        <td>${participants.length} /${requestedBuddies}</td>
                         <td>${date}</td>
                         <td><a id="trash${id}" href="#"><i class="fa fa-trash"></i></a></td>
                         </tr>`;
@@ -87,7 +87,7 @@ function tableRowTemplate(id, description, sport, requestedBuddies, date, partic
     let tableRow = `<tr>
                         <td>${description}</td>
                         <td>${sport}</td>
-                        <td>${participants.length + 1} /${requestedBuddies}</td>
+                        <td>${participants.length} /${requestedBuddies}</td>
                         <td>${date}</td>
                         <td><a id="trash${id}" href="#"><i class="fa fa-trash"></i></a></td>
                         </tr>`;

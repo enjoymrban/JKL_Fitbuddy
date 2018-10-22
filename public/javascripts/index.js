@@ -1,11 +1,41 @@
-let mapZoom = 15;
-let map = L.map('mapid').setView([0, 0], mapZoom)
+let endZoom = 14;
+let startZoom =10;
+let map = L.map('mapid').setView([0, 0], startZoom);
+
+// markers Cluster Group for collecting marker plugin
+let markersClusterGroup = L.markerClusterGroup();
+
+// all markers
+let markers = [];
 
 
 $().ready(() => {
     // when the user visits the site, check geodata
     getLocation();
+    // setTimeout(function () {
+    //     map.setZoom(endZoom);
+    // }, 1500);
 
+    $(`#sendEventForm`).click(() => {
+        let newEvent = {
+            id: events.length + 1,
+            description: $('#descriptionEventForm').val(),
+            sport: $('#sportEventForm').find(":selected").text(),
+            date: $('#dateEventForm').val(),
+            requestedBuddies: $('#amoutBuddiesEventForm').val(),
+            location: {
+                lat: $("#whereLatEventForm").val(),
+                long: $("#whereLngEventForm").val()
+
+            },
+            interested: [],
+            participants: [],
+            creator: "me"
+        };
+        events.push(newEvent);
+        $('#createEventModal').modal('toggle');
+        addMarkerToMap(newEvent);
+    });
 
 });
 
@@ -60,7 +90,8 @@ function createMap(myLatitude, myLongitude) {
     placeEventsOnMap();
 
     //set map center after all events are placed
-    map.panTo(new L.LatLng(myLatitude, myLongitude));
+    //map.panTo(new L.LatLng(myLatitude, myLongitude));
+    map.setView([myLatitude, myLongitude], endZoom);
 }
 
 
@@ -74,34 +105,25 @@ map.on('click', function (e) {
         .setContent(`<div><button id="createEventButton${id}" class="btn btn-default" type="button">Create event here!</button></p></div>`)
         .openOn(map);
 
-
     $(`#createEventButton${id}`).click(() => {
         $("#whereLatEventForm").val(popLocation.lat);
         $("#whereLngEventForm").val(popLocation.lng);
         $("#createEventModal").modal("show");
-        $(`#sendEventForm`).click(() => {
-            let newEvent = {
-                id: events.length + 1,
-                description: $('#descriptionEventForm').val(),
-                sport: $('#sportEventForm').find(":selected").text(),
-                date: $('#dateEventForm').val(),
-                requestedBuddies: $('#amoutBuddiesEventForm').val(),
-                location: {
-                    lat: $("#whereLatEventForm").val(),
-                    long: $("#whereLngEventForm").val()
-
-                },
-                interested: [],
-                participants: [],
-                creator: "me"
-            };
-            events.push(newEvent);
-            $('#createEventModal').modal('toggle');
-            addMarkerToMap(newEvent);
-        });
     });
+});
 
 
+map.on('zoom', function () {
+    if (map.getZoom() < 13) {
+        for (const m of markers) {
+            m.closePopup();
+        }
+    }
+    else {
+        for (const m of markers) {
+            m.openPopup();
+        }
+    }
 });
 
 // Place Markers on the map
@@ -110,18 +132,22 @@ function placeEventsOnMap() {
     for (const i of events) {
         addMarkerToMap(i);
     }
+    console.log("place events on map");
+    map.addLayer(markersClusterGroup);
 }
-
 
 function addMarkerToMap(event) {
     let {id, location, sport, requestedBuddies, interested} = event;
     let {lat, long} = location;
 
-    let marker = L.marker([lat, long]).addTo(map);
+    let marker = L.marker([lat, long]);
+
     marker.bindPopup(`<p>Sport: <b>${sport}</b> | Requested buddies: <b>${requestedBuddies}</b></p> <button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`, {
         closeOnClick: false,
         autoClose: false
     }).openPopup();
+    markersClusterGroup.addLayer(marker);
+    markers.push(marker);
 
 
     let interestedInEvent = $(`#interestedInEvent${id}`);

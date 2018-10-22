@@ -8,11 +8,11 @@ let events = [{
         lat: "47.480581532215325",
         long: "9.05"
     },
-    interested: ["me", "max", "peter"],
+    interested: [],
     participants: [],
     creator: "max"
 
-}, {
+} , {
     id: 2,
     description: "bin Anfänger suche Begleitung",
     sport: "football",
@@ -78,7 +78,10 @@ let events = [{
         interested: ["max", "peter"],
         participants: [],
         creator: "max"
-    }];
+    };
+
+
+
 
 let sports = ["tennis", "football", "squash", "badminton", "volleyball", "swimming"];
 
