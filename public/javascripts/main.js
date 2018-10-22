@@ -75,14 +75,15 @@ let events = [{
             lat: "46.85874261906014",
             long: "9.505915045738222"
         },
-        interested: ["max", "peter"],
+        interested: ["max"],
         participants: [],
-        creator: "max"
-    };
+        creator: "peter"
+    }];
 
 
 
-
+let buddies = ["me", "peter", "paul", "hans", "max"];
+let mybuddies = ["peter", "paul"];
 let sports = ["tennis", "football", "squash", "badminton", "volleyball", "swimming"];
 
 

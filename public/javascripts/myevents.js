@@ -48,7 +48,7 @@ function buildInterestedTBodyModal(interested, participants) {
     for (const i of interested) {
         let indexOfI = interested.indexOf(i);
         let tableRow = `<tr>
-                        <td>${i.name}</td>
+                        <td>${i}</td>
                         <td><a id="decline${indexOfI}" href="#"><i class="fa fa-times"></i></a></td>
                         <td><a id="accept${indexOfI}" href="#"><i class="fa fa-check"></i></a></td>
                         </tr>`;
