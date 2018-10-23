@@ -12,7 +12,7 @@ let events = [{
     participants: [],
     creator: "max"
 
-} , {
+}, {
     id: 2,
     description: "bin Anfänger suche Begleitung",
     sport: "football",
@@ -64,30 +64,25 @@ let events = [{
     interested: ["max", "peter"],
     participants: ["me"],
     creator: "max"
-},
-    {
-        id: 6,
-        description: "Bahnen schwimmen",
-        sport: "swimming",
-        date: "22.10.2018",
-        requestedBuddies: "1",
-        location: {
-            lat: "46.85874261906014",
-            long: "9.505915045738222"
-        },
-        interested: ["max"],
-        participants: [],
-        creator: "peter"
-    }];
-
+}, {
+    id: 6,
+    description: "Bahnen schwimmen",
+    sport: "swimming",
+    date: "22.10.2018",
+    requestedBuddies: "1",
+    location: {
+        lat: "46.85874261906014",
+        long: "9.505915045738222"
+    },
+    interested: ["max"],
+    participants: [],
+    creator: "peter"
+}];
 
 
 let buddies = ["me", "peter", "paul", "hans", "max"];
 let mybuddies = ["peter", "paul"];
 let sports = ["tennis", "football", "squash", "badminton", "volleyball", "swimming"];
-
-
-
 
 
 $().ready(() => {

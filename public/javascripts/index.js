@@ -1,4 +1,4 @@
-let endZoom = 14;
+let endZoom = 13;
 let startZoom = 10;
 let map = L.map('mapid').setView([0, 0], startZoom);
 
@@ -117,27 +117,103 @@ map.on('zoom move', function () {
     let mapBounds = map.getBounds();
     let {_northEast, _southWest} = mapBounds;
 
-    if (map.getZoom() < 13) {
-        for (const m of markers) {
-            m.closePopup();
+    if (map.getZoom() <= 13) {
+        for (const mobj of markers) {
+            mobj.marker.closePopup();
         }
     }
 
     else {
-        for (const m of markers) {
-            let {lat, lng} = m._latlng;
+        for (const mobj of markers) {
+            let {eventId, marker} = mobj;
+            let {lat, lng} = mobj.marker._latlng;
             if (_northEast.lat > lat && lat > _southWest.lat && _northEast.lng > lng && lng > _southWest.lng) {
-                m.openPopup();
+                marker.openPopup();
+                popUpOpens(eventId);
+
             }
         }
     }
 });
 
-map.on('popupopen', function(e){
-    for(const m of markers){
+
+
+/*map.on('popupopen', function(e){
+    for(const mobj of markers){
+        let {id, marker} = mobj;
+        if(marker._popup._latlng === e.popup._latlng) {
+
+
+
+            let event = "";
+            for (const e of events) {
+                if (e.id === id) {
+                    event = e;
+                }
+            }
+            let {interested} = event;
+
+
+            let interestedInEvent = $(`#interestedInEvent${id}`);
+
+            if (interested.indexOf("me") !== -1) {
+                interestedInEvent.text("I'm not longer interested");
+            }
+
+            interestedInEvent.click(() => {
+
+                let eventIndex = events.indexOf(event);
+                console.log(eventIndex);
+                let amIInterested = events[eventIndex].interested.indexOf("me");
+
+                if (events[eventIndex].id === id && amIInterested === -1) {
+                    events[eventIndex].interested.push("me");
+
+                    interestedInEvent.text("I'm not longer interested");
+                } else if (events[eventIndex].id === id && amIInterested !== -1) {
+
+                    event.interested.splice(amIInterested, 1);
+                    interestedInEvent.text("I'm interested!");
+                }
+            })
+        }else{console.log("not this markers popup");}
 
     }
-});
+});*/
+
+function popUpOpens(markerId){
+    let event = "";
+    for (const e of events) {
+        if (e.id === markerId) {
+            event = e;
+        }
+    }
+    let {interested} = event;
+
+
+    let interestedInEvent = $(`#interestedInEvent${markerId}`);
+
+    if (interested.indexOf("me") !== -1) {
+        interestedInEvent.text("I'm not longer interested");
+    }
+
+    interestedInEvent.click(() => {
+
+        let eventIndex = events.indexOf(event);
+        console.log(eventIndex);
+        let amIInterested = events[eventIndex].interested.indexOf("me");
+
+        if (events[eventIndex].id === markerId && amIInterested === -1) {
+            events[eventIndex].interested.push("me");
+
+            interestedInEvent.text("I'm not longer interested");
+        } else if (events[eventIndex].id === markerId && amIInterested !== -1) {
+
+            event.interested.splice(amIInterested, 1);
+            interestedInEvent.text("I'm interested!");
+        }
+    })
+}
 
 // Place Markers on the map
 function placeEventsOnMap() {
@@ -160,32 +236,13 @@ function addMarkerToMap(event) {
         autoClose: false,
         autoPan: false
     }).openPopup();
+    marker.on('click', ()=>{
+        popUpOpens(id);
+    });
     markersClusterGroup.addLayer(marker);
-    markers.push({marker: marker, id: id});
+    markers.push({marker: marker, eventId: id});
 
 
-    let interestedInEvent = $(`#interestedInEvent${id}`);
-
-    if (interested.indexOf("me") !== -1) {
-        interestedInEvent.text("I'm not longer interested");
-    }
-
-    interestedInEvent.click(() => {
-
-        let eventIndex = events.indexOf(event);
-        console.log(eventIndex);
-        let amIInterested = events[eventIndex].interested.indexOf("me");
-
-        if (events[eventIndex].id === id && amIInterested === -1) {
-            events[eventIndex].interested.push("me");
-
-            interestedInEvent.text("I'm not longer interested");
-        } else if (events[eventIndex].id === id && amIInterested !== -1) {
-
-            event.interested.splice(amIInterested, 1);
-            interestedInEvent.text("I'm interested!");
-        }
-    })
 }
 
 
