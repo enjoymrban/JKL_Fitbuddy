@@ -1,5 +1,5 @@
 let endZoom = 14;
-let startZoom =10;
+let startZoom = 10;
 let map = L.map('mapid').setView([0, 0], startZoom);
 
 // markers Cluster Group for collecting marker plugin
@@ -113,16 +113,29 @@ map.on('click', function (e) {
 });
 
 
-map.on('zoom', function () {
+map.on('zoom move', function () {
+    let mapBounds = map.getBounds();
+    let {_northEast, _southWest} = mapBounds;
+
     if (map.getZoom() < 13) {
         for (const m of markers) {
             m.closePopup();
         }
     }
+
     else {
         for (const m of markers) {
-            m.openPopup();
+            let {lat, lng} = m._latlng;
+            if (_northEast.lat > lat && lat > _southWest.lat && _northEast.lng > lng && lng > _southWest.lng) {
+                m.openPopup();
+            }
         }
+    }
+});
+
+map.on('popupopen', function(e){
+    for(const m of markers){
+
     }
 });
 
@@ -144,10 +157,11 @@ function addMarkerToMap(event) {
 
     marker.bindPopup(`<p>Sport: <b>${sport}</b> | Requested buddies: <b>${requestedBuddies}</b></p> <button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`, {
         closeOnClick: false,
-        autoClose: false
+        autoClose: false,
+        autoPan: false
     }).openPopup();
     markersClusterGroup.addLayer(marker);
-    markers.push(marker);
+    markers.push({marker: marker, id: id});
 
 
     let interestedInEvent = $(`#interestedInEvent${id}`);
