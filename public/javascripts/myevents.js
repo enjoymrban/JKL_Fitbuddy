@@ -1,4 +1,7 @@
+
+/*sessionStorage*/
 let  events = getEvents();
+let mybuddies = getmybuddies();
 
 
 $().ready(() => {
@@ -49,6 +52,17 @@ function fillEventTables() {
                 /*sessionStorage*/
                 saveEvents(events);
             });
+        } else {
+            for(const mb  of mybuddies){
+                if(mb === e.creator){
+                    let tableRow = (tableRowTemplateBuddies(id, description, sport, requestedBuddies, date, participants));
+                    $("#buddieTBody").append(tableRow);
+                    $(`#interestedinevent${id}`).click(()=>{
+                       e.interested.push("me");
+                       fillEventTables();
+                    });
+                }
+            }
         }
 
 
@@ -108,6 +122,17 @@ function tableRowTemplate(id, description, sport, requestedBuddies, date, partic
                         <td>${participants.length} /${requestedBuddies}</td>
                         <td>${date}</td>
                         <td><a id="trash${id}" href="#"><i class="fa fa-trash"></i></a></td>
+                        </tr>`;
+    return tableRow;
+}
+$
+function tableRowTemplateBuddies(id, description, sport, requestedBuddies, date, participants) {
+    let tableRow = `<tr>
+                        <td>${description}</td>
+                        <td>${sport}</td>
+                        <td>${participants.length} /${requestedBuddies}</td>
+                        <td>${date}</td>
+                        <td><button id="interestedinevent${id}">I'm interested</button></td>
                         </tr>`;
     return tableRow;
 }

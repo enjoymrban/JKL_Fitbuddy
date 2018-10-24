@@ -1,5 +1,4 @@
 let buddies = ["me", "peter", "paul", "hans", "max"];
-
 let sports = ["tennis", "football", "squash", "badminton", "volleyball", "swimming"];
 
 
@@ -38,10 +37,10 @@ function minDate() {
 function loadData() {
     let eventsStorage = [{
         id: 1,
-        description: "bin Anfänger suche Begleitung",
+        description: "Suche Trainingspartner",
         sport: "tennis",
-        date: "16.10.2018",
-        requestedBuddies: "2",
+        date: "30.10.2018",
+        requestedBuddies: "1",
         location: {
             lat: "47.480581532215325",
             long: "9.05"
@@ -52,23 +51,23 @@ function loadData() {
 
     }, {
         id: 2,
-        description: "bin Anfänger suche Begleitung",
+        description: "Plauschspiel auf dem Roten Platz",
         sport: "football",
-        date: "22.10.2018",
-        requestedBuddies: "10",
+        date: "27.10.2018",
+        requestedBuddies: "9",
         location: {
             lat: "47.473736163992214",
             long: "9.03977394104004"
         },
-        interested: ["max", "me", "peter"],
+        interested: ["me", "peter"],
         participants: [],
         creator: "max"
     }, {
         id: 3,
-        description: "bin Anfänger suche Begleitung",
-        sport: "football",
-        date: "22.10.2018",
-        requestedBuddies: "10",
+        description: "suche 3 Hobbyspieler für ein 2 vs 2",
+        sport: "volleyball",
+        date: "22.12.2018",
+        requestedBuddies: "3",
         location: {
             lat: "47.48714416287697",
             long: "9.016513824462892"
@@ -80,8 +79,8 @@ function loadData() {
         id: 4,
         description: "um 17:00 bei der Box",
         sport: "squash",
-        date: "22.10.2018",
-        requestedBuddies: "10",
+        date: "5.12.2018",
+        requestedBuddies: "1",
         location: {
             lat: "47.49714416287697",
             long: "9.016513824462892"
@@ -91,10 +90,10 @@ function loadData() {
         creator: "me"
     }, {
         id: 5,
-        description: "bin Anfänger suche Begleitung",
+        description: "Suche Hobbyspieler",
         sport: "badminton",
-        date: "22.10.2018",
-        requestedBuddies: "10",
+        date: "1.11.2018",
+        requestedBuddies: "1",
         location: {
             lat: "47.58714416287697",
             long: "9.016513824462892"
@@ -106,7 +105,7 @@ function loadData() {
         id: 6,
         description: "Bahnen schwimmen",
         sport: "swimming",
-        date: "22.10.2018",
+        date: "25.10.2018",
         requestedBuddies: "1",
         location: {
             lat: "46.85874261906014",
