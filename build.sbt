@@ -8,7 +8,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 scalaVersion := "2.12.6"
 
 libraryDependencies += guice
-herokuAppName in Compile := "gentle-depths-68912"
+
 
 
 libraryDependencies ++= Seq(
@@ -30,3 +30,5 @@ libraryDependencies ++= Seq(
   // Vue.js
   "org.webjars" % "vue" % "2.5.16"
 )
+
+herokuAppName in Compile := "evening-journey-24668"
