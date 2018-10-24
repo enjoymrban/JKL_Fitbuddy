@@ -1,3 +1,7 @@
+/*sessionStorage*/
+let mybuddies = getmybuddies();
+
+
 $().ready(() => {
     fillBuddyTable();
     randomBuddy();
@@ -8,7 +12,9 @@ $().ready(() => {
         if(buddyToAdd !== "NO FURTHER OPTIONS") {
             mybuddies.push(buddyToAdd);
             addBuddyToList(buddyToAdd);
-            randomBuddy()
+            randomBuddy();
+            /*sessionStorage*/
+            savemyBuddies(mybuddies);
         }
     });
 
@@ -35,6 +41,8 @@ function addBuddyToList(buddy) {
         mybuddies.splice(mybuddies.indexOf($(`#buddy${rowCount}`).text()), 1);
         fillBuddyTable();
         randomBuddy();
+        /*sessionStorage*/
+        savemyBuddies(mybuddies);
 
     })
 }

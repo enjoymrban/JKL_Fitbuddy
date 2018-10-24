@@ -8,6 +8,9 @@ let markersClusterGroup = L.markerClusterGroup();
 // all markers
 let markers = [];
 
+/*sessionStorage*/
+let events = getEvents();
+
 
 $().ready(() => {
     // when the user visits the site, check geodata
@@ -33,6 +36,10 @@ $().ready(() => {
             creator: "me"
         };
         events.push(newEvent);
+
+        /*sessionStorage*/
+        saveEvents(events);
+
         $('#createEventModal').modal('toggle');
         addMarkerToMap(newEvent);
     });
@@ -205,6 +212,8 @@ function popUpOpens(markerId){
 
         if (events[eventIndex].id === markerId && amIInterested === -1) {
             events[eventIndex].interested.push("me");
+            /*sessionStorage*/
+            saveEvents(events);
 
             interestedInEvent.text("I'm not longer interested");
         } else if (events[eventIndex].id === markerId && amIInterested !== -1) {

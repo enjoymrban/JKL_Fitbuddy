@@ -1,91 +1,14 @@
-let events = [{
-    id: 1,
-    description: "bin Anfänger suche Begleitung",
-    sport: "tennis",
-    date: "16.10.2018",
-    requestedBuddies: "2",
-    location: {
-        lat: "47.480581532215325",
-        long: "9.05"
-    },
-    interested: [],
-    participants: [],
-    creator: "max"
-
-}, {
-    id: 2,
-    description: "bin Anfänger suche Begleitung",
-    sport: "football",
-    date: "22.10.2018",
-    requestedBuddies: "10",
-    location: {
-        lat: "47.473736163992214",
-        long: "9.03977394104004"
-    },
-    interested: ["max", "me", "peter"],
-    participants: [],
-    creator: "max"
-}, {
-    id: 3,
-    description: "bin Anfänger suche Begleitung",
-    sport: "football",
-    date: "22.10.2018",
-    requestedBuddies: "10",
-    location: {
-        lat: "47.48714416287697",
-        long: "9.016513824462892"
-    },
-    interested: ["max", "peter"],
-    participants: [],
-    creator: "me"
-}, {
-    id: 4,
-    description: "um 17:00 bei der Box",
-    sport: "squash",
-    date: "22.10.2018",
-    requestedBuddies: "10",
-    location: {
-        lat: "47.49714416287697",
-        long: "9.016513824462892"
-    },
-    interested: ["max", "peter"],
-    participants: [],
-    creator: "me"
-}, {
-    id: 5,
-    description: "bin Anfänger suche Begleitung",
-    sport: "badminton",
-    date: "22.10.2018",
-    requestedBuddies: "10",
-    location: {
-        lat: "47.58714416287697",
-        long: "9.016513824462892"
-    },
-    interested: ["max", "peter"],
-    participants: ["me"],
-    creator: "max"
-}, {
-    id: 6,
-    description: "Bahnen schwimmen",
-    sport: "swimming",
-    date: "22.10.2018",
-    requestedBuddies: "1",
-    location: {
-        lat: "46.85874261906014",
-        long: "9.505915045738222"
-    },
-    interested: ["max"],
-    participants: [],
-    creator: "peter"
-}];
-
-
 let buddies = ["me", "peter", "paul", "hans", "max"];
-let mybuddies = ["peter", "paul"];
+
 let sports = ["tennis", "football", "squash", "badminton", "volleyball", "swimming"];
 
 
 $().ready(() => {
+    $('#loadData').click(() => {
+        loadData();
+    });
+
+
     minDate();
     loadSportOptionsForCreateEventForm();
 
@@ -108,4 +31,118 @@ function minDate() {
         minDate = now.toISOString().substring(0, 10);
 
     $('#dateEventForm').prop('min', minDate).prop('value', minDate);
+}
+
+
+/*sessionStorage*/
+function loadData() {
+    let eventsStorage = [{
+        id: 1,
+        description: "bin Anfänger suche Begleitung",
+        sport: "tennis",
+        date: "16.10.2018",
+        requestedBuddies: "2",
+        location: {
+            lat: "47.480581532215325",
+            long: "9.05"
+        },
+        interested: [],
+        participants: [],
+        creator: "max"
+
+    }, {
+        id: 2,
+        description: "bin Anfänger suche Begleitung",
+        sport: "football",
+        date: "22.10.2018",
+        requestedBuddies: "10",
+        location: {
+            lat: "47.473736163992214",
+            long: "9.03977394104004"
+        },
+        interested: ["max", "me", "peter"],
+        participants: [],
+        creator: "max"
+    }, {
+        id: 3,
+        description: "bin Anfänger suche Begleitung",
+        sport: "football",
+        date: "22.10.2018",
+        requestedBuddies: "10",
+        location: {
+            lat: "47.48714416287697",
+            long: "9.016513824462892"
+        },
+        interested: ["max", "peter"],
+        participants: [],
+        creator: "me"
+    }, {
+        id: 4,
+        description: "um 17:00 bei der Box",
+        sport: "squash",
+        date: "22.10.2018",
+        requestedBuddies: "10",
+        location: {
+            lat: "47.49714416287697",
+            long: "9.016513824462892"
+        },
+        interested: ["max", "peter"],
+        participants: [],
+        creator: "me"
+    }, {
+        id: 5,
+        description: "bin Anfänger suche Begleitung",
+        sport: "badminton",
+        date: "22.10.2018",
+        requestedBuddies: "10",
+        location: {
+            lat: "47.58714416287697",
+            long: "9.016513824462892"
+        },
+        interested: ["max", "peter"],
+        participants: ["me"],
+        creator: "max"
+    }, {
+        id: 6,
+        description: "Bahnen schwimmen",
+        sport: "swimming",
+        date: "22.10.2018",
+        requestedBuddies: "1",
+        location: {
+            lat: "46.85874261906014",
+            long: "9.505915045738222"
+        },
+        interested: ["max"],
+        participants: [],
+        creator: "peter"
+    }];
+
+
+    let mybuddiesStorage = ["peter", "paul"];
+
+    sessionStorage.setItem("eventsStorage", JSON.stringify(eventsStorage));
+    sessionStorage.setItem("mybuddiesStorage", JSON.stringify(mybuddiesStorage));
+
+}
+
+
+function saveEvents(saveEvents) {
+    sessionStorage.setItem("eventsStorage", JSON.stringify(saveEvents));
+
+}
+
+function getEvents() {
+    let eventsFromStorage = sessionStorage.getItem("eventsStorage");
+    return JSON.parse(eventsFromStorage);
+}
+
+
+function savemyBuddies(savemybuddies) {
+    sessionStorage.setItem("mybuddiesStorage", JSON.stringify(savemybuddies));
+
+}
+
+function getmybuddies(){
+    return JSON.parse(sessionStorage.getItem("mybuddiesStorage"));
+
 }

@@ -1,3 +1,6 @@
+let  events = getEvents();
+
+
 $().ready(() => {
     fillEventTables();
 
@@ -22,6 +25,9 @@ function fillEventTables() {
             $(`#trash${id}`).click(() => {
                 events.splice(events.indexOf(e),1);
                 fillEventTables();
+
+                /*sessionStorage*/
+                saveEvents(events);
             });
         } else if (interested.indexOf("me") !== -1) {
             let tableRow = (tableRowTemplate(id, description, sport, requestedBuddies, date, participants));
@@ -29,6 +35,9 @@ function fillEventTables() {
             $(`#trash${id}`).click(() => {
                 interested.splice(interested.indexOf("me"),1);
                 fillEventTables();
+
+                /*sessionStorage*/
+                saveEvents(events);
             });
         } else if(participants.indexOf("me") !== -1){
             let tableRow = (tableRowTemplate(id, description, sport, requestedBuddies, date, participants));
@@ -36,6 +45,9 @@ function fillEventTables() {
             $(`#trash${id}`).click(() => {
                 participants.splice(participants.indexOf("me"),1);
                 fillEventTables();
+
+                /*sessionStorage*/
+                saveEvents(events);
             });
         }
 
@@ -57,12 +69,18 @@ function buildInterestedTBodyModal(interested, participants) {
             interested.splice(indexOfI, 1);
             buildInterestedTBodyModal(interested, participants);
             fillEventTables();
+
+            /*sessionStorage*/
+            saveEvents(events);
         });
         $(`#accept${indexOfI}`).click(() => {
             interested.splice(indexOfI, 1);
             participants.push(i);
             buildInterestedTBodyModal(interested, participants);
             fillEventTables();
+
+            /*sessionStorage*/
+            saveEvents(events);
 
         })
 
