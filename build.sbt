@@ -8,7 +8,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 scalaVersion := "2.12.6"
 
 libraryDependencies += guice
-herokuAppName in Compile := "jklfitbuddy"
+herokuAppName in Compile := "gentle-depths-68912"
 
 
 libraryDependencies ++= Seq(
