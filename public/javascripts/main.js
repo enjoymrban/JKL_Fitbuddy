@@ -1,5 +1,5 @@
 let buddies = ["me", "peter", "paul", "hans", "max"];
-let sports = ["tennis", "football", "squash", "badminton", "volleyball", "swimming"];
+let sports = ["tennis", "football", "squash", "badminton", "volleyball", "swimming", "billiard"];
 
 
 $().ready(() => {
@@ -114,6 +114,19 @@ function loadData() {
         interested: ["max"],
         participants: [],
         creator: "peter"
+    }, {
+        id: 7,
+        description: "Billiard Spielen",
+        sport: "billiard",
+        date: "24.10.2018",
+        requestedBuddies: "1",
+        location: {
+            lat: "46.85371702642054",
+            long: "9.514557123184204"
+        },
+        interested: ["peter"],
+        participants: [],
+        creator: "me"
     }];
 
 
