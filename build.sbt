@@ -31,4 +31,4 @@ libraryDependencies ++= Seq(
   "org.webjars" % "vue" % "2.5.16"
 )
 
-herokuAppName in Compile := "evening-journey-24668"
+herokuAppName in Compile := "jklfitbuddy"

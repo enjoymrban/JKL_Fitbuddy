@@ -144,7 +144,6 @@ map.on('zoom move', function () {
 });
 
 
-
 /*map.on('popupopen', function(e){
     for(const mobj of markers){
         let {id, marker} = mobj;
@@ -188,19 +187,23 @@ map.on('zoom move', function () {
     }
 });*/
 
-function popUpOpens(markerId){
+function popUpOpens(markerId) {
     let event = "";
     for (const e of events) {
         if (e.id === markerId) {
             event = e;
         }
     }
-    let {interested} = event;
+    let {interested, creator} = event;
 
 
     let interestedInEvent = $(`#interestedInEvent${markerId}`);
 
-    if (interested.indexOf("me") !== -1) {
+
+    if (creator === "me") {
+        interestedInEvent.prop("disabled",true);
+
+    } else if (interested.indexOf("me") !== -1) {
         interestedInEvent.text("I'm not longer interested");
     }
 
@@ -245,7 +248,7 @@ function addMarkerToMap(event) {
         autoClose: false,
         autoPan: false
     }).openPopup();
-    marker.on('click', ()=>{
+    marker.on('click', () => {
         popUpOpens(id);
     });
     markersClusterGroup.addLayer(marker);
