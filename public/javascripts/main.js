@@ -1,6 +1,6 @@
 let buddies = ["me", "peter", "paul", "hans", "max"];
 let sports = ["tennis", "football", "squash", "badminton", "volleyball", "swimming", "billiard"];
-
+let url = "localhost:9000";
 
 $().ready(() => {
     $('#loadData').click(() => {

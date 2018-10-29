@@ -144,49 +144,6 @@ map.on('zoom move', function () {
 });
 
 
-/*map.on('popupopen', function(e){
-    for(const mobj of markers){
-        let {id, marker} = mobj;
-        if(marker._popup._latlng === e.popup._latlng) {
-
-
-
-            let event = "";
-            for (const e of events) {
-                if (e.id === id) {
-                    event = e;
-                }
-            }
-            let {interested} = event;
-
-
-            let interestedInEvent = $(`#interestedInEvent${id}`);
-
-            if (interested.indexOf("me") !== -1) {
-                interestedInEvent.text("I'm not longer interested");
-            }
-
-            interestedInEvent.click(() => {
-
-                let eventIndex = events.indexOf(event);
-                console.log(eventIndex);
-                let amIInterested = events[eventIndex].interested.indexOf("me");
-
-                if (events[eventIndex].id === id && amIInterested === -1) {
-                    events[eventIndex].interested.push("me");
-
-                    interestedInEvent.text("I'm not longer interested");
-                } else if (events[eventIndex].id === id && amIInterested !== -1) {
-
-                    event.interested.splice(amIInterested, 1);
-                    interestedInEvent.text("I'm interested!");
-                }
-            })
-        }else{console.log("not this markers popup");}
-
-    }
-});*/
-
 function popUpOpens(markerId) {
     let event = "";
     for (const e of events) {
@@ -201,7 +158,7 @@ function popUpOpens(markerId) {
 
 
     if (creator === "me") {
-        interestedInEvent.prop("disabled",true);
+        interestedInEvent.prop("disabled", true);
 
     } else if (interested.indexOf("me") !== -1) {
         interestedInEvent.text("I'm not longer interested");
@@ -230,20 +187,30 @@ function popUpOpens(markerId) {
 // Place Markers on the map
 function placeEventsOnMap() {
 
-    for (const i of events) {
-        addMarkerToMap(i);
-    }
+    $.ajax({
+        url: url+"/api/events",
+        type: "GET",
+        dataType: "json"
+    }).done((json) => {
+        $.each(json, (key, value) => {
+            addMarkerToMap(value);
+        })
+    });
+
+    // for (const i of events) {
+    //     addMarkerToMap(i);
+    // }
     console.log("place events on map");
     map.addLayer(markersClusterGroup);
 }
 
 function addMarkerToMap(event) {
-    let {id, location, sport, requestedBuddies, interested} = event;
-    let {lat, long} = location;
+    let {id, sport, nrOfPlayers, interested, coordinateX, coordinateY} = event;
 
-    let marker = L.marker([lat, long]);
 
-    marker.bindPopup(`<p>Sport: <b>${sport}</b> | Requested buddies: <b>${requestedBuddies}</b></p> <button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`, {
+    let marker = L.marker([coordinateX, coordinateY]);
+
+    marker.bindPopup(`<p>Sport: <b>${sport}</b> | Requested buddies: <b>${nrOfPlayers}</b></p> <button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`, {
         closeOnClick: false,
         autoClose: false,
         autoPan: false
