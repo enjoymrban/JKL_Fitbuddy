@@ -8,6 +8,16 @@ GET     /fitbuddies                 controllers.SinglePageController.fitbuddies
 GET     /myprofile                  controllers.SinglePageController.myprofile
 GET     /myevents                   controllers.SinglePageController.myevents
 
+# Events
+GET		/api/event                  controllers.EventController.getAllEvents()
+GET		/api/event/:id              controllers.EventController.getOneEvent(id: Long)
+POST	/api/event                  controllers.EventController.addEvent()
+PUT		/api/event/:id              controllers.EventController.changeEvent(id: Long)
+DELETE	/api/event/:id              controllers.EventController.deleteEvent(id: Long)
+
+# User
+
+# Category
 
 
 

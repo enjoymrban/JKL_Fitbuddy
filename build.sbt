@@ -28,7 +28,13 @@ libraryDependencies ++= Seq(
   "org.webjars" % "leaflet" % "1.3.1",
 
   // Vue.js
-  "org.webjars" % "vue" % "2.5.16"
+  "org.webjars" % "vue" % "2.5.16",
+    evolutions,
+    javaJdbc,
+    javaJpa,
+    "org.hibernate" % "hibernate-entitymanager" % "5.1.0.Final",
+    "com.h2database" % "h2" % "1.4.192"
+  
 )
 
 herokuAppName in Compile := "jklfitbuddy"
