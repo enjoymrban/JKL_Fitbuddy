@@ -6,8 +6,6 @@ $().ready(() => {
     $('#loadData').click(() => {
         loadData();
     });
-
-
     minDate();
     loadSportOptionsForCreateEventForm();
 
