@@ -17,7 +17,13 @@ DELETE	/api/event/:id              controllers.EventController.deleteEvent(id: L
 
 # User
 
-# Category
+#Categories
+GET           /api/category            controllers.CategoryController.category()
+GET           /api/category/:id        controllers.CategoryController.getCategory(id: Long)
+POST          /api/category            controllers.CategoryController.addCategory()
+PUT           /api/category/:id        controllers.CategoryController.updateCategory(id: Long)
+DELETE        /api/category/:id        controllers.CategoryController.deleteCategory(id: Long)
+
 
 
 

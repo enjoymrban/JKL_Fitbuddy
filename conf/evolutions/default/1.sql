@@ -10,7 +10,14 @@ create table event (
   PRIMARY KEY (id)
 );
 
+create table category(
+  id BIGINT(20) NOT NULL AUTO_INCREMENT,
+  title VARCHAR(20),
+  PRIMARY KEY (id)
+);
+
 INSERT INTO event (description, date, nrOfPlayers, coordinateX, coordinateY) VALUES ('Fussballspielen mit Profis', '12.09.2018', '22', '123456789', '987654321');
+INSERT INTO category (title) VALUES ('Synchronschwimmen');
 
 # --- !Downs
 
