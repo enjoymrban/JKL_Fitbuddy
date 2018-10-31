@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 @Entity(name="event")
 public class Event {
@@ -56,11 +58,11 @@ public class Event {
         this.coordinateX = coordinateX;
     }
 
-    public long getGetCoordinateY() {
+    public long getCoordinateY() {
         return coordinateY;
     }
 
-    public void setGetCoordinateY(long coordinateY) {
+    public void setCoordinateY(long coordinateY) {
         this.coordinateY = coordinateY;
     }
 

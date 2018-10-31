@@ -31,6 +31,22 @@ public class EventRepository {
         return supplyAsync(() -> wrap(em -> find(em, id)));
     }
 
+    public CompletionStage<Stream<Event>> list() {
+        return supplyAsync(() -> wrap(em -> list(em)));
+    }
+
+    public CompletionStage<Event> add(Event event) {
+        return supplyAsync(() -> wrap(em -> insert(em, event)));
+    }
+
+    public CompletionStage<Event> change(Event event) {
+        return supplyAsync(() -> wrap(em -> change(em, event)));
+    }
+
+    public CompletionStage<Boolean> remove(Long id) {
+        return supplyAsync(() -> wrap(em -> remove(em, id)));
+    }
+
 
 
     private Event find(EntityManager em, Long id) {
@@ -40,8 +56,8 @@ public class EventRepository {
 
 
     private Stream<Event> list(EntityManager em) {
-        List<Event> cards = em.createQuery("select e from event e", Event.class).getResultList();
-        return cards.stream();
+        List<Event> events = em.createQuery("select e from event e", Event.class).getResultList();
+        return events.stream();
     }
 
     private <T> T wrap(Function<EntityManager, T> function) {
@@ -51,5 +67,25 @@ public class EventRepository {
     private Event insert(EntityManager em, Event event) {
         em.persist(event);
         return event;
+    }
+
+    private Event change(EntityManager em, Event event) {
+        Event eventToChange = em.find(Event.class, event.getId());
+        eventToChange.setDescription(event.getDescription());
+        eventToChange.setDate(event.getDate());
+        eventToChange.setNrOfPlayers(event.getNrOfPlayers());
+        eventToChange.setCoordinateX(event.getCoordinateX());
+        eventToChange.setCoordinateY(event.getCoordinateY());
+        return eventToChange;
+    }
+
+    private Boolean remove(EntityManager em, Long id) {
+        Event event = em.find(Event.class, id);
+        if(null != event) {
+            em.remove(event);
+            return true;
+
+        }
+        return false;
     }
 }

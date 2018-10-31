@@ -21,7 +21,6 @@ public class EventController extends Controller {
 
     @Inject
     public EventController(EventService eventService, HttpExecutionContext ec) {
-
         this.eventService = eventService;
         this.ec = ec;
     }
@@ -31,18 +30,36 @@ public class EventController extends Controller {
             return ok(Json.toJson(event));
         }, ec.current());
     }
-    public Result getAllEvents() {return null; }
-
-    public Result addEvent() {
-        return ok("it worked");
+    public CompletionStage<Result> getAllEvents() {
+        return eventService.getAll().thenApplyAsync(personStream -> {
+            return ok(Json.toJson(personStream.collect(Collectors.toList())));
+        }, ec.current());
     }
 
-    public Result changeEvent(long id) {
-        return ok("it worked");
+    @BodyParser.Of(BodyParser.Json.class)
+    public CompletionStage<Result> addEvent() {
+        final JsonNode jsonRequest = request().body().asJson();
+        final Event eventToAdd = Json.fromJson(jsonRequest, Event.class);
+
+        return eventService.add(eventToAdd).thenApplyAsync(event -> {
+            return ok(Json.toJson(event));
+        }, ec.current());
     }
 
-    public Result deleteEvent(long id) {
-        return ok("it worked");
+    public CompletionStage<Result> changeEvent(Long id) {
+        final JsonNode jsonRequest = request().body().asJson();
+        final Event eventToChange = Json.fromJson(jsonRequest, Event.class);
+        eventToChange.setId(id);
+        return eventService.change(eventToChange).thenApplyAsync(event -> {
+            return ok(Json.toJson(event));
+        }, ec.current());
+
+    }
+
+    public CompletionStage<Result> deleteEvent(Long id) {
+        return eventService.delete(id).thenApplyAsync(removed -> {
+            return removed ? ok() : internalServerError();
+        }, ec.current());
     }
 
 }
