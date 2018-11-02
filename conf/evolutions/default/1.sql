@@ -20,7 +20,7 @@ create table category (
 INSERT INTO category (title) VALUES ('Fussball');
 INSERT INTO category (title) VALUES ('Basketball');
 
-create table user (
+create table fitUser (
   id BIGSERIAL NOT NULL PRIMARY KEY,
   description VARCHAR(200),
   firstName VARCHAR(20),
@@ -30,9 +30,9 @@ create table user (
   avatarUrl VARCHAR(100)
 );
 
-INSERT INTO user (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Ehemaliger profifussballer und Extremsportler', 'Silvio', 'Jaeger', 'Silvio Jäger', 'silvio.jaeger@ntb.ch', 'hallihallo/katze.png');
+INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Ehemaliger profifussballer und Extremsportler', 'Silvio', 'Jaeger', 'Silvio Jäger', 'silvio.jaeger@ntb.ch', 'hallihallo/katze.png');
 
 # --- !Downs
   drop table event;
   drop table category;
-  drop table user;
+  drop table fitUser;

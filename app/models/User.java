@@ -2,12 +2,12 @@ package models;
 
 import javax.persistence.*;
 
-@Entity(name="user")
+@Entity(name="fitUser")
 public class User{
 
     @Id
-    @SequenceGenerator(name="user_id_seq", sequenceName="user_id_seq",allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="user_id_seq")
+    @SequenceGenerator(name="fitUser_id_seq", sequenceName="fitUser_id_seq",allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="fitUser_id_seq")
     private long id;
     private String description;
     private String firstName;

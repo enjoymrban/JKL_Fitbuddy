@@ -55,7 +55,7 @@ public class UserRepository {
 
 
     private Stream<User> list(EntityManager em) {
-        List<User> user = em.createQuery("select u from user u", User.class).getResultList();
+        List<User> user = em.createQuery("select u from fitUser u", User.class).getResultList();
         return user.stream();
     }
 
@@ -71,7 +71,7 @@ public class UserRepository {
     private User change(EntityManager em, User user) {
         User userToChange = em.find(User.class, user.getId());
         userToChange.setDescription(user.getDescription());
-        userToChange.setFirstName(user.getDescription());
+        userToChange.setFirstName(user.getFirstName());
         userToChange.setLastName(user.getLastName());
         userToChange.setFullName(user.getFullName());
         userToChange.setEmail(user.getEmail());
