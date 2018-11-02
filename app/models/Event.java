@@ -12,6 +12,11 @@ public class Event {
     @SequenceGenerator(name="event_id_seq", sequenceName="event_id_seq",allocationSize=1)
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="event_id_seq")
     private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     private String description;
     private String date;
     private int nrOfPlayers;
@@ -26,6 +31,10 @@ public class Event {
     public void setId(long id) {
         this.id = id;
     }
+
+    public Category getCategory() { return category; }
+
+    public void setCategory(Category category) { this.category = category; }
 
     public String getDescription() {
         return description;
