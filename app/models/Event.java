@@ -9,7 +9,8 @@ public class Event {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="event_id_seq", sequenceName="event_id_seq",allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="event_id_seq")
     private long id;
     private String description;
     private String date;

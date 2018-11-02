@@ -32,6 +32,8 @@
   <logger name="com.avaje.ebeaninternal.server.core.XmlConfigLoader" level="OFF" />
   <logger name="com.avaje.ebeaninternal.server.lib.BackgroundThread" level="OFF" />
   <logger name="com.gargoylesoftware.htmlunit.javascript" level="OFF" />
+  <!-- Logger für SQL Anfragen an PostgreSQL -->
+  <logger name="org.hibernate.SQL" level="DEBUG" />
 
   <root level="WARN">
     <appender-ref ref="ASYNCFILE" />

@@ -33,8 +33,11 @@ libraryDependencies ++= Seq(
     javaJdbc,
     javaJpa,
     "org.hibernate" % "hibernate-entitymanager" % "5.1.0.Final",
-    "com.h2database" % "h2" % "1.4.192"
-
+    "com.h2database" % "h2" % "1.4.192",
+  
+  // PostgreSQL
+  "org.postgresql" % "postgresql" % "42.2.5"
+  
   )
 
 herokuAppName in Compile := "jklfitbuddy"
