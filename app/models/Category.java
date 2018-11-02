@@ -1,14 +1,12 @@
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name="category")
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="category_id_seq", sequenceName="category_id_seq",allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="category_id_seq")
     private Long id;
     private String title;
 
