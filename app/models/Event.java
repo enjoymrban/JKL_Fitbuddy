@@ -7,7 +7,6 @@ import java.util.ArrayList;
 @Entity(name="event")
 public class Event {
 
-
     @Id
     @SequenceGenerator(name="event_id_seq", sequenceName="event_id_seq",allocationSize=1)
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="event_id_seq")
@@ -16,6 +15,10 @@ public class Event {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "creator_id")
+    private User creator;
 
     private String description;
     private String date;
@@ -36,9 +39,11 @@ public class Event {
 
     public void setCategory(Category category) { this.category = category; }
 
-    public String getDescription() {
-        return description;
-    }
+    public User getCreator() { return creator; }
+
+    public void setCreator(User creator) { this.creator = creator; }
+
+    public String getDescription() { return description; }
 
     public void setDescription(String description) {
         this.description = description;

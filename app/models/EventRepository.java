@@ -72,6 +72,7 @@ public class EventRepository {
     private Event change(EntityManager em, Event event) {
         Event eventToChange = em.find(Event.class, event.getId());
         eventToChange.setCategory(event.getCategory());
+        eventToChange.setCreator(event.getCreator());
         eventToChange.setDescription(event.getDescription());
         eventToChange.setDate(event.getDate());
         eventToChange.setNrOfPlayers(event.getNrOfPlayers());
