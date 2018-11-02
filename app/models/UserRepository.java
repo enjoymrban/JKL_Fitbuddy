@@ -70,9 +70,12 @@ public class UserRepository {
 
     private User change(EntityManager em, User user) {
         User userToChange = em.find(User.class, user.getId());
-        //userToChange.setDescription(event.getDescription());
-        //userToChange.setDate(event.getDate());
-        //userToChange.setNrOfPlayers(event.getNrOfPlayers());
+        userToChange.setDescription(user.getDescription());
+        userToChange.setFirstName(user.getDescription());
+        userToChange.setLastName(user.getLastName());
+        userToChange.setFullName(user.getFullName());
+        userToChange.setEmail(user.getEmail());
+        userToChange.setAvatarUrl(user.getAvatarUrl());
         return userToChange;
     }
 

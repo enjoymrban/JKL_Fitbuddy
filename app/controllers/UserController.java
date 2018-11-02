@@ -21,7 +21,7 @@ public class UserController extends Controller {
 
     @Inject
     public UserController(UserService userService, HttpExecutionContext ec) {
-        this.UserService = userService;
+        this.userService = userService;
         this.ec = ec;
     }
 
@@ -31,7 +31,7 @@ public class UserController extends Controller {
         }, ec.current());
     }
     public CompletionStage<Result> getAllUsers() {
-        return eventService.getAll().thenApplyAsync(personStream -> {
+        return userService.getAll().thenApplyAsync(personStream -> {
             return ok(Json.toJson(personStream.collect(Collectors.toList())));
         }, ec.current());
     }

@@ -16,11 +16,11 @@ PUT		/api/event/:id              controllers.EventController.changeEvent(id: Lon
 DELETE	/api/event/:id              controllers.EventController.deleteEvent(id: Long)
 
 # User
-GET		/api/user                  controllers.EventController.getAllUsers()
-GET		/api/user/:id              controllers.EventController.getOneUser(id: Long)
-POST	/api/user                  controllers.EventController.addUser()
-PUT		/api/user/:id              controllers.EventController.changeUser(id: Long)
-DELETE	/api/user/:id              controllers.EventController.deleteUser(id: Long)
+GET		/api/user                  controllers.UserController.getAllUsers()
+GET		/api/user/:id              controllers.UserController.getOneUser(id: Long)
+POST	/api/user                  controllers.UserController.addUser()
+PUT		/api/user/:id              controllers.UserController.changeUser(id: Long)
+DELETE	/api/user/:id              controllers.UserController.deleteUser(id: Long)
 
 #Categories
 GET     /api/category            controllers.CategoryController.category()
