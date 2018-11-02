@@ -76,6 +76,7 @@ public class UserRepository {
         userToChange.setFullName(user.getFullName());
         userToChange.setEmail(user.getEmail());
         userToChange.setAvatarUrl(user.getAvatarUrl());
+        userToChange.setCategories(user.getCategories());
         return userToChange;
     }
 

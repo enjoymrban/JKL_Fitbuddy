@@ -55,7 +55,7 @@ public class CategoryRepository {
     private Category update(EntityManager em, Category category) {
         Category categoryToUpdate = em.find(Category.class, category.getId());
         categoryToUpdate.setTitle(category.getTitle());
-
+        categoryToUpdate.setUsers(category.getUsers());
         return categoryToUpdate;
     }
 

@@ -1,6 +1,9 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name="fitUser")
 public class User{
@@ -15,6 +18,10 @@ public class User{
     private String fullName;
     private String email;
     private String avatarUrl;
+
+    @ManyToMany(fetch=FetchType.EAGER, mappedBy="users")
+    @JsonManagedReference  // siehe jackson bidirectional relationships and infinite recursion
+    private Set<Category> categories = new HashSet<>();
 
     public long getId() {
         return id;
@@ -70,5 +77,11 @@ public class User{
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public Set<Category> getCategories() { return this.categories; }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
     }
 }
