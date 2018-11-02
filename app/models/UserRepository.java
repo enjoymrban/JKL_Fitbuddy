@@ -55,7 +55,7 @@ public class UserRepository {
 
 
     private Stream<User> list(EntityManager em) {
-        List<User> user = em.createQuery("select u from user us", User.class).getResultList();
+        List<User> user = em.createQuery("select u from user u", User.class).getResultList();
         return user.stream();
     }
 

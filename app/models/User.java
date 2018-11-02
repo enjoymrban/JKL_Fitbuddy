@@ -1,15 +1,13 @@
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity(name="event")
+@Entity(name="user")
 public class User{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="user_id_seq", sequenceName="user_id_seq",allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="user_id_seq")
     private long id;
     private String description;
     private String firstName;

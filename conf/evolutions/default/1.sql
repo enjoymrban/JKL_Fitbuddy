@@ -20,6 +20,19 @@ create table category (
 INSERT INTO category (title) VALUES ('Fussball');
 INSERT INTO category (title) VALUES ('Basketball');
 
+create table user (
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  description VARCHAR(200),
+  firstName VARCHAR(20),
+  lastName VARCHAR(20),
+  fullName VARCHAR(40),
+  email VARCHAR(30),
+  avatarUrl VARCHAR(100)
+);
+
+INSERT INTO user (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Ehemaliger profifussballer und Extremsportler', 'Silvio', 'Jaeger', 'Silvio Jäger', 'silvio.jaeger@ntb.ch', 'hallihallo/katze.png');
+
 # --- !Downs
- drop table event;
- drop table category;
+  drop table event;
+  drop table category;
+  drop table user;
