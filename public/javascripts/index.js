@@ -1,6 +1,6 @@
 let endZoom = 13;
 let startZoom = 10;
-let map = L.map('mapid').setView([0, 0], startZoom);
+let map = L.map('mapid', {zoomControl:false}).setView([0, 0], startZoom);
 
 // markers Cluster Group for collecting marker plugin
 let markersClusterGroup = L.markerClusterGroup();
