@@ -1,6 +1,6 @@
 let endZoom = 13;
 let startZoom = 10;
-let map = L.map('mapid').setView([0, 0], startZoom);
+let map = L.map('mapid', {zoomControl:false}).setView([0, 0], startZoom);
 
 // markers Cluster Group for collecting marker plugin
 let markersClusterGroup = L.markerClusterGroup();
@@ -8,41 +8,14 @@ let markersClusterGroup = L.markerClusterGroup();
 // all markers
 let markers = [];
 
-/*sessionStorage*/
-let events = getEvents();
 
 
 $().ready(() => {
     // when the user visits the site, check geodata
     getLocation();
-    // setTimeout(function () {
-    //     map.setZoom(endZoom);
-    // }, 1500);
+    createEvent();
 
-    $(`#sendEventForm`).click(() => {
-        let newEvent = {
-            id: events.length + 1,
-            description: $('#descriptionEventForm').val(),
-            sport: $('#sportEventForm').find(":selected").text(),
-            date: $('#dateEventForm').val(),
-            requestedBuddies: $('#amoutBuddiesEventForm').val(),
-            location: {
-                lat: $("#whereLatEventForm").val(),
-                long: $("#whereLngEventForm").val()
 
-            },
-            interested: [],
-            participants: [],
-            creator: "me"
-        };
-        events.push(newEvent);
-
-        /*sessionStorage*/
-        saveEvents(events);
-
-        $('#createEventModal').modal('toggle');
-        addMarkerToMap(newEvent);
-    });
 
 });
 
@@ -120,6 +93,7 @@ map.on('click', function (e) {
 });
 
 
+
 map.on('zoom move', function () {
     let mapBounds = map.getBounds();
     let {_northEast, _southWest} = mapBounds;
@@ -188,7 +162,7 @@ function popUpOpens(markerId) {
 function placeEventsOnMap() {
 
     $.ajax({
-        url: url+"/api/events",
+        url: url+"/api/event",
         type: "GET",
         dataType: "json"
     }).done((json) => {
@@ -221,6 +195,33 @@ function addMarkerToMap(event) {
     markersClusterGroup.addLayer(marker);
     markers.push({marker: marker, eventId: id});
 
+
+}
+
+
+function createEvent(){
+    $(`#sendEventForm`).click(() => {
+
+        let newEvent = {
+            id: events.length + 1,
+            description: $('#descriptionEventForm').val(),
+            sport: $('#sportEventForm').find(":selected").text(),
+            date: $('#dateEventForm').val(),
+            requestedBuddies: $('#amoutBuddiesEventForm').val(),
+            location: {
+                lat: $("#whereLatEventForm").val(),
+                long: $("#whereLngEventForm").val()
+
+            },
+            interested: [],
+            participants: [],
+            creator: "me"
+        };
+
+
+        $('#createEventModal').modal('toggle');
+        addMarkerToMap(newEvent);
+    });
 
 }
 
