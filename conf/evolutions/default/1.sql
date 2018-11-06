@@ -37,6 +37,14 @@ create table Favorite_Categories (
   FOREIGN KEY (category_id) REFERENCES category (id)
 );
 
+create table Buddies (
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  fitUser_id BIGINT,
+  buddy_id BIGINT,
+  FOREIGN KEY (fitUser_id) REFERENCES fitUser (id),
+  FOREIGN KEY (buddy_id) REFERENCES fitUser (id)
+);
+
 INSERT INTO category (title) VALUES ('Fussball');
 INSERT INTO category (title) VALUES ('Basketball');
 INSERT INTO category (title) VALUES ('Tennis');
@@ -57,6 +65,9 @@ INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (3,3);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (1,4);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (3,5);
 
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (1,2);
+-- wenn sich zwei User gegenseitig folgen gibt es unendlich json daten... fix? nur id mitgeben in json
+--INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,1);
 
 # --- !Downs
   drop table event cascade;
@@ -66,3 +77,4 @@ INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (3,5);
   drop table fitUser cascade;
   --drop table fitUser;
   drop table Favorite_Categories;
+  drop table Buddies;

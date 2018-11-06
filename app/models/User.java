@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import java.util.HashSet;
@@ -22,6 +23,22 @@ public class User{
     @ManyToMany(fetch=FetchType.EAGER, mappedBy="users")
     @JsonManagedReference  // siehe jackson bidirectional relationships and infinite recursion
     private Set<Category> categories = new HashSet<>();
+
+    // siehe jpa many to many relashionship causing infinite recursion auf stack overflow
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    }, fetch=FetchType.EAGER)
+    @JoinTable(name="Buddies",
+            joinColumns = @JoinColumn(name="fitUser_id"),
+            inverseJoinColumns = @JoinColumn(name="buddy_id")
+    )
+    @JsonBackReference
+    private Set<User> buddies = new HashSet<>();
+
+    @ManyToMany(fetch=FetchType.EAGER, mappedBy="buddies")
+    @JsonManagedReference
+    private Set<User> following = new HashSet<>();
 
     public long getId() {
         return id;
@@ -84,4 +101,12 @@ public class User{
     public void setCategories(Set<Category> categories) {
         this.categories = categories;
     }
+
+    public Set<User> getBuddies() { return this.buddies; }
+
+    public void setBuddies(Set<User> buddies) { this.buddies = buddies; }
+
+    public Set<User> getFollowing() { return this.following; }
+
+    public void setFollowing(Set<User> following) { this.following = following; }
 }
