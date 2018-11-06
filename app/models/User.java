@@ -1,17 +1,17 @@
 package models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
-@Entity(name="fitUser")
-public class User{
+
+@Entity(name = "fitUser")
+public class User {
 
     @Id
-    @SequenceGenerator(name="fitUser_id_seq", sequenceName="fitUser_id_seq",allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="fitUser_id_seq")
+    @SequenceGenerator(name = "fitUser_id_seq", sequenceName = "fitUser_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "fitUser_id_seq")
     private long id;
     private String description;
     private String firstName;
@@ -20,25 +20,40 @@ public class User{
     private String email;
     private String avatarUrl;
 
-    @ManyToMany(fetch=FetchType.EAGER, mappedBy="users")
-    @JsonManagedReference  // siehe jackson bidirectional relationships and infinite recursion
-    private Set<Category> categories = new HashSet<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Favorite_Categories",
+            joinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
+    private List<Category> categories = new ArrayList<>();
 
-    // siehe jpa many to many relashionship causing infinite recursion auf stack overflow
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Buddies",
+            joinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "buddy_id", referencedColumnName = "id"))
+    private List<User> buddies = new ArrayList<>();
+
+
+    @JsonIgnore
+    @ManyToMany(fetch=FetchType.EAGER, mappedBy="buddies")
+    private List<User> following = new ArrayList<>();
+
+    /*// siehe jpa many to many relashionship causing infinite recursion auf stack overflow
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
-    }, fetch=FetchType.EAGER)
-    @JoinTable(name="Buddies",
-            joinColumns = @JoinColumn(name="fitUser_id"),
-            inverseJoinColumns = @JoinColumn(name="buddy_id")
+    }, fetch = FetchType.EAGER)
+    @JoinTable(name = "Buddies",
+            joinColumns = @JoinColumn(name = "fitUser_id"),
+            inverseJoinColumns = @JoinColumn(name = "buddy_id")
     )
-    @JsonBackReference
-    private Set<User> buddies = new HashSet<>();
-
-    @ManyToMany(fetch=FetchType.EAGER, mappedBy="buddies")
     @JsonManagedReference
-    private Set<User> following = new HashSet<>();
+    private List<User> buddies = new ArrayList<>();
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "buddies")
+    @JsonBackReference
+    private List<User> following = new ArrayList<>();*/
 
     public long getId() {
         return id;
@@ -96,17 +111,27 @@ public class User{
         this.avatarUrl = avatarUrl;
     }
 
-    public Set<Category> getCategories() { return this.categories; }
+    public List<Category> getCategories() {
+        return categories;
+    }
 
-    public void setCategories(Set<Category> categories) {
+    public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
 
-    public Set<User> getBuddies() { return this.buddies; }
+    public List<User> getBuddies() {
+        return this.buddies;
+    }
 
-    public void setBuddies(Set<User> buddies) { this.buddies = buddies; }
+    public void setBuddies(List<User> buddies) {
+        this.buddies = buddies;
+    }
 
-    public Set<User> getFollowing() { return this.following; }
+    public List<User> getFollowing() {
+        return this.following;
+    }
 
-    public void setFollowing(Set<User> following) { this.following = following; }
+    public void setFollowing(List<User> following) {
+        this.following = following;
+    }
 }

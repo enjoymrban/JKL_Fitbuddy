@@ -29,6 +29,7 @@ create table fitUser (
   FOREIGN KEY (category_id) REFERENCES category (id)
 );
 
+
 create table Favorite_Categories (
   id BIGSERIAL NOT NULL PRIMARY KEY,
   fitUser_id BIGINT,
@@ -38,11 +39,11 @@ create table Favorite_Categories (
 );
 
 create table Buddies (
-  id BIGSERIAL NOT NULL PRIMARY KEY,
-  fitUser_id BIGINT,
-  buddy_id BIGINT,
-  FOREIGN KEY (fitUser_id) REFERENCES fitUser (id),
-  FOREIGN KEY (buddy_id) REFERENCES fitUser (id)
+id BIGSERIAL NOT NULL PRIMARY KEY,
+fitUser_id BIGINT,
+buddy_id BIGINT,
+FOREIGN KEY (fitUser_id) REFERENCES fitUser (id),
+FOREIGN KEY (buddy_id) REFERENCES fitUser (id)
 );
 
 INSERT INTO category (title) VALUES ('Fussball');
@@ -76,5 +77,6 @@ INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (1,2);
   --drop table category;
   drop table fitUser cascade;
   --drop table fitUser;
-  drop table Favorite_Categories;
-  drop table Buddies;
+  drop table Favorite_Categories cascade;
+ -- drop table Buddies;
+  drop table Buddies cascade;

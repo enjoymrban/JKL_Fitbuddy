@@ -1,9 +1,11 @@
 package models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity(name="category")
 public class Category {
@@ -13,16 +15,9 @@ public class Category {
     private Long id;
     private String title;
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    }, fetch=FetchType.EAGER)
-    @JoinTable(name="Favorite_Categories",
-            joinColumns = @JoinColumn(name="category_id"),
-            inverseJoinColumns = @JoinColumn(name="fitUser_id")
-    )
-    @JsonBackReference // siehe jackson bidirectional relationships and infinite recursion
-    private Set<User> users = new HashSet<>();
+    @JsonIgnore
+    @ManyToMany(fetch=FetchType.EAGER, mappedBy="categories")
+    private List<User> users = new ArrayList<>();
 
     public Long getId() { return id; }
 
@@ -36,18 +31,12 @@ public class Category {
         this.title = title;
     }
 
-    public Set<User> getUsers() { return users; }
-
-    public void setUsers(Set<User> users) { this.users = users; }
-
-    // eingefügt gemäss vladmihalcea.com artikel zu jpa und hibernate... bitte testen
-    public void addUser(User user) {
-        users.add(user);
-        user.getCategories().add(this);
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void removeUser(User user) {
-        users.remove(user);
-        user.getCategories().remove(this);
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
+
 }
