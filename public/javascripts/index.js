@@ -1,6 +1,6 @@
 let endZoom = 13;
 let startZoom = 10;
-let map = L.map('mapid', {zoomControl:false}).setView([0, 0], startZoom);
+let map = L.map('mapid', {zoomControl: false}).setView([0, 0], startZoom);
 
 // markers Cluster Group for collecting marker plugin
 let markersClusterGroup = L.markerClusterGroup();
@@ -9,12 +9,10 @@ let markersClusterGroup = L.markerClusterGroup();
 let markers = [];
 
 
-
 $().ready(() => {
     // when the user visits the site, check geodata
     getLocation();
     createEvent();
-
 
 
 });
@@ -80,8 +78,8 @@ map.on('click', function (e) {
     let popLocation = e.latlng;
     let id = `${popLocation.lat}${popLocation.lng}`;
     id = id.replace(/\./g, "");
-    let popup = L.popup()
-        .setLatLng(popLocation)
+
+    L.popup().setLatLng(popLocation)
         .setContent(`<div><button id="createEventButton${id}" class="btn btn-default" type="button">Create event here!</button></p></div>`)
         .openOn(map);
 
@@ -91,7 +89,6 @@ map.on('click', function (e) {
         $("#createEventModal").modal("show");
     });
 });
-
 
 
 map.on('zoom move', function () {
@@ -120,49 +117,59 @@ map.on('zoom move', function () {
 
 function popUpOpens(markerId) {
     let event = "";
-    for (const e of events) {
-        if (e.id === markerId) {
-            event = e;
+    $.ajax({
+        url: url + "/api/event",
+        type: "GET",
+        dataType: "json"
+    }).done((events) => {
+        for (const e of events) {
+            if (e.id === markerId) {
+                event = e;
+            }
         }
-    }
-    let {interested, creator} = event;
+        let {interested, creator} = event;
 
 
-    let interestedInEvent = $(`#interestedInEvent${markerId}`);
+        let interestedInEvent = $(`#interestedInEvent${markerId}`);
 
 
-    if (creator === "me") {
-        interestedInEvent.prop("disabled", true);
+        if (creator === "me") {
+            interestedInEvent.prop("disabled", true);
 
-    } else if (interested.indexOf("me") !== -1) {
-        interestedInEvent.text("I'm not longer interested");
-    }
-
-    interestedInEvent.click(() => {
-
-        let eventIndex = events.indexOf(event);
-        console.log(eventIndex);
-        let amIInterested = events[eventIndex].interested.indexOf("me");
-
-        if (events[eventIndex].id === markerId && amIInterested === -1) {
-            events[eventIndex].interested.push("me");
-            /*sessionStorage*/
-            saveEvents(events);
-
+        } else if (interested.indexOf("me") !== -1) {
             interestedInEvent.text("I'm not longer interested");
-        } else if (events[eventIndex].id === markerId && amIInterested !== -1) {
-
-            event.interested.splice(amIInterested, 1);
-            interestedInEvent.text("I'm interested!");
         }
-    })
+
+        interestedInEvent.click(() => {
+
+            let eventIndex = events.indexOf(event);
+            console.log(eventIndex);
+            let amIInterested = events[eventIndex].interested.indexOf("me");
+
+            if (events[eventIndex].id === markerId && amIInterested === -1) {
+                events[eventIndex].interested.push("me");
+                /*sessionStorage*/
+                saveEvents(events);
+
+                interestedInEvent.text("I'm not longer interested");
+            } else if (events[eventIndex].id === markerId && amIInterested !== -1) {
+
+                event.interested.splice(amIInterested, 1);
+                interestedInEvent.text("I'm interested!");
+            }
+        })
+    });
+
+
+
+
 }
 
 // Place Markers on the map
 function placeEventsOnMap() {
 
     $.ajax({
-        url: url+"/api/event",
+        url: url + "/api/event",
         type: "GET",
         dataType: "json"
     }).done((json) => {
@@ -171,9 +178,7 @@ function placeEventsOnMap() {
         })
     });
 
-    // for (const i of events) {
-    //     addMarkerToMap(i);
-    // }
+
     console.log("place events on map");
     map.addLayer(markersClusterGroup);
 }
@@ -199,28 +204,46 @@ function addMarkerToMap(event) {
 }
 
 
-function createEvent(){
+function createEvent() {
     $(`#sendEventForm`).click(() => {
 
-        let newEvent = {
-            id: events.length + 1,
+        let event = {
             description: $('#descriptionEventForm').val(),
-            sport: $('#sportEventForm').find(":selected").text(),
+            category: {
+                id: $('#sportEventForm').find(":selected").val()
+            },
+            creator: {
+                id: myId
+            },
+
             date: $('#dateEventForm').val(),
             requestedBuddies: $('#amoutBuddiesEventForm').val(),
-            location: {
-                lat: $("#whereLatEventForm").val(),
-                long: $("#whereLngEventForm").val()
+            coordinateX: $("#whereLatEventForm").val(),
+            coordinateY: $("#whereLngEventForm").val()
 
-            },
-            interested: [],
-            participants: [],
-            creator: "me"
         };
 
+        $.ajax({
 
-        $('#createEventModal').modal('toggle');
-        addMarkerToMap(newEvent);
+            type: "POST",
+            url: url+"/api/event",
+            data: JSON.stringify(event),
+            contentType: "application/json",
+            dataType: 'json'
+        }).done(msg =>{
+            console.log(msg);
+            $('#createEventModal').modal('toggle');
+            addMarkerToMap(event);
+        }).catch(err =>{
+            console.log(err);
+        });
+
+
+
+
+
+
+
     });
 
 }

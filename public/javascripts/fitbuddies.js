@@ -1,7 +1,3 @@
-/*sessionStorage*/
-let mybuddies = getmybuddies();
-
-
 $().ready(() => {
     fillBuddyTable();
     randomBuddy();
@@ -9,12 +5,10 @@ $().ready(() => {
     $('#addBuddy').click(() => {
         let buddyToAdd = $("#buddyName").text();
 
-        if(buddyToAdd !== "NO FURTHER OPTIONS") {
-            mybuddies.push(buddyToAdd);
+        if (buddyToAdd !== "NO FURTHER OPTIONS") {
             addBuddyToList(buddyToAdd);
             randomBuddy();
-            /*sessionStorage*/
-            savemyBuddies(mybuddies);
+
         }
     });
 
@@ -27,28 +21,54 @@ $().ready(() => {
 
 function fillBuddyTable() {
     $('#myBuddyTable').empty();
-    for (const b of mybuddies) {
-        addBuddyToList(b);
-    }
+    $.ajax({
+        url: url + "/api/user/" + myId,
+        type: "GET",
+        dataType: "json"
+    }).done(me => {
+        $.each(me.buddies, (key, value) => {
+            addBuddyToList(value);
+        });
+
+    });
 }
 
 function addBuddyToList(buddy) {
     let rowCount = $("#myBuddyTable > tr").length + 1;
-    let tableTemplate = `<tr><th scope="row">${rowCount}</th><td id="buddy${rowCount}">${buddy}</td><td><i id="remove${rowCount}" class="fa fa-times"></i></td></tr>`;
+    let tableTemplate = `<tr><th scope="row">${rowCount}</th><td id="buddy${rowCount}">${buddy.fullName}</td><td><i id="remove${buddy.id}" class="fa fa-times"></i></td></tr>`;
     $("#myBuddyTable").append(tableTemplate);
 
-    $(`#remove${rowCount}`).click(() => {
-        mybuddies.splice(mybuddies.indexOf($(`#buddy${rowCount}`).text()), 1);
-        fillBuddyTable();
-        randomBuddy();
-        /*sessionStorage*/
-        savemyBuddies(mybuddies);
+    $(`#remove${buddy.id}`).click(() => {
+        $.ajax({
+            url: url + "/api/user/" + myId,
+            type: "GET",
+            dataType: "json"
+        }).done(me => {
+            $.each(me.buddies, (key, value) => {
+                if (buddy.id === value.id) {
+                    me.buddies.splice(key, 1);
+                }
+                $.ajax({
+                    url: url + "/api/user/" + myId,
+                    type: "PUT",
+                    data: JSON.stringify(me),
+                    contentType: "application/json",
+                    dataType: 'json'
+                }).done(me => {
 
-    })
+                    fillBuddyTable();
+                    randomBuddy();
+                });
+
+
+            });
+        });
+    });
+
 }
-function test() {
-   console.log(Math.floor((Math.random() * buddies.length)));
-}
+
+
+
 
 
 function randomBuddy(buddy = "me") {
@@ -62,9 +82,9 @@ function randomBuddy(buddy = "me") {
             let randomIndex = Math.floor((Math.random() * buddies.length));
             return randomBuddy(buddies[randomIndex]);
         }
-    }catch(e){
+    } catch (e) {
         $("#buddyName").text("NO FURTHER OPTIONS");
         return;
     }
-}
 
+}
