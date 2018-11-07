@@ -95,3 +95,14 @@ html, body {
 
 
 
+
+/* My Profile */
+#sentSuccess {
+    display: none;
+}
+
+#sentDanger {
+    display: none;
+}
+
+

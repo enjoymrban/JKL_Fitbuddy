@@ -1,6 +1,9 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.User;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
@@ -10,6 +13,8 @@ import play.mvc.Result;
 import services.UserService;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
 
@@ -49,6 +54,9 @@ public class UserController extends Controller {
     public CompletionStage<Result> changeUser(Long id) {
         final JsonNode jsonRequest = request().body().asJson();
         final User userToChange = Json.fromJson(jsonRequest, User.class);
+
+        // Aus ID array buddies hinzufügen---------------------------------------------------------------------------
+
         userToChange.setId(id);
         return userService.change(userToChange).thenApplyAsync(user -> {
             return ok(Json.toJson(user));
@@ -62,4 +70,16 @@ public class UserController extends Controller {
         }, ec.current());
     }
 
+    private JsonNode getCustomJson(User user){
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode json = Json.toJson(user);
+        List<User> buddies = user.getBuddies();
+        ArrayList<Long> list = new ArrayList<>();
+        for (User u : buddies) {
+            list.add(u.getId());
+        }
+        ArrayNode buddieIds = mapper.valueToTree(list);
+        ((ObjectNode) json).putArray("buddies").addAll(buddieIds);
+        return json;
+    }
 }

@@ -41,8 +41,6 @@ public class User {
     //private List<User> buddies = new ArrayList<>();
     private List<User> buddies;
 
-
-
     @JsonIgnore
     @ManyToMany(fetch=FetchType.EAGER, mappedBy="buddies")
     private List<User> following = new ArrayList<>();
