@@ -55,6 +55,8 @@ INSERT INTO category (title) VALUES ('Sonstiges');
 INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Ehemalige Miss Ostschweiz', 'Silvio', 'Jaeger', 'Silvio Jäger', 'silvio.jaeger@ntb.ch', 'hallihallo/katze.png');
 INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Bester Basketballer unserer Zeit', 'LeBron', 'James', 'LeBron James', 'lbj@lakers23.nba', 'getdunked.png');
 INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Bester Basler Export', 'Roger', 'Federer', 'Roger Federer', 'fedi@ch', 'racketrocket.png');
+INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Fussballer', 'Mo', 'Salah', 'Mo Salah', 'fasdf@ch', 'rertzaocket.png');
+
 
 INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (1, 3, 'Fussballspielen mit Profis', '12.09.2018', '22', '123456789', '987654321');
 INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (5, 1, 'Schwimmen', '22.09.2018', '4', '12345745', '22765411');
@@ -65,10 +67,20 @@ INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (2,2);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (3,3);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (1,4);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (3,5);
+INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (4,1);
+INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (4,3);
 
-INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (1,2);
+
 -- wenn sich zwei User gegenseitig folgen gibt es unendlich json daten... fix? nur id mitgeben in json
---INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,1);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,1);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (1,2);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (1,3);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (3,2);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,3);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (4,2);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (4,1);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,4);
+
 
 # --- !Downs
   drop table event cascade;
