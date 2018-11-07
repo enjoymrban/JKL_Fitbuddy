@@ -4,7 +4,8 @@
 * two arguments, a `String` for the title of the page and an `Html`
 * object to insert into the body of the page.
 *@
-@(title: String, scripts: Html = Html(""))(content: Html)
+@import javax.swing.text.html.CSS
+@(title: String, scripts: Html = Html(""), links: Html = Html(""))(content: Html)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,11 +16,9 @@
         <meta charset="uft-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("lib/bootstrap/css/bootstrap.min.css")">
-        <link rel="stylesheet" href="@routes.Assets.versioned("lib/leaflet/leaflet.css")"/>
+        @links
         <link rel="stylesheet" href="@routes.Assets.versioned("lib/material-design-icons/material-icons.css")"/>
         <link rel="stylesheet" href="@routes.Assets.versioned("lib/font-awesome/css/all.css")"/>
-        <link rel="stylesheet" href="@routes.Assets.versioned("leaflet_plugin/Leaflet.markercluster-1.4.1/dist/MarkerCluster.css")"/>
-        <link rel="stylesheet" href="@routes.Assets.versioned("leaflet_plugin/Leaflet.markercluster-1.4.1/dist/MarkerCluster.Default.css")"/>
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/svg" href="@routes.Assets.versioned("images/favicon.ico")">
     </head>

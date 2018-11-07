@@ -1,0 +1,6 @@
+______________
+MyProfile.js
+______________
+
+- favorisierte Sportarten alphabetisch in das Select einordnen
+
