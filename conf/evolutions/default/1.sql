@@ -68,7 +68,10 @@ INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (3,5);
 
 INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (1,2);
 -- wenn sich zwei User gegenseitig folgen gibt es unendlich json daten... fix? nur id mitgeben in json
---INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,1);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,1);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,3);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (3,1);
+INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (3,2);
 
 # --- !Downs
   drop table event cascade;

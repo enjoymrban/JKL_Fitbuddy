@@ -1,6 +1,7 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.Event;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
@@ -18,6 +19,7 @@ public class EventController extends Controller {
 
     private final EventService eventService;
     private final HttpExecutionContext ec;
+    private JsonNode myjson;
 
     @Inject
     public EventController(EventService eventService, HttpExecutionContext ec) {

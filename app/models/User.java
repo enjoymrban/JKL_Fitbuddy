@@ -32,7 +32,8 @@ public class User {
             name = "Buddies",
             joinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "buddy_id", referencedColumnName = "id"))
-    private List<User> buddies = new ArrayList<>();
+    @JsonIgnore
+    public List<User> buddies = new ArrayList<>();
 
 
     @JsonIgnore
