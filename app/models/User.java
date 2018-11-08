@@ -131,6 +131,7 @@ public class User {
         return buddies;
     }
 
+    //@JsonDeserialize(using = CustomListDeserializer.class)
     public void setBuddies(List<User> buddies) {
         this.buddies = buddies;
     }
