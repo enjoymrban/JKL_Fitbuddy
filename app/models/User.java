@@ -3,6 +3,7 @@ package models;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import javax.persistence.*;
@@ -38,6 +39,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "buddy_id", referencedColumnName = "id"))
     //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     @JsonSerialize(using = CustomListSerializer.class)
+    @JsonDeserialize(using = CustomListDeserializer.class)
     //private List<User> buddies = new ArrayList<>();
     private List<User> buddies;
 
