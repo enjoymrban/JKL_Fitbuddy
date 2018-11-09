@@ -78,7 +78,11 @@ INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUr
 
 INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (1, 3, 'Fussballspielen mit Profis', '12.09.2018', '22', '12.3456789', '98.7654321');
 INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (5, 1, 'Schwimmen', '22.09.2018', '4', '47.73473737373', '9.4243542345');
-INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (4, 2, 'Runden', '16.09.2018', '4', '3.45745', '-225.411');
+INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (4, 2, 'Runden', '16.09.2018', '4', '47.547878787', '9.05354545');
+INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (3, 3, 'Runden', '16.09.2018', '4', '47.147878787', '9.05354545');
+INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (2, 2, 'Runden', '16.09.2018', '4', '47.845876787', '9.65364545');
+INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (1, 4, 'Runden', '16.09.2018', '4', '47.645878787', '9.216545455');
+INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (4, 2, 'Runden', '16.09.2018', '4', '47.597818787', '9.55334545');
 
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (1,1);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (2,2);

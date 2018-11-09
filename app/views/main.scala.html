@@ -11,16 +11,16 @@
 <html lang="en">
     <head>
         @* Here's where we render the page title `String`. *@
-        <title>@title</title>
+    <title>@title</title>
 
-        <meta charset="uft-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("lib/bootstrap/css/bootstrap.min.css")">
+    <meta charset="uft-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("lib/bootstrap/css/bootstrap.min.css")">
         @links
-        <link rel="stylesheet" href="@routes.Assets.versioned("lib/material-design-icons/material-icons.css")"/>
-        <link rel="stylesheet" href="@routes.Assets.versioned("lib/font-awesome/css/all.css")"/>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/svg" href="@routes.Assets.versioned("images/favicon.ico")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("lib/material-design-icons/material-icons.css")"/>
+    <link rel="stylesheet" href="@routes.Assets.versioned("lib/font-awesome/css/all.css")"/>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/svg" href="@routes.Assets.versioned("images/favicon.ico")">
     </head>
     <body>
 
@@ -40,10 +40,6 @@
                             <li class="nav-item ">
                                 <a class="nav-link" href="/fitbuddies">Fit buddies <span class="sr-only">
                                     (current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="modal" data-target="#createEventModal">
-                                    Create event</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/myevents">
@@ -72,7 +68,7 @@
                                                     </p>
                                                 </div>
                                                 <div class="col-8">
-                                                    <p  class=""><strong id="userFullname">Test User</strong></p>
+                                                    <p class=""><strong id="userFullname">Test User</strong></p>
                                                     <a href="/myprofile">My profile</a>
                                                     <br>
                                                     <a href="/myevents">My events</a>
@@ -101,7 +97,6 @@
             </header>
             @* And here's where we render the `Html` object containing
             * the page content. *@
-
             <div id="content">
             @content
             </div>
@@ -147,7 +142,6 @@
                         </div>
                     </div>
 
-
                 </div>
             </div>
         </div>
@@ -191,7 +185,7 @@
                                 </div>
                                 <input id="amoutBuddiesEventForm" type="number" class="form-control" aria-label="EventAmountBuddies" min="1" value="1" required>
                             </div>
-                            <div class="input-group mb-3">
+                            @*<div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <i title="Latitude" class="fa fa-location-arrow prefix grey-text input-group-text"></i>
                                 </div>
@@ -202,8 +196,7 @@
                                     <i title="Longitude" class="fa fa-location-arrow prefix grey-text input-group-text"></i>
                                 </div>
                                 <input id="whereLngEventForm" type="text" class="form-control" aria-label="whereLngEventForm" required>
-                            </div>
-
+                            </div>*@
 
                         </div>
                         <div class="modal-footer justify-content-center">
@@ -214,23 +207,19 @@
                 </div>
             </div>
         </div>
-
         @*Bootstrap*@
         <script src="@routes.Assets.versioned("lib/jquery/jquery.min.js")" type="text/javascript"></script>
         <script src="@routes.Assets.versioned("lib/popper.js/dist/umd/popper.min.js")" type="text/javascript"></script>
         <script src="@routes.Assets.versioned("lib/bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
         <script src="@routes.Assets.versioned("lib/sammy/sammy.min.js")" type="text/javascript"></script>
-
         @*Leavlet*@
         <script src="@routes.Assets.versioned("lib/leaflet/leaflet.js")"></script>
         <script src="@routes.Assets.versioned("leaflet_plugin/Leaflet.markercluster-1.4.1/dist/leaflet.markercluster.js")"></script>
-
         @*Custom*@
         <script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
 
 
         @scripts
-
 
     </body>
 </html>
