@@ -36,6 +36,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "buddy_id", referencedColumnName = "id"))
     //@JsonSerialize(using = CustomListSerializer.class)
     //@JsonDeserialize(using = CustomListDeserializer.class)
+    @JsonIgnore
     private List<User> buddies;
 
     @JsonIgnore

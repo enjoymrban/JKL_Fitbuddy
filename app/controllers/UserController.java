@@ -14,14 +14,11 @@ import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
 
 
-
-
 public class UserController extends Controller {
 
     private final UserService userService;
     private final UserIdHandler userIdHandler;
     private final HttpExecutionContext ec;
-
 
     @Inject
     public UserController(UserService userService, HttpExecutionContext ec) {
@@ -30,13 +27,12 @@ public class UserController extends Controller {
         this.userIdHandler = new UserIdHandler(userService);
     }
 
-
-
     public CompletionStage<Result> getOneUser(Long id) {
         return userService.get(id).thenApplyAsync(user -> {
             return ok(userIdHandler.getCustomJsonFromUser(user));
         }, ec.current());
     }
+
     public CompletionStage<Result> getAllUsers() {
         return userService.getAll().thenApplyAsync(personStream -> {
             return ok(Json.toJson(personStream.collect(Collectors.toList())));
@@ -58,7 +54,6 @@ public class UserController extends Controller {
         return userService.change(userIdHandler.getCustomUserFromJson(jsonRequest, id)).thenApplyAsync(user -> {
             return ok("User updated");
         }, ec.current());
-
     }
 
     public CompletionStage<Result> deleteUser(Long id) {
