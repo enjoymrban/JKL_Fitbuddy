@@ -1,15 +1,12 @@
 package models;
 
 import play.db.jpa.JPAApi;
-
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.function.Function;
 import java.util.stream.Stream;
-
-
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 
 /**
@@ -47,11 +44,9 @@ public class EventRepository {
     }
 
 
-
     private Event find(EntityManager em, Long id) {
         return em.find(Event.class, id);
     }
-
 
 
     private Stream<Event> list(EntityManager em) {
@@ -77,6 +72,8 @@ public class EventRepository {
         eventToChange.setNrOfPlayers(event.getNrOfPlayers());
         eventToChange.setCoordinateX(event.getCoordinateX());
         eventToChange.setCoordinateY(event.getCoordinateY());
+        eventToChange.setInterested(event.getInterested());
+        eventToChange.setParticipants(event.getParticipants());
         return eventToChange;
     }
 

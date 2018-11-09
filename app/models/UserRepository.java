@@ -1,15 +1,12 @@
 package models;
 
 import play.db.jpa.JPAApi;
-
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.function.Function;
 import java.util.stream.Stream;
-
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 
 /**
@@ -51,12 +48,9 @@ public class UserRepository {
     public User findOneUser(Long id) { return wrap(em -> find(em, id)); }
 
 
-
     private User find(EntityManager em, Long id) {
         return em.find(User.class, id);
     }
-
-
 
 
     private Stream<User> list(EntityManager em) {
@@ -84,6 +78,8 @@ public class UserRepository {
         userToChange.setCategories(user.getCategories());
         userToChange.setBuddies(user.getBuddies());
         userToChange.setFollowing(user.getFollowing());
+        userToChange.setInterestingEvents(user.getInterestingEvents());
+        userToChange.setParticipatingEvent(user.getParticipatingEvent());
         return userToChange;
     }
 

@@ -1,11 +1,8 @@
 package models;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,31 +34,21 @@ public class User {
             name = "Buddies",
             joinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "buddy_id", referencedColumnName = "id"))
-    //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-    @JsonSerialize(using = CustomListSerializer.class)
-    @JsonDeserialize(using = CustomListDeserializer.class)
-    //private List<User> buddies = new ArrayList<>();
+    //@JsonSerialize(using = CustomListSerializer.class)
+    //@JsonDeserialize(using = CustomListDeserializer.class)
     private List<User> buddies;
 
     @JsonIgnore
     @ManyToMany(fetch=FetchType.EAGER, mappedBy="buddies")
     private List<User> following = new ArrayList<>();
 
-    /*// siehe jpa many to many relashionship causing infinite recursion auf stack overflow
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    }, fetch = FetchType.EAGER)
-    @JoinTable(name = "Buddies",
-            joinColumns = @JoinColumn(name = "fitUser_id"),
-            inverseJoinColumns = @JoinColumn(name = "buddy_id")
-    )
-    @JsonManagedReference
-    private List<User> buddies = new ArrayList<>();
+    @JsonIgnore
+    @ManyToMany(fetch=FetchType.EAGER, mappedBy="interested")
+    private List<Event> interestingEvents = new ArrayList<>();
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "buddies")
-    @JsonBackReference
-    private List<User> following = new ArrayList<>();*/
+    @JsonIgnore
+    @ManyToMany(fetch=FetchType.EAGER, mappedBy="participants")
+    private List<Event> participatingEvent = new ArrayList<>();
 
     public long getId() {
         return id;
@@ -131,7 +118,6 @@ public class User {
         return buddies;
     }
 
-    //@JsonDeserialize(using = CustomListDeserializer.class)
     public void setBuddies(List<User> buddies) {
         this.buddies = buddies;
     }
@@ -141,4 +127,16 @@ public class User {
     }
 
     public void setFollowing(List<User> following) { this.following = following; }
+
+    public List<Event> getInterestingEvents() {
+        return this.interestingEvents;
+    }
+
+    public void setInterestingEvents(List<Event> interestingEvents) { this.interestingEvents = interestingEvents; }
+
+    public List<Event> getParticipatingEvent() {
+        return this.participatingEvent;
+    }
+
+    public void setParticipatingEvent(List<Event> participatingEvent) { this.participatingEvent = participatingEvent; }
 }
