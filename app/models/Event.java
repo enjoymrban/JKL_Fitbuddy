@@ -1,10 +1,8 @@
 package models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name="event")
 public class Event {
@@ -28,14 +26,23 @@ public class Event {
     private long coordinateX;
     private long coordinateY;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Interested",
+            joinColumns = @JoinColumn(name = "event_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"))
+    private List<User> interested = new ArrayList<>();
 
-    public long getId() {
-        return id;
-    }
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "Participants",
+            joinColumns = @JoinColumn(name = "event_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"))
+    private List<User> participants = new ArrayList<>();
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    public long getId() { return id; }
+
+    public void setId(long id) { this.id = id; }
 
     public Category getCategory() { return category; }
 
@@ -83,4 +90,15 @@ public class Event {
         this.coordinateY = coordinateY;
     }
 
+    public List<User> getInterested() {
+        return this.interested;
+    }
+
+    public void setInterested(List<User> interested) { this.interested = interested; }
+
+    public List<User> getParticipants() {
+        return this.participants;
+    }
+
+    public void setParticipants(List<User> participants) { this.participants = participants; }
 }

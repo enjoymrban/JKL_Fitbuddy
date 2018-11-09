@@ -46,6 +46,22 @@ FOREIGN KEY (fitUser_id) REFERENCES fitUser (id),
 FOREIGN KEY (buddy_id) REFERENCES fitUser (id)
 );
 
+create table Interested (
+id BIGSERIAL NOT NULL PRIMARY KEY,
+event_id BIGINT,
+fitUser_id BIGINT,
+FOREIGN KEY (event_id) REFERENCES event (id),
+FOREIGN KEY (fitUser_id) REFERENCES fitUser (id)
+);
+
+create table Participants (
+id BIGSERIAL NOT NULL PRIMARY KEY,
+event_id BIGINT,
+fitUser_id BIGINT,
+FOREIGN KEY (event_id) REFERENCES event (id),
+FOREIGN KEY (fitUser_id) REFERENCES fitUser (id)
+);
+
 INSERT INTO category (title) VALUES ('Fussball');
 INSERT INTO category (title) VALUES ('Basketball');
 INSERT INTO category (title) VALUES ('Tennis');
@@ -70,8 +86,6 @@ INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (3,5);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (4,1);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (4,3);
 
-
--- wenn sich zwei User gegenseitig folgen gibt es unendlich json daten... fix? nur id mitgeben in json
 INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,1);
 INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (1,2);
 INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (1,3);
@@ -81,6 +95,9 @@ INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (4,2);
 INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (4,1);
 INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,4);
 
+INSERT INTO Interested (event_id, fitUser_id) VALUES (1,1);
+
+INSERT INTO Participants (event_id, fitUser_id) VALUES (2,2);
 
 # --- !Downs
   drop table event cascade;
@@ -92,3 +109,5 @@ INSERT INTO Buddies (fitUser_id, buddy_id) VALUES (2,4);
   drop table Favorite_Categories cascade;
  -- drop table Buddies;
   drop table Buddies cascade;
+  drop table Interested cascade;
+  drop table Participants cascade;
