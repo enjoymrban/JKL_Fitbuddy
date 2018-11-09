@@ -43,7 +43,7 @@ public class UserController extends Controller {
 
     public CompletionStage<Result> getOneUser(Long id) {
         return userService.get(id).thenApplyAsync(user -> {
-            return ok(getCustomJson(user));
+            return ok(Json.toJson(user));
         }, ec.current());
     }
     public CompletionStage<Result> getAllUsers() {

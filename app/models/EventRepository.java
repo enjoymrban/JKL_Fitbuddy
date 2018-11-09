@@ -16,7 +16,6 @@ import static java.util.concurrent.CompletableFuture.supplyAsync;
  * Provide JPA operations running inside of a thread pool sized to the connection pool
  */
 
-
 public class EventRepository {
 
     private final JPAApi jpaApi;

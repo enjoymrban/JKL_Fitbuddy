@@ -1,6 +1,11 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +37,11 @@ public class User {
             name = "Buddies",
             joinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "buddy_id", referencedColumnName = "id"))
-    @JsonIgnore
-    public List<User> buddies = new ArrayList<>();
-
+    //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+    @JsonSerialize(using = CustomListSerializer.class)
+    @JsonDeserialize(using = CustomListDeserializer.class)
+    //private List<User> buddies = new ArrayList<>();
+    private List<User> buddies;
 
     @JsonIgnore
     @ManyToMany(fetch=FetchType.EAGER, mappedBy="buddies")
@@ -121,9 +128,10 @@ public class User {
     }
 
     public List<User> getBuddies() {
-        return this.buddies;
+        return buddies;
     }
 
+    //@JsonDeserialize(using = CustomListDeserializer.class)
     public void setBuddies(List<User> buddies) {
         this.buddies = buddies;
     }
@@ -132,7 +140,5 @@ public class User {
         return this.following;
     }
 
-    public void setFollowing(List<User> following) {
-        this.following = following;
-    }
+    public void setFollowing(List<User> following) { this.following = following; }
 }
