@@ -23,8 +23,10 @@ create table fitUser (
   description VARCHAR(100),
   date VARCHAR(64),
   nrOfPlayers VARCHAR(20),
-  coordinateX VARCHAR(20),
-  coordinateY VARCHAR(20),
+  coordinateX NUMERIC(19,16),
+  coordinateY NUMERIC(19,16),
+  -- coordinateX VARCHAR(20),
+  -- coordinateY VARCHAR(20),
   FOREIGN KEY (creator_id) REFERENCES fitUser (id),
   FOREIGN KEY (category_id) REFERENCES category (id)
 );
@@ -74,9 +76,9 @@ INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUr
 INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Fussballer', 'Mo', 'Salah', 'Mo Salah', 'fasdf@ch', 'rertzaocket.png');
 
 
-INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (1, 3, 'Fussballspielen mit Profis', '12.09.2018', '22', '123456789', '987654321');
-INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (5, 1, 'Schwimmen', '22.09.2018', '4', '12345745', '22765411');
-INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (4, 2, 'Runden', '16.09.2018', '4', '345745', '225411');
+INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (1, 3, 'Fussballspielen mit Profis', '12.09.2018', '22', '12.3456789', '98.7654321');
+INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (5, 1, 'Schwimmen', '22.09.2018', '4', '-12.345745', '2.2765411');
+INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (4, 2, 'Runden', '16.09.2018', '4', '3.45745', '-225.411');
 
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (1,1);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (2,2);
