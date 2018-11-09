@@ -48,6 +48,18 @@ html, body {
     padding-bottom:5px;
 }*/
 
+
+
+/* Index */
+.popupclickable{
+    cursor: pointer;
+}
+
+div[id^="popupInfoLarge"]{
+    display: none;
+}
+
+
 #mapid {
 
     z-index: -1;
@@ -96,22 +108,13 @@ html, body {
 
 
 
+
 /* My Profile */
 #sentSuccess {
     display: none;
 }
 
 #sentDanger {
-    display: none;
-}
-
-
-/* Index */
-.popupclickable{
-    cursor: pointer;
-}
-
-div[id^="popupInfoLarge"]{
     display: none;
 }
 

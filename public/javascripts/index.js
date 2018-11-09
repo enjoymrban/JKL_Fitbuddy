@@ -8,6 +8,9 @@ let markersClusterGroup = L.markerClusterGroup();
 // all markers
 let markers = [];
 
+//
+let createEventPopupMarker = undefined;
+
 
 $().ready(() => {
     // when the user visits the site, check geodata
@@ -79,9 +82,15 @@ map.on('click', function (e) {
     let id = `${popLocation.lat}${popLocation.lng}`;
     id = id.replace(/\./g, "");
 
-    L.popup().setLatLng(popLocation)
-        .setContent(`<div><button id="createEventButton${id}" class="btn btn-default" type="button">Create event here!</button></p></div>`)
-        .openOn(map);
+    if (createEventPopupMarker !== undefined) {
+        map.removeLayer(createEventPopupMarker);
+    }
+
+    createEventPopupMarker = L.marker(popLocation);
+    createEventPopupMarker.addTo(map);
+    createEventPopupMarker.bindPopup(`<div><button id="createEventButton${id}" class="btn btn-default" type="button">Create event here!</button></p></div>`);
+    createEventPopupMarker.openPopup();
+
 
     $(`#createEventButton${id}`).click(() => {
         $("#whereLatEventForm").val(popLocation.lat);
@@ -94,6 +103,11 @@ map.on('click', function (e) {
 map.on('zoom move', function () {
     let mapBounds = map.getBounds();
     let {_northEast, _southWest} = mapBounds;
+
+
+    if (createEventPopupMarker !== undefined) {
+        map.removeLayer(createEventPopupMarker);
+    }
 
     if (map.getZoom() <= 13) {
         for (const mobj of markers) {
@@ -110,40 +124,32 @@ map.on('zoom move', function () {
                 popUpOpens(mobj);
 
 
-
             }
         }
     }
 });
 
 
-function popUpOpens(m) {
+function popUpOpens(mobj) {
 
 
-            $('#popupInfoShort' + m.eventId).click(() => {
-                $.ajax({
-                    url: url + "/api/event/" + m.eventId,
-                    type: "GET",
-                    dataType: "json"
-                }).then((event) => {
-                    let {id,description, date, creator} = event;
-                    let popupInfoLarge = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b></p>`
-                    $('#popupInfoLarge'+ id).empty().append(popupInfoLarge).show();
+    $('#popupInfoShort' + mobj.eventId).click(() => {
+        $.ajax({
+            url: url + "/api/event/" + mobj.eventId,
+            type: "GET",
+            dataType: "json"
+        }).then((event) => {
+            let {id, description, date, creator} = event;
+            let popupInfoLarge = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b></p>`
+            $('#popupInfoLarge' + id).empty().append(popupInfoLarge).show();
 
-                }).catch(err => {
-                    console.log(err)
-                })
-
-
-
-            });
-
-
-
-
+        }).catch(err => {
+            console.log(err)
+        })
+    });
 }
 
-// Place Markers on the map
+
 function placeEventsOnMap() {
 
     $.ajax({
@@ -156,12 +162,11 @@ function placeEventsOnMap() {
         })
     });
 
-
     console.log("place events on map");
     map.addLayer(markersClusterGroup);
 }
 
-function addMarkerToMap(event) {
+function addMarkerToMap(event, wasCreated = false) {
     let {id, category, nrOfPlayers, coordinateX, coordinateY} = event;
     let {title} = category;
 
@@ -171,24 +176,32 @@ function addMarkerToMap(event) {
     marker.bindPopup(`<div class="popupclickable" id="popupInfoShort${id}"><p>Sport: <b>${title}</b> | Requested buddies: <b>${nrOfPlayers}</b></p> </div><div class="popupclickable" id="popupInfoLarge${id}"></div>`, {
         closeOnClick: false,
         autoClose: false,
-        autoPan: false
+        autoPan: false,
+        className: "custom"
     }).openPopup();
+
 //<button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>
+
+    let mobj = {marker: marker, eventId: id};
     marker.on('click', () => {
-        popUpOpens(id);
+        popUpOpens(mobj);
     });
+
+
     markersClusterGroup.addLayer(marker);
-    markers.push({marker: marker, eventId: id});
-
-
+    markers.push(mobj);
+    if (wasCreated) {
+        marker.openPopup();
+    }
 }
 
 map.on('popupopen', function (e) {
     for (const mobj of markers) {
-        if (m.marker === e.popup._source) {
+        if (mobj.marker === e.popup._source) {
 
             popUpOpens(mobj);
-        }}
+        }
+    }
     console.log("popup");
 
 
@@ -201,14 +214,15 @@ function createEvent() {
         let event = {
             description: $('#descriptionEventForm').val(),
             category: {
-                id: $('#sportEventForm').find(":selected").val()
+                id: $('#sportEventForm').find(":selected").val(),
+                title: $('#sportEventForm').find(":selected").text() // id doesn't suffice since the returned json wouldn't contain the title.
             },
             creator: {
                 id: myId
             },
 
             date: $('#dateEventForm').val(),
-            requestedBuddies: $('#amoutBuddiesEventForm').val(),
+            nrOfPlayers: $('#amoutBuddiesEventForm').val(),
             coordinateX: $("#whereLatEventForm").val(),
             coordinateY: $("#whereLngEventForm").val()
 
@@ -222,9 +236,10 @@ function createEvent() {
             contentType: "application/json",
             dataType: 'json'
         }).done(msg => {
-            console.log(msg);
-            $('#createEventModal').modal('toggle');
-            addMarkerToMap(event);
+
+            addMarkerToMap(event, true);
+            map.removeLayer(createEventPopupMarker);
+
         }).catch(err => {
             console.log(err);
         });
