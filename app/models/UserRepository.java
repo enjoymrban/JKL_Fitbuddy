@@ -4,6 +4,7 @@ import play.db.jpa.JPAApi;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.function.Function;
@@ -46,11 +47,15 @@ public class UserRepository {
         return supplyAsync(() -> wrap(em -> remove(em, id)));
     }
 
+    //get one user object
+    public User findOneUser(Long id) { return wrap(em -> find(em, id)); }
+
 
 
     private User find(EntityManager em, Long id) {
         return em.find(User.class, id);
     }
+
 
 
 

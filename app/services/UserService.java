@@ -49,4 +49,7 @@ public interface UserService {
      * @return updated user
      */
     CompletionStage<User> change(final User changeUser);
+
+    //Get one user from entity manager
+    User getUserFromId (final Long id);
 }

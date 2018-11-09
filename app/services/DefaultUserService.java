@@ -40,5 +40,8 @@ public class DefaultUserService implements UserService{
             return userRepository.change(changeUser);
         }
 
+        @Override
+        public User getUserFromId(Long id){return userRepository.findOneUser(id);}
+
 
 }
