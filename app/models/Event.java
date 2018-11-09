@@ -24,8 +24,8 @@ public class Event {
     private String description;
     private String date;
     private int nrOfPlayers;
-    private long coordinateX;
-    private long coordinateY;
+    private double coordinateX;
+    private double coordinateY;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -77,19 +77,19 @@ public class Event {
         this.nrOfPlayers = nrOfPlayers;
     }
 
-    public long getCoordinateX() {
+    public double getCoordinateX() {
         return coordinateX;
     }
 
-    public void setCoordinateX(long coordinateX) {
+    public void setCoordinateX(double coordinateX) {
         this.coordinateX = coordinateX;
     }
 
-    public long getCoordinateY() {
+    public double getCoordinateY() {
         return coordinateY;
     }
 
-    public void setCoordinateY(long coordinateY) {
+    public void setCoordinateY(double coordinateY) {
         this.coordinateY = coordinateY;
     }
 
