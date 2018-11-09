@@ -106,3 +106,12 @@ html, body {
 }
 
 
+/* Index */
+.popupclickable{
+    cursor: pointer;
+}
+
+div[id^="popupInfoLarge"]{
+    display: none;
+}
+

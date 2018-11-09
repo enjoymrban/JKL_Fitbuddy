@@ -107,7 +107,9 @@ map.on('zoom move', function () {
             let {lat, lng} = mobj.marker._latlng;
             if (_northEast.lat > lat && lat > _southWest.lat && _northEast.lng > lng && lng > _southWest.lng) {
                 marker.openPopup();
-                popUpOpens(eventId);
+                popUpOpens(mobj);
+
+
 
             }
         }
@@ -115,50 +117,26 @@ map.on('zoom move', function () {
 });
 
 
-function popUpOpens(markerId) {
-    let event = "";
-    $.ajax({
-        url: url + "/api/event",
-        type: "GET",
-        dataType: "json"
-    }).done((events) => {
-        for (const e of events) {
-            if (e.id === markerId) {
-                event = e;
-            }
-        }
-        let {interested, creator} = event;
+function popUpOpens(m) {
 
 
-        let interestedInEvent = $(`#interestedInEvent${markerId}`);
+            $('#popupInfoShort' + m.eventId).click(() => {
+                $.ajax({
+                    url: url + "/api/event/" + m.eventId,
+                    type: "GET",
+                    dataType: "json"
+                }).then((event) => {
+                    let {id,description, date, creator} = event;
+                    let popupInfoLarge = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b></p>`
+                    $('#popupInfoLarge'+ id).empty().append(popupInfoLarge).show();
+
+                }).catch(err => {
+                    console.log(err)
+                })
 
 
-        if (creator === "me") {
-            interestedInEvent.prop("disabled", true);
 
-        } else if (interested.indexOf("me") !== -1) {
-            interestedInEvent.text("I'm not longer interested");
-        }
-
-        interestedInEvent.click(() => {
-
-            let eventIndex = events.indexOf(event);
-            console.log(eventIndex);
-            let amIInterested = events[eventIndex].interested.indexOf("me");
-
-            if (events[eventIndex].id === markerId && amIInterested === -1) {
-                events[eventIndex].interested.push("me");
-                /*sessionStorage*/
-                saveEvents(events);
-
-                interestedInEvent.text("I'm not longer interested");
-            } else if (events[eventIndex].id === markerId && amIInterested !== -1) {
-
-                event.interested.splice(amIInterested, 1);
-                interestedInEvent.text("I'm interested!");
-            }
-        })
-    });
+            });
 
 
 
@@ -184,16 +162,18 @@ function placeEventsOnMap() {
 }
 
 function addMarkerToMap(event) {
-    let {id, sport, nrOfPlayers, interested, coordinateX, coordinateY} = event;
+    let {id, category, nrOfPlayers, coordinateX, coordinateY} = event;
+    let {title} = category;
 
 
     let marker = L.marker([coordinateX, coordinateY]);
 
-    marker.bindPopup(`<p>Sport: <b>${sport}</b> | Requested buddies: <b>${nrOfPlayers}</b></p> <button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`, {
+    marker.bindPopup(`<div class="popupclickable" id="popupInfoShort${id}"><p>Sport: <b>${title}</b> | Requested buddies: <b>${nrOfPlayers}</b></p> </div><div class="popupclickable" id="popupInfoLarge${id}"></div>`, {
         closeOnClick: false,
         autoClose: false,
         autoPan: false
     }).openPopup();
+//<button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>
     marker.on('click', () => {
         popUpOpens(id);
     });
@@ -202,6 +182,17 @@ function addMarkerToMap(event) {
 
 
 }
+
+map.on('popupopen', function (e) {
+    for (const mobj of markers) {
+        if (m.marker === e.popup._source) {
+
+            popUpOpens(mobj);
+        }}
+    console.log("popup");
+
+
+});
 
 
 function createEvent() {
@@ -226,22 +217,17 @@ function createEvent() {
         $.ajax({
 
             type: "POST",
-            url: url+"/api/event",
+            url: url + "/api/event",
             data: JSON.stringify(event),
             contentType: "application/json",
             dataType: 'json'
-        }).done(msg =>{
+        }).done(msg => {
             console.log(msg);
             $('#createEventModal').modal('toggle');
             addMarkerToMap(event);
-        }).catch(err =>{
+        }).catch(err => {
             console.log(err);
         });
-
-
-
-
-
 
 
     });

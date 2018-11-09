@@ -12,8 +12,8 @@ let myProfile = "";
 
 
 $().ready(() => {
-    fillFavSportsSelect();
     fillProfileForm();
+
 
 
 
@@ -44,7 +44,7 @@ $().ready(() => {
             url: url+"/api/user/"+myId,
             data: JSON.stringify(userToUpdate),
             contentType: "application/json",
-            dataType: 'json'
+
         }).done(msg =>{
             $("#sentSuccess").show();
             $("#sentDanger").hide();
@@ -79,11 +79,9 @@ function fillFavSportsSelect(){
             selectFavoriteSports.val(myFavorites);
             selectFavoriteSports.selectpicker("refresh");
 
-        })
+        });
+
     });
-
-
-
 }
 
 
@@ -101,7 +99,7 @@ function fillProfileForm(){
         for(const c of json.categories){
             myFavorites.push(c.id);
         }
-
+        fillFavSportsSelect();
     });
 }
 
