@@ -1,7 +1,6 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.Event;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
@@ -9,8 +8,10 @@ import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 import services.EventService;
+import services.UserService;
 
 import javax.inject.Inject;
+import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
 
@@ -19,17 +20,20 @@ public class EventController extends Controller {
 
     private final EventService eventService;
     private final HttpExecutionContext ec;
-    private JsonNode myjson;
+    private final UserService userService;
+    private final UserIdHandler userIdHandler;
 
     @Inject
-    public EventController(EventService eventService, HttpExecutionContext ec) {
+    public EventController(EventService eventService, HttpExecutionContext ec, UserService userService) {
         this.eventService = eventService;
         this.ec = ec;
+        this.userService = userService;
+        this.userIdHandler = new UserIdHandler(userService);
     }
 
     public CompletionStage<Result> getOneEvent(Long id) {
         return eventService.get(id).thenApplyAsync(event -> {
-            return ok(Json.toJson(event));
+            return ok(userIdHandler.getCustomJsonFromEvent(event));
         }, ec.current());
     }
     public CompletionStage<Result> getAllEvents() {
@@ -48,14 +52,11 @@ public class EventController extends Controller {
         }, ec.current());
     }
 
-    public CompletionStage<Result> changeEvent(Long id) {
+    public CompletionStage<Result> changeEvent(Long id) throws IOException {
         final JsonNode jsonRequest = request().body().asJson();
-        final Event eventToChange = Json.fromJson(jsonRequest, Event.class);
-        eventToChange.setId(id);
-        return eventService.change(eventToChange).thenApplyAsync(event -> {
-            return ok(Json.toJson(event));
+        return eventService.change(userIdHandler.getCustomEventFromJson(jsonRequest, id)).thenApplyAsync(event -> {
+            return ok("Event updated!");
         }, ec.current());
-
     }
 
     public CompletionStage<Result> deleteEvent(Long id) {

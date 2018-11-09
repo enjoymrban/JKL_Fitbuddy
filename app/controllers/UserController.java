@@ -17,14 +17,14 @@ import java.util.stream.Collectors;
 public class UserController extends Controller {
 
     private final UserService userService;
-    private final UserIdHandler userIdHandler;
     private final HttpExecutionContext ec;
+    private final UserIdHandler userIdHandler;
 
     @Inject
     public UserController(UserService userService, HttpExecutionContext ec) {
         this.userService = userService;
-        this.ec = ec;
         this.userIdHandler = new UserIdHandler(userService);
+        this.ec = ec;
     }
 
     public CompletionStage<Result> getOneUser(Long id) {

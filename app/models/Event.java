@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class Event {
             name = "Interested",
             joinColumns = @JoinColumn(name = "event_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"))
+    @JsonIgnore
     private List<User> interested = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -38,6 +40,7 @@ public class Event {
             name = "Participants",
             joinColumns = @JoinColumn(name = "event_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"))
+    @JsonIgnore
     private List<User> participants = new ArrayList<>();
 
     public long getId() { return id; }

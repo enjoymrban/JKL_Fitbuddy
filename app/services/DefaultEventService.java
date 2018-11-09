@@ -15,9 +15,7 @@ public class DefaultEventService implements EventService{
         }
 
         @Override
-        public CompletionStage<Event> get(Long id) {
-            return eventRepository.find(id);
-        }
+        public CompletionStage<Event> get(Long id) { return eventRepository.find(id); }
 
         @Override
         public CompletionStage<Stream<Event>> getAll() {

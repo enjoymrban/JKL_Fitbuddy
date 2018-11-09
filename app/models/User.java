@@ -1,8 +1,6 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +32,6 @@ public class User {
             name = "Buddies",
             joinColumns = @JoinColumn(name = "fitUser_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "buddy_id", referencedColumnName = "id"))
-    //@JsonSerialize(using = CustomListSerializer.class)
-    //@JsonDeserialize(using = CustomListDeserializer.class)
     @JsonIgnore
     private List<User> buddies;
 
