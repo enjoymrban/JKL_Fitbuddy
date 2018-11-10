@@ -51,7 +51,7 @@ html, body {
 
 
 /* Index */
-.popupclickable{
+.clickable{
     cursor: pointer;
 }
 

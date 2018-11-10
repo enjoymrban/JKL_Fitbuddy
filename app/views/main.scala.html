@@ -11,16 +11,19 @@
 <html lang="en">
     <head>
         @* Here's where we render the page title `String`. *@
-    <title>@title</title>
-
-    <meta charset="uft-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("lib/bootstrap/css/bootstrap.min.css")">
+        <title>@title</title>
+        <meta charset="uft-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        @*Bootstrap*@
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("lib/bootstrap/css/bootstrap.min.css")">
+        @*Plugins*@
         @links
-    <link rel="stylesheet" href="@routes.Assets.versioned("lib/material-design-icons/material-icons.css")"/>
-    <link rel="stylesheet" href="@routes.Assets.versioned("lib/font-awesome/css/all.css")"/>
-    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-    <link rel="shortcut icon" type="image/svg" href="@routes.Assets.versioned("images/favicon.ico")">
+        @*Icons*@
+        <link rel="stylesheet" href="@routes.Assets.versioned("lib/material-design-icons/material-icons.css")"/>
+        <link rel="stylesheet" href="@routes.Assets.versioned("lib/font-awesome/css/all.css")"/>
+        @*Custom*@
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/svg" href="@routes.Assets.versioned("images/favicon.ico")">
     </head>
     <body>
 
@@ -186,16 +189,16 @@
                                 <input id="amoutBuddiesEventForm" type="number" class="form-control" aria-label="EventAmountBuddies" min="1" value="1" required>
                             </div>
                             @*<div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <i title="Latitude" class="fa fa-location-arrow prefix grey-text input-group-text"></i>
-                                </div>
-                                <input id="whereLatEventForm" type="text" class="form-control" aria-label="whereLatEventForm" required>
+                            <div class="input-group-prepend">
+                            <i title="Latitude" class="fa fa-location-arrow prefix grey-text input-group-text"></i>
+                            </div>
+                            <input id="whereLatEventForm" type="text" class="form-control" aria-label="whereLatEventForm" required>
                             </div>
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <i title="Longitude" class="fa fa-location-arrow prefix grey-text input-group-text"></i>
-                                </div>
-                                <input id="whereLngEventForm" type="text" class="form-control" aria-label="whereLngEventForm" required>
+                            <div class="input-group-prepend">
+                            <i title="Longitude" class="fa fa-location-arrow prefix grey-text input-group-text"></i>
+                            </div>
+                            <input id="whereLngEventForm" type="text" class="form-control" aria-label="whereLngEventForm" required>
                             </div>*@
 
                         </div>

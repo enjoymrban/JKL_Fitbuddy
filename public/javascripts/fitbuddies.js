@@ -26,42 +26,53 @@ function fillBuddyTable() {
         type: "GET",
         dataType: "json"
     }).done(me => {
+        console.log(me);
         $.each(me.buddies, (key, value) => {
-            addBuddyToList(value);
-        });
+            $.ajax({
+                url: url+"/api/user/"+value,
+                type: "GET",
+                dataType: "json"
+            }).done((json) => {
+                    addBuddyToList(json);
 
+            }).catch(err => console.log(err));
+        });
     });
 }
 
 function addBuddyToList(buddy) {
+    let {fullName} = buddy;
+
     let rowCount = $("#myBuddyTable > tr").length + 1;
-    let tableTemplate = `<tr><th scope="row">${rowCount}</th><td id="buddy${rowCount}">${buddy.fullName}</td><td><i id="remove${buddy.id}" class="fa fa-times"></i></td></tr>`;
+    let tableTemplate = `<tr><th scope="row">${rowCount}</th><td id="buddy${rowCount}">${fullName}</td><td><i id="remove${buddy.id}" class="fa fa-times clickable"></i></td></tr>`;
     $("#myBuddyTable").append(tableTemplate);
 
     $(`#remove${buddy.id}`).click(() => {
         $.ajax({
             url: url + "/api/user/" + myId,
             type: "GET",
-            dataType: "json"
+
         }).done(me => {
             $.each(me.buddies, (key, value) => {
-                if (buddy.id === value.id) {
+                if (buddy.id === value) {
                     me.buddies.splice(key, 1);
+
+                    $.ajax({
+                        url: url + "/api/user/" + myId,
+                        type: "PUT",
+                        data: JSON.stringify(me),
+                        contentType: "application/json",
+
+                    }).done(info => {
+                        console.log(info);
+                        fillBuddyTable();
+
+                        //randomBuddy();
+                    }).catch(err => console.log(err));
                 }
-                $.ajax({
-                    url: url + "/api/user/" + myId,
-                    type: "PUT",
-                    data: JSON.stringify(me),
-                    contentType: "application/json",
-                    dataType: 'json'
-                }).done(me => {
-
-                    fillBuddyTable();
-                    randomBuddy();
-                });
-
 
             });
+
         });
     });
 

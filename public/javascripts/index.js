@@ -65,6 +65,7 @@ function createMap(myLatitude, myLongitude) {
 // Leaflet Map on index page
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZW5qb3ltcmJhbiIsImEiOiJjam5hY3EwcDQwZ2hiM3BwYWQ2dWt4a2x1In0.nlX1GeaPE2DQn3aZH0IJaA', {
         maxZoom: 18,
+        minZoom: 4,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox.streets'
     }).addTo(map);
@@ -93,13 +94,13 @@ function placeEventsOnMap() {
 }
 
 
-function addMarkerToMap(event, wasCreated = false) {
+function addMarkerToMap(event, wasNewlyCreated = false) {
     let {id, category, nrOfPlayers, coordinateX, coordinateY} = event;
     let {title} = category;
 
 
     let marker = L.marker([coordinateX, coordinateY]);
-    marker.bindPopup(`<div class="popupclickable" id="popupInfoShort${id}"><p>Sport: <b>${title}</b> | Requested buddies: <b>${nrOfPlayers}</b></p></div><div class="popupclickable" id="popupInfoLarge${id}"></div>`, {
+    marker.bindPopup(`<div class="clickable" id="popupInfo${id}"><div id="popupInfoShort${id}"><p>Sport: <b>${title}</b> | Requested buddies: <b>${nrOfPlayers}</b></p></div><div id="popupInfoLarge${id}"></div></div>`, {
         closeOnClick: false,
         autoClose: false,
         autoPan: false,
@@ -115,7 +116,7 @@ function addMarkerToMap(event, wasCreated = false) {
 
     markersClusterGroup.addLayer(marker);
     markers.push(mobj);
-    if (wasCreated) {
+    if (wasNewlyCreated) {
         marker.openPopup();
     }
 }
@@ -133,7 +134,11 @@ map.on('click', function (e) {
 
     createEventPopupMarker = L.marker(popLocation);
     createEventPopupMarker.addTo(map);
-    createEventPopupMarker.bindPopup(`<div><button id="createEventButton${id}" class="btn btn-default" type="button">Create event here!</button></p></div>`);
+    createEventPopupMarker.bindPopup(`<div><button id="createEventButton${id}" class="btn btn-default" type="button">Create event here!</button></p></div>`, {
+        closeButton: false,
+        closeOnEscapeKey: false
+
+    });
     createEventPopupMarker.openPopup();
 
 
@@ -185,60 +190,60 @@ map.on('popupopen', function (e) {
 function popUpOpens(mobj) {
 
 
-        $.ajax({
-            url: url + "/api/event/" + mobj.eventId,
-            type: "GET",
-            dataType: "json"
-        }).done((event) => {
-            let {id, description, date, creator, interested} = event;
-            $('#popupInfoLarge' + id).empty();
+    $.ajax({
+        url: url + "/api/event/" + mobj.eventId,
+        type: "GET",
+        dataType: "json"
+    }).done((event) => {
+        let {id, description, date, creator, interested, nrOfPlayers, participants} = event;
+        $('#popupInfoLarge' + id).empty();
 
-            if (creator.id === myId) {
-                let popupInfoLargeCreator = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b></p>`;
-                $('#popupInfoLarge' + id).append(popupInfoLargeCreator);
-                return;
-            } else if (interested.indexOf(myId) !== -1) {
-                let popupInfoLargeInterested = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" disabled>I'm interested!</button>`;
-                $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
-            } else {
-                let popupInfoLargeInterested = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`;
-                $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
-            }
+        if (creator.id === myId) {
+            let popupInfoLargeCreator = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b> | Spots open: <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p>`;
+            $('#popupInfoLarge' + id).append(popupInfoLargeCreator);
+            return;
+        } else if (interested.indexOf(myId) !== -1) {
+            let popupInfoLargeInterested = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b>| Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" disabled>I'm interested!</button>`;
+            $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
+        } else {
+            let popupInfoLargeInterested = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b>| Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`;
+            $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
+        }
 
-            let updatedInterestedArray = event.interested;
-            updatedInterestedArray.push(myId);
-            let eventUpdated = {
-                description: event.description,
-                category: event.category,
-                creator: event.creator,
-                date: event.date,
-                nrOfPlayers: event.nrOfPlayers,
-                coordinateX: event.coordinateX,
-                coordinateY: event.coordinateY,
-                interested: updatedInterestedArray,
-                participants: event.participants
-            };
+        let updatedInterestedArray = event.interested;
+        updatedInterestedArray.push(myId);
+        let eventUpdated = {
+            description: event.description,
+            category: event.category,
+            creator: event.creator,
+            date: event.date,
+            nrOfPlayers: event.nrOfPlayers,
+            coordinateX: event.coordinateX,
+            coordinateY: event.coordinateY,
+            interested: updatedInterestedArray,
+            participants: event.participants
+        };
 
-            $('#popupInfoLarge' + id).unbind();
-            $('#popupInfoLarge' + id).click(() => {
+        $('#interestedInEvent' + id).unbind();
+        $('#interestedInEvent' + id).click(() => {
 
-                $.ajax({
-                    type: "PUT",
-                    url: url + "/api/event/" + mobj.eventId,
-                    data: JSON.stringify(eventUpdated),
-                    contentType: "application/json",
-                }).done(msg => {
-                    console.log("");
-                    popUpOpens(mobj);
-                }).catch(err => {
-                    console.log(err);
-                });
-            })
-        }).catch(err => {
-            console.log(err)
-        });
-    $('#popupInfoShort' + mobj.eventId).unbind();
-    $('#popupInfoShort' + mobj.eventId).click(() => {
+            $.ajax({
+                type: "PUT",
+                url: url + "/api/event/" + mobj.eventId,
+                data: JSON.stringify(eventUpdated),
+                contentType: "application/json",
+            }).done(msg => {
+                console.log("I'm interested in this event");
+                popUpOpens(mobj);
+            }).catch(err => {
+                console.log(err);
+            });
+        })
+    }).catch(err => {
+        console.log(err)
+    });
+    $('#popupInfo' + mobj.eventId).unbind();
+    $('#popupInfo' + mobj.eventId).click(() => {
         console.log("show large info div");
         $('#popupInfoLarge' + mobj.eventId).show();
 
