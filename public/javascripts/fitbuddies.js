@@ -3,11 +3,14 @@ $().ready(() => {
     randomBuddy();
 
     $('#addBuddy').click(() => {
-        let buddyToAdd = $("#buddyName").text();
+        let buddyToAddId = $(".card").attr("id");
 
-        if (buddyToAdd !== "NO FURTHER OPTIONS") {
-            addBuddyToList(buddyToAdd);
-            randomBuddy();
+        if (buddyToAddId !== "NO_FURTHER_OPTIONS") {
+            getUser(buddyToAddId).done((buddy)=>{
+                addBuddyToList(buddy);
+                randomBuddy();
+            });
+
 
         }
     });
@@ -20,22 +23,14 @@ $().ready(() => {
 });
 
 function fillBuddyTable() {
-    $('#myBuddyTable').empty();
-    $.ajax({
-        url: url + "/api/user/" + myId,
-        type: "GET",
-        dataType: "json"
-    }).done(me => {
-        console.log(me);
-        $.each(me.buddies, (key, value) => {
-            $.ajax({
-                url: url+"/api/user/"+value,
-                type: "GET",
-                dataType: "json"
-            }).done((json) => {
-                    addBuddyToList(json);
 
+    $('#myBuddyTable').empty();
+    getUser(myId).done((me) => {
+        $.each(me.buddies, (key, value) => {
+            getUser(value).done((json) => {
+                addBuddyToList(json);
             }).catch(err => console.log(err));
+
         });
     });
 }
@@ -48,11 +43,8 @@ function addBuddyToList(buddy) {
     $("#myBuddyTable").append(tableTemplate);
 
     $(`#remove${buddy.id}`).click(() => {
-        $.ajax({
-            url: url + "/api/user/" + myId,
-            type: "GET",
 
-        }).done(me => {
+        getUser(myId).done((me)=>{
             $.each(me.buddies, (key, value) => {
                 if (buddy.id === value) {
                     me.buddies.splice(key, 1);
@@ -70,32 +62,52 @@ function addBuddyToList(buddy) {
                         //randomBuddy();
                     }).catch(err => console.log(err));
                 }
-
             });
-
         });
     });
-
 }
 
 
+function randomBuddy(buddyId = myId) {
+
+    getUser(myId).done((me)=>{
+        getUsers().done((users)=>{
+            try {
+                if (me.buddies.indexOf(buddyId) === -1 && buddyId !== myId) {
+                    for(const u of users){
+                        if(u.id === buddyId){
+                            getUser(buddyId).done((buddy)=>{
+                                $("#buddyName").text(buddy.fullName);
+
+                                // TODO id of the random Buddy is placed as the id of the card.. change eventually
+                                $(".card").attr("id",buddy.id);
+                                $("#buddyDescription").text(buddy.description);
+                                $("#buddyImg").attr("src",`${buddy.avatarUrl}`);
+                                $("#buddyImg").on('error',()=>{
+                                    $("#buddyImg").attr("src",`/assets/images/whitesmile.png`);
+                                });
+                                return;
+                            });
+
+
+                        }
+                    }
+
+                } else {
+                    let randomIndex = Math.floor((Math.random() * users.length));
+                    return randomBuddy(users[randomIndex].id);
+                }
+            } catch (e) {
+                $(".card").attr("id","NO_FURTHER_OPTIONS");
+                $("#buddyDescription").text();
+                $("#buddyImg").attr("src",`NO_FURTHER_OPTIONS`);
+                return;
+            }
+        })
+    });
 
 
 
-function randomBuddy(buddy = "me") {
 
-    try {
-        if (mybuddies.indexOf(buddy) === -1 && buddy !== "me") {
-            $("#buddyName").text(buddy);
-            return;
-
-        } else {
-            let randomIndex = Math.floor((Math.random() * buddies.length));
-            return randomBuddy(buddies[randomIndex]);
-        }
-    } catch (e) {
-        $("#buddyName").text("NO FURTHER OPTIONS");
-        return;
-    }
 
 }

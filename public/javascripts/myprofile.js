@@ -15,8 +15,6 @@ $().ready(() => {
     fillProfileForm();
 
 
-
-
     sendProfileChangesB.on('click', ()=>{
         let categoriesToUpdate = [];
 
@@ -38,14 +36,7 @@ $().ready(() => {
 
         };
 
-        $.ajax({
-
-            type: "PUT",
-            url: url+"/api/user/"+myId,
-            data: JSON.stringify(userToUpdate),
-            contentType: "application/json",
-
-        }).done(msg =>{
+        updateUser(myId,userToUpdate).done(msg =>{
             $("#sentSuccess").show();
             $("#sentDanger").hide();
 
@@ -86,11 +77,7 @@ function fillFavSportsSelect(){
 
 
 function fillProfileForm(){
-    $.ajax({
-        url: url + "/api/user/"+myId,
-        type: "GET",
-        dataType: "json"
-    }).done((json) => {
+    getUser(myId).done((json) => {
         myProfile = json;
         fullName.attr('placeholder',json.fullName);
         email.attr('placeholder',json.email);

@@ -84,6 +84,9 @@ INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coor
 INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (1, 4, 'Runden', '16.09.2018', '4', '47.645878787', '9.216545455');
 INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (4, 2, 'Runden', '16.09.2018', '4', '47.597818787', '9.55334545');
 
+
+
+
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (1,1);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (2,2);
 INSERT INTO Favorite_Categories (fitUser_id, category_id) VALUES (3,3);

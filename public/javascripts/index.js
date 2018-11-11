@@ -190,11 +190,7 @@ map.on('popupopen', function (e) {
 function popUpOpens(mobj) {
 
 
-    $.ajax({
-        url: url + "/api/event/" + mobj.eventId,
-        type: "GET",
-        dataType: "json"
-    }).done((event) => {
+    getEvent(mobj.eventId).done((event) => {
         let {id, description, date, creator, interested, nrOfPlayers, participants} = event;
         $('#popupInfoLarge' + id).empty();
 
