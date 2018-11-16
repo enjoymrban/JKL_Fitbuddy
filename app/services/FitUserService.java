@@ -7,8 +7,8 @@ import java.util.concurrent.CompletionStage;
 import java.util.stream.Stream;
 
 
-@ImplementedBy(DefaultUserService.class)
-public interface UserService {
+@ImplementedBy(DefaultFitUserService.class)
+public interface FitUserService {
 
     /**
      * Returns

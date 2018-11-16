@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.Event;
 import models.User;
 import play.libs.Json;
-import services.UserService;
+import services.FitUserService;
 
 import javax.inject.Inject;
 import java.io.IOException;
@@ -19,11 +19,11 @@ import java.util.Set;
 public  class UserIdHandler{
 
     private ObjectMapper mapper = new ObjectMapper();
-    private final UserService userService;
+    private final FitUserService fitUserService;
 
 
     @Inject
-    public UserIdHandler(UserService userService) { this.userService = userService; }
+    public UserIdHandler(FitUserService fitUserService) { this.fitUserService = fitUserService; }
 
 
     public JsonNode getCustomJsonFromUser(User user){
@@ -77,7 +77,7 @@ public  class UserIdHandler{
         if (budJson.isArray()) {
             for (JsonNode u : budJson) {
                 //insert User to Arraylist
-                User buddie = userService.getUserFromId(u.asLong());
+                User buddie = fitUserService.getUserFromId(u.asLong());
                 buddies.add(buddie);
                 System.out.println(buddie.getFullName());
             }
@@ -97,13 +97,13 @@ public  class UserIdHandler{
         final JsonNode paJson = mapper.readTree(jsonString).get("participants");
         if (inJson.isArray()) {
             for (JsonNode u : inJson) {
-                User interested = userService.getUserFromId(u.asLong());
+                User interested = fitUserService.getUserFromId(u.asLong());
                 in.add(interested);
             }
         }
         if (paJson.isArray()) {
             for (JsonNode u : paJson) {
-                User participant = userService.getUserFromId(u.asLong());
+                User participant = fitUserService.getUserFromId(u.asLong());
                 pa.add(participant);
             }
         }

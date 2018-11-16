@@ -9,7 +9,7 @@ scalaVersion := "2.12.6"
 
 libraryDependencies += guice
 
-
+resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies ++= Seq(
   // for bootstrap
@@ -36,7 +36,12 @@ libraryDependencies ++= Seq(
     "com.h2database" % "h2" % "1.4.192",
   
   // PostgreSQL
-  "org.postgresql" % "postgresql" % "42.2.5"
+  "org.postgresql" % "postgresql" % "42.2.5",
+  
+  //SecureSocial
+    "ws.securesocial" %% "securesocial" % "master-SNAPSHOT",
+    javaCore,
+    ehcache
   
   )
 

@@ -7,11 +7,11 @@ import javax.inject.Inject;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Stream;
 
-public class DefaultUserService implements UserService{
+public class DefaultFitUserService implements FitUserService {
         private UserRepository userRepository;
 
         @Inject
-        public DefaultUserService(UserRepository userRepository) {
+        public DefaultFitUserService(UserRepository userRepository) {
             this.userRepository = userRepository;
         }
 

@@ -7,7 +7,7 @@ import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
-import services.UserService;
+import services.FitUserService;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
@@ -16,25 +16,25 @@ import java.util.stream.Collectors;
 
 public class UserController extends Controller {
 
-    private final UserService userService;
+    private final FitUserService fitUserService;
     private final HttpExecutionContext ec;
     private final UserIdHandler userIdHandler;
 
     @Inject
-    public UserController(UserService userService, HttpExecutionContext ec) {
-        this.userService = userService;
-        this.userIdHandler = new UserIdHandler(userService);
+    public UserController(FitUserService fitUserService, HttpExecutionContext ec) {
+        this.fitUserService = fitUserService;
+        this.userIdHandler = new UserIdHandler(fitUserService);
         this.ec = ec;
     }
 
     public CompletionStage<Result> getOneUser(Long id) {
-        return userService.get(id).thenApplyAsync(user -> {
+        return fitUserService.get(id).thenApplyAsync(user -> {
             return ok(userIdHandler.getCustomJsonFromUser(user));
         }, ec.current());
     }
 
     public CompletionStage<Result> getAllUsers() {
-        return userService.getAll().thenApplyAsync(personStream -> {
+        return fitUserService.getAll().thenApplyAsync(personStream -> {
             return ok(Json.toJson(personStream.collect(Collectors.toList())));
         }, ec.current());
     }
@@ -44,20 +44,20 @@ public class UserController extends Controller {
         final JsonNode jsonRequest = request().body().asJson();
         final User userToAdd = Json.fromJson(jsonRequest, User.class);
 
-        return userService.add(userToAdd).thenApplyAsync(user -> {
+        return fitUserService.add(userToAdd).thenApplyAsync(user -> {
             return ok(Json.toJson(user));
         }, ec.current());
     }
 
     public CompletionStage<Result> changeUser(Long id) throws IOException {
         final JsonNode jsonRequest = request().body().asJson();
-        return userService.change(userIdHandler.getCustomUserFromJson(jsonRequest, id)).thenApplyAsync(user -> {
+        return fitUserService.change(userIdHandler.getCustomUserFromJson(jsonRequest, id)).thenApplyAsync(user -> {
             return ok("User updated");
         }, ec.current());
     }
 
     public CompletionStage<Result> deleteUser(Long id) {
-        return userService.delete(id).thenApplyAsync(removed -> {
+        return fitUserService.delete(id).thenApplyAsync(removed -> {
             return removed ? ok() : internalServerError();
         }, ec.current());
     }

@@ -29,6 +29,17 @@ POST    /api/category            controllers.CategoryController.addCategory()
 PUT     /api/category/:id        controllers.CategoryController.updateCategory(id: Long)
 DELETE  /api/category/:id        controllers.CategoryController.deleteCategory(id: Long)
 
+# SecureSocial
+#GET        /                    @controllers.Application.index
+GET        /userAware           @controllers.Application.userAware
+GET        /only-twitter        @controllers.Application.onlyTwitter
+GET        /link-result         @controllers.Application.linkResult
+GET        /current-user        @controllers.Application.currentUser
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file        controllers.Assets.at(path="/public", file)
+->         /auth                securesocial.Routes
+
 
 
 

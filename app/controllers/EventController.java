@@ -8,7 +8,7 @@ import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 import services.EventService;
-import services.UserService;
+import services.FitUserService;
 
 import javax.inject.Inject;
 import java.io.IOException;
@@ -20,15 +20,15 @@ public class EventController extends Controller {
 
     private final EventService eventService;
     private final HttpExecutionContext ec;
-    private final UserService userService;
+    private final FitUserService fitUserService;
     private final UserIdHandler userIdHandler;
 
     @Inject
-    public EventController(EventService eventService, HttpExecutionContext ec, UserService userService) {
+    public EventController(EventService eventService, HttpExecutionContext ec, FitUserService fitUserService) {
         this.eventService = eventService;
         this.ec = ec;
-        this.userService = userService;
-        this.userIdHandler = new UserIdHandler(userService);
+        this.fitUserService = fitUserService;
+        this.userIdHandler = new UserIdHandler(fitUserService);
     }
 
     public CompletionStage<Result> getOneEvent(Long id) {
