@@ -13,7 +13,8 @@ create table fitUser (
   lastName VARCHAR(20),
   fullName VARCHAR(40),
   email VARCHAR(30),
-  avatarUrl VARCHAR(100)
+  avatarUrl VARCHAR(100),
+  authUserId VARCHAR(100)
 );
 
  create table event (
@@ -70,10 +71,10 @@ INSERT INTO category (title) VALUES ('Tennis');
 INSERT INTO category (title) VALUES ('Jogging');
 INSERT INTO category (title) VALUES ('Sonstiges');
 
-INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Ehemalige Miss Ostschweiz', 'Silvio', 'Jaeger', 'Silvio Jäger', 'silvio.jaeger@ntb.ch', 'hallihallo/katze.png');
-INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Bester Basketballer unserer Zeit', 'LeBron', 'James', 'LeBron James', 'lbj@lakers23.nba', 'getdunked.png');
-INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Bester Basler Export', 'Roger', 'Federer', 'Roger Federer', 'fedi@ch', 'racketrocket.png');
-INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl) VALUES ('Fussballer', 'Mo', 'Salah', 'Mo Salah', 'fasdf@ch', 'rertzaocket.png');
+INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl, authUserId) VALUES ('Ehemalige Miss Ostschweiz', 'Silvio', 'Jaeger', 'Silvio Jäger', 'silvio.jaeger@ntb.ch', 'hallihallo/katze.png', '029387450923475');
+INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl, authUserId) VALUES ('Bester Basketballer unserer Zeit', 'LeBron', 'James', 'LeBron James', 'lbj@lakers23.nba', 'getdunked.png', '654321687');
+INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl, authUserId) VALUES ('Bester Basler Export', 'Roger', 'Federer', 'Roger Federer', 'fedi@ch', 'racketrocket.png', '632318664554645');
+INSERT INTO fitUser (description, firstName, lastName, fullName, email, avatarUrl, authUserId) VALUES ('Fussballer', 'Mo', 'Salah', 'Mo Salah', 'fasdf@ch', 'rertzaocket.png', '235468654354');
 
 
 INSERT INTO event (category_id, creator_id, description, date, nrOfPlayers, coordinateX, coordinateY) VALUES (1, 3, 'Fussballspielen mit Profis', '12.09.2018', '22', '12.3456789', '98.7654321');

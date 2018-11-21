@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import securesocial.core.BasicProfile;
 
 
 @Entity(name = "fitUser")
@@ -19,6 +20,7 @@ public class User {
     private String fullName;
     private String email;
     private String avatarUrl;
+    private String authUserId;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -46,6 +48,24 @@ public class User {
     @JsonIgnore
     @ManyToMany(fetch=FetchType.EAGER, mappedBy="participants")
     private List<Event> participatingEvent = new ArrayList<>();
+
+    public User() {
+        // standard constructor
+    }
+
+    public User(BasicProfile profile) {
+        //this.providerId = profile.providerId();
+        this.authUserId  = profile.userId();
+        if(profile.firstName().isDefined()) { firstName = profile.firstName().get(); }
+        if(profile.lastName().isDefined())
+            lastName  = profile.lastName().get();
+        if(profile.fullName().isDefined())
+            fullName = profile.fullName().get();
+        if(profile.email().isDefined())
+            email = profile.email().get();
+        if(profile.avatarUrl().isDefined())
+            avatarUrl = profile.avatarUrl().get();
+    }
 
     public long getId() {
         return id;
@@ -136,4 +156,12 @@ public class User {
     }
 
     public void setParticipatingEvent(List<Event> participatingEvent) { this.participatingEvent = participatingEvent; }
+
+    public String getAuthUserId() {
+        return this.authUserId;
+    }
+
+    public void setAuthUserId(String authUserId) {
+        this.authUserId = authUserId;
+    }
 }

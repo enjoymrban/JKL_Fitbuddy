@@ -16,10 +16,10 @@
   */
 package services
 
-import javax.inject.{ Inject, Singleton }
-
+import javax.inject.{Inject, Singleton}
 import akka.actor.ActorSystem
-import play.api.{ Configuration, Environment }
+import models.User
+import play.api.{Configuration, Environment}
 import play.api.cache.AsyncCacheApi
 import play.api.i18n.MessagesApi
 import play.api.libs.mailer.MailerClient
@@ -41,6 +41,6 @@ class MyEnvironment @Inject() (
                                 override val executionContext: ExecutionContext,
                                 override val parsers: PlayBodyParsers,
                                 override val actorSystem: ActorSystem) extends RuntimeEnvironment.Default {
-  type U = DemoUser
+  type U = User
   override val userService: UserService[U] = new InMemoryUserService()
 }
