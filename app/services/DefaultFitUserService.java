@@ -4,25 +4,21 @@ import models.User;
 import models.UserRepository;
 
 import javax.inject.Inject;
+import java.util.List;
 import java.util.concurrent.CompletionStage;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import play.Logger;
-import play.libs.F;
 import securesocial.core.BasicProfile;
 import securesocial.core.PasswordInfo;
 import securesocial.core.services.SaveMode;
 import securesocial.core.java.BaseUserService;
 import securesocial.core.java.Token;
-import securesocial.core.providers.UsernamePasswordProvider;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-
-
-
 
 
 public class DefaultFitUserService extends BaseUserService<User> implements FitUserService {
@@ -73,8 +69,19 @@ public class DefaultFitUserService extends BaseUserService<User> implements FitU
             if (mode == SaveMode.SignUp()) {
                 result = new User(profile);
                 users.put(profile.providerId() + profile.userId(), result);
+                // hier muss geprüft werden, ob user schon in db ist. zurzeit wird immer ein neuer user erstellt
                 userRepository.add(result);
-            } else if (mode == SaveMode.LoggedIn()) { /*
+            } else if (mode == SaveMode.LoggedIn()) {
+                if(logger.isDebugEnabled()){ logger.debug("SaveMode.LoggedIn aufgerufen"); }
+                /*CompletionStage<Stream<User>> userList = userRepository.list();
+                .thenApplyAsync(stream -> {
+                    return stream.collect(Collectors.toList());
+                });
+
+                        .thenApplyAsync(personStream -> {
+                    return personStream.collect(Collectors.toList());
+                });
+
                 for (Iterator<User> it =  users.values().iterator() ; it.hasNext() && result == null ; ) {
                     User user = it.next();
                     if ( user.getAuthUserId().equals(profile.userId()) ) {
@@ -83,8 +90,7 @@ public class DefaultFitUserService extends BaseUserService<User> implements FitU
                         result = user;
                         break;
                     }
-                    }
-                } */
+                }*/
             } else {
                 throw new RuntimeException("Unknown mode");
             }
@@ -98,23 +104,20 @@ public class DefaultFitUserService extends BaseUserService<User> implements FitU
 
         @Override
         public CompletionStage<Token> doSaveToken(Token token) {
-            return null;
+            tokens.put(token.uuid, token);
+            return new CompletableFuture().completedFuture(token);
         }
 
         @Override
         public CompletionStage<BasicProfile> doFind(String providerId, String userId) {
-            if(logger.isDebugEnabled()){
-                logger.debug("Finding user " + userId);
-            }
+            if(logger.isDebugEnabled()){ logger.debug("Finding user " + userId); }
             BasicProfile found = null;
-
             for ( User u: users.values() ) {
                 if ( u.getProviderId().equals(providerId) && u.getAuthUserId().equals(userId) ) {
                     found = u.getProfile();
                     break;
                 }
             }
-
             return new CompletableFuture().completedFuture(found);
         }
 
@@ -154,5 +157,4 @@ public class DefaultFitUserService extends BaseUserService<User> implements FitU
                 }
             }
         }
-
 }

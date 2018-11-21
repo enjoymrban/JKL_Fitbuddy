@@ -17,6 +17,7 @@
 package controllers;
 
 import com.google.inject.Inject;
+import models.User;
 import play.Logger;
 import play.libs.F;
 import play.mvc.Controller;
@@ -69,10 +70,10 @@ public class Application extends Controller {
     */
     @UserAwareAction
     public Result userAware() {
-        DemoUser demoUser = (DemoUser) ctx().args.get(SecureSocial.USER_KEY);
-        String userName ;
+        User demoUser = (User) ctx().args.get(SecureSocial.USER_KEY);
+        String userName;
         if ( demoUser != null ) {
-            BasicProfile user = demoUser.main;
+            BasicProfile user = demoUser.getProfile();
             if ( user.firstName().isDefined() ) {
                 userName = user.firstName().get();
             } else if ( user.fullName().isDefined()) {
@@ -86,9 +87,9 @@ public class Application extends Controller {
         return ok("Hello " + userName + ", you are seeing a public page");
     }
 
-    @SecuredAction(authorization = WithProvider.class, params = {"twitter"})
+    @SecuredAction(authorization = WithProvider.class, params = {"facebook"})
     public Result onlyTwitter() {
-        return ok("You are seeing this because you logged in using Twitter");
+        return ok("You are seeing this because you logged in using Facebook");
     }
 
     @SecuredAction
@@ -106,8 +107,8 @@ public class Application extends Controller {
                 String id;
 
                 if ( maybeUser != null ) {
-                    DemoUser user = (DemoUser) maybeUser;
-                    id = user.main.userId();
+                    User user = (User) maybeUser;
+                    id = user.getAuthUserId();
                 } else {
                     id = "not available. Please log in.";
                 }
