@@ -20,6 +20,7 @@ public class User {
     private String fullName;
     private String email;
     private String avatarUrl;
+    private String providerId;
     private String authUserId;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -49,13 +50,19 @@ public class User {
     @ManyToMany(fetch=FetchType.EAGER, mappedBy="participants")
     private List<Event> participatingEvent = new ArrayList<>();
 
+    // wird nicht in Datenbank gespeichert
+    @Transient
+    @JsonIgnore
+    private BasicProfile profile;
+
     public User() {
         // standard constructor
     }
 
     public User(BasicProfile profile) {
-        //this.providerId = profile.providerId();
+        this.providerId = profile.providerId();
         this.authUserId  = profile.userId();
+        this.profile = profile;
         if(profile.firstName().isDefined()) { firstName = profile.firstName().get(); }
         if(profile.lastName().isDefined())
             lastName  = profile.lastName().get();
@@ -157,11 +164,15 @@ public class User {
 
     public void setParticipatingEvent(List<Event> participatingEvent) { this.participatingEvent = participatingEvent; }
 
-    public String getAuthUserId() {
-        return this.authUserId;
-    }
+    public String getProviderId() { return providerId; }
 
-    public void setAuthUserId(String authUserId) {
-        this.authUserId = authUserId;
-    }
+    public void setProviderId(String providerId) { this.providerId = providerId; }
+
+    public String getAuthUserId() { return this.authUserId; }
+
+    public void setAuthUserId(String authUserId) { this.authUserId = authUserId; }
+
+    public BasicProfile getProfile() { return profile; }
+
+    public void setProfile(BasicProfile profile) { this.profile = profile; }
 }

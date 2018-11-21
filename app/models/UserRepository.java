@@ -80,6 +80,7 @@ public class UserRepository {
         userToChange.setFollowing(user.getFollowing());
         userToChange.setInterestingEvents(user.getInterestingEvents());
         userToChange.setParticipatingEvent(user.getParticipatingEvent());
+        userToChange.setProviderId(user.getProviderId());
         userToChange.setAuthUserId(user.getAuthUserId());
         return userToChange;
     }

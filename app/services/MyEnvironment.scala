@@ -30,9 +30,13 @@ import securesocial.core.services.UserService
 
 import scala.concurrent.ExecutionContext
 
+import models.UserRepository
+
 @Singleton
 class MyEnvironment @Inject() (
                                 override val configuration: Configuration,
+                              //bastel
+                                val userRepository: UserRepository,
                                 override val messagesApi: MessagesApi,
                                 override val environment: Environment,
                                 override val wsClient: WSClient,
@@ -42,5 +46,5 @@ class MyEnvironment @Inject() (
                                 override val parsers: PlayBodyParsers,
                                 override val actorSystem: ActorSystem) extends RuntimeEnvironment.Default {
   type U = User
-  override val userService: UserService[U] = new InMemoryUserService()
+  override val userService: UserService[U] = new DefaultFitUserService(userRepository)
 }
