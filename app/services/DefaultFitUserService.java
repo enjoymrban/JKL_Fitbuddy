@@ -67,11 +67,19 @@ public class DefaultFitUserService extends BaseUserService<User> implements FitU
         public CompletionStage<User> doSave(BasicProfile profile, SaveMode mode) {
             User result = null;
             if (mode == SaveMode.SignUp()) {
-                result = new User(profile);
-                users.put(profile.providerId() + profile.userId(), result);
                 // hier muss geprüft werden, ob user schon in db ist. zurzeit wird immer ein neuer user erstellt
-                userRepository.add(result);
+                User foundUser = userRepository.findUserByAuthID(profile.userId());
+                if(foundUser!=null){
+                    //User existiert schon in DB. Nicht neu adden
+                    result = foundUser;
+                }else{
+                    //Der User existiert noch nicht
+                    result = new User(profile);
+                    userRepository.add(result);
+                }
+                users.put(profile.providerId() + profile.userId(), result);
             } else if (mode == SaveMode.LoggedIn()) {
+                System.out.println("SaveMode.LoggedIn aufgerufen -- siehe Kommentar");
                 if(logger.isDebugEnabled()){ logger.debug("SaveMode.LoggedIn aufgerufen"); }
                 /*CompletionStage<Stream<User>> userList = userRepository.list();
                 .thenApplyAsync(stream -> {

@@ -47,10 +47,23 @@ public class UserRepository {
     //get one user object
     public User findOneUser(Long id) { return wrap(em -> find(em, id)); }
 
-
     private User find(EntityManager em, Long id) {
         return em.find(User.class, id);
     }
+
+    //get one user object by AuthID, wird benötigt um bei erneutem einloggen eines users zu überprüfen, ob er bereits in der Datenbank vorhanden ist.
+    public User findUserByAuthID(String authUserId){return wrap(em -> findByAuthId(em, authUserId));}
+
+    private User findByAuthId(EntityManager em, String authUserId) {
+        User user;
+        try {
+            user = em.createQuery("select u from fitUser u where u.authUserId=:authId", User.class).setParameter("authId",authUserId).getSingleResult();
+            return user;
+        } catch (javax.persistence.NoResultException error) {
+            return null;
+        }
+    }
+
 
 
     private Stream<User> list(EntityManager em) {
