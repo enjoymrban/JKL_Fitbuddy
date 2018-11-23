@@ -67,7 +67,7 @@ public class DefaultFitUserService extends BaseUserService<User> implements FitU
         public CompletionStage<User> doSave(BasicProfile profile, SaveMode mode) {
             User result = null;
             if (mode == SaveMode.SignUp()) {
-                // hier muss geprüft werden, ob user schon in db ist. zurzeit wird immer ein neuer user erstellt
+                // hier muss geprüft werden, ob user schon in db ist
                 User foundUser = userRepository.findUserByAuthID(profile.userId());
                 if(foundUser!=null){
                     //User existiert schon in DB. Nicht neu adden
@@ -82,27 +82,10 @@ public class DefaultFitUserService extends BaseUserService<User> implements FitU
             } else if (mode == SaveMode.LoggedIn()) {
                 System.out.println("SaveMode.LoggedIn aufgerufen -- siehe Kommentar");
                 if(logger.isDebugEnabled()){ logger.debug("SaveMode.LoggedIn aufgerufen"); }
-                // LoggedIn deutet darauf hin, dass es einen User mit dieser authID gibt, testen ohne if else
+                // LoggedIn deutet darauf hin, dass es bereits einen User mit dieser authID gibt
                 result = userRepository.findUserByAuthID(profile.userId());
+                // das profile des users wird wieder hinzugefügt, da nicht in DB gespeichert
                 result.setProfile(profile);
-                /*CompletionStage<Stream<User>> userList = userRepository.list();
-                .thenApplyAsync(stream -> {
-                    return stream.collect(Collectors.toList());
-                });
-
-                        .thenApplyAsync(personStream -> {
-                    return personStream.collect(Collectors.toList());
-                });
-
-                for (Iterator<User> it =  users.values().iterator() ; it.hasNext() && result == null ; ) {
-                    User user = it.next();
-                    if ( user.getAuthUserId().equals(profile.userId()) ) {
-                        user.remove(p);
-                        user.identities.add(profile);
-                        result = user;
-                        break;
-                    }
-                }*/
             } else {
                 throw new RuntimeException("Unknown mode");
             }

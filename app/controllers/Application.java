@@ -19,7 +19,6 @@ package controllers;
 import com.google.inject.Inject;
 import models.User;
 import play.Logger;
-import play.libs.F;
 import play.mvc.Controller;
 import play.mvc.Result;
 import securesocial.core.BasicProfile;
@@ -88,7 +87,7 @@ public class Application extends Controller {
     }
 
     @SecuredAction(authorization = WithProvider.class, params = {"facebook"})
-    public Result onlyTwitter() {
+    public Result onlyFacebook() {
         return ok("You are seeing this because you logged in using Facebook");
     }
 

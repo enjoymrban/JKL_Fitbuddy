@@ -32,7 +32,7 @@ DELETE  /api/category/:id        controllers.CategoryController.deleteCategory(i
 # SecureSocial
 #GET        /                    @controllers.Application.index
 GET        /userAware           @controllers.Application.userAware
-GET        /only-twitter        @controllers.Application.onlyTwitter
+GET        /only-facebook        @controllers.Application.onlyFacebook
 GET        /link-result         @controllers.Application.linkResult
 GET        /current-user        @controllers.Application.currentUser
 
