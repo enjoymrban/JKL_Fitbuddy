@@ -72,6 +72,7 @@ public class DefaultFitUserService extends BaseUserService<User> implements FitU
                 if(foundUser!=null){
                     //User existiert schon in DB. Nicht neu adden
                     result = foundUser;
+                    result.setProfile(profile);
                 }else{
                     //Der User existiert noch nicht
                     result = new User(profile);
@@ -81,6 +82,9 @@ public class DefaultFitUserService extends BaseUserService<User> implements FitU
             } else if (mode == SaveMode.LoggedIn()) {
                 System.out.println("SaveMode.LoggedIn aufgerufen -- siehe Kommentar");
                 if(logger.isDebugEnabled()){ logger.debug("SaveMode.LoggedIn aufgerufen"); }
+                // LoggedIn deutet darauf hin, dass es einen User mit dieser authID gibt, testen ohne if else
+                result = userRepository.findUserByAuthID(profile.userId());
+                result.setProfile(profile);
                 /*CompletionStage<Stream<User>> userList = userRepository.list();
                 .thenApplyAsync(stream -> {
                     return stream.collect(Collectors.toList());

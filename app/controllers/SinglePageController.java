@@ -1,6 +1,7 @@
 package controllers;
 
 import play.mvc.*;
+import securesocial.core.java.SecuredAction;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -22,6 +23,7 @@ public class SinglePageController extends Controller {
         return ok(views.html.fitbuddies.render());
     }
 
+    @SecuredAction
     public Result myprofile() {
         return ok(views.html.myprofile.render());
     }
