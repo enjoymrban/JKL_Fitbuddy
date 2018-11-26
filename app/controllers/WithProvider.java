@@ -18,7 +18,6 @@ package controllers;
 
 import models.User;
 import securesocial.core.java.Authorization;
-import services.DemoUser;
 
 /**
  * A sample authorization implementation that lets you filter requests based
