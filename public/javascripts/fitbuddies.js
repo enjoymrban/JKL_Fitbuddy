@@ -1,25 +1,39 @@
 let me;
+let users;
+
+let addBuddyButton = $('#addBuddy');
+let skipBuddyButton = $('#skipBuddy');
+
 
 $().ready(() => {
-    fillBuddyTable();
-    randomBuddy();
+    getUser(myId).done((myData) => {
+        me = myData;
 
-    $('#addBuddy').click(() => {
+        getUsers().done((allUsers) => {
+            users = allUsers;
+
+            fillBuddyTable();
+            randomBuddy();
+        });
+    });
+
+
+    addBuddyButton.click(() => {
         let buddyToAddId = $(".card").attr("id");
+       addBuddyButton.prop("disabled", true);
 
         if (buddyToAddId !== "NO_FURTHER_OPTIONS") {
             getUser(buddyToAddId).done((buddy) => {
 
                 addBuddyToList(buddy);
-                randomBuddy();
+
                 me.buddies.push(buddy.id);
                 updateUser(myId, me).done(() => {
-                    console.log('Added User to my buddies')
+                    console.log('Added User to my buddies');
+                    randomBuddy();
                 }).catch(err => console.log(err));
 
             });
-
-
         }
     });
 
@@ -52,74 +66,64 @@ function addBuddyToList(buddy) {
 
     $(`#remove${buddy.id}`).click(() => {
 
-        getUser(myId).done((me) => {
-            $.each(me.buddies, (key, value) => {
-                if (buddy.id === value) {
-                    me.buddies.splice(key, 1);
 
-                    $.ajax({
-                        url: url + "/api/user/" + myId,
-                        type: "PUT",
-                        data: JSON.stringify(me),
-                        contentType: "application/json",
+        $.each(me.buddies, (key, value) => {
+            if (buddy.id === value) {
+                me.buddies.splice(key, 1);
 
-                    }).done(info => {
-                        console.log(info);
-                        fillBuddyTable();
-                        randomBuddy();
-                    }).catch(err => console.log(err));
-                }
-            });
+                $.ajax({
+                    url: url + "/api/user/" + myId,
+                    type: "PUT",
+                    data: JSON.stringify(me),
+                    contentType: "application/json",
+
+                }).done(info => {
+                    console.log(info);
+                    fillBuddyTable();
+                    randomBuddy();
+                }).catch(err => console.log(err));
+            }
+
         });
     });
 }
 
-// TODO really bad performance since the data of me and the other users is fetched ever time it is called AND RECURSION!
 function randomBuddy(buddyId = myId) {
+    skipBuddyButton.prop("disabled", false);
+    if (me.buddies.indexOf(buddyId) === -1 && buddyId !== myId) {
+        for (const u of users) {
+            if (u.id === buddyId) {
+                getUser(buddyId).done((buddy) => {
+                    $("#buddyName").text(buddy.fullName);
 
-    getUser(myId).done((myData) => {
-        me = myData;
-        getUsers().done((users) => {
-            try {
-                if (me.buddies.indexOf(buddyId) === -1 && buddyId !== myId) {
-                    for (const u of users) {
-                        if (u.id === buddyId) {
-                            getUser(buddyId).done((buddy) => {
-                                $("#buddyName").text(buddy.fullName);
+                    // ToDo id of the random Buddy is placed as the id of the card.. change eventually
+                    $(".card").attr("id", buddy.id);
+                    $("#buddyDescription").text(buddy.description);
+                    $("#buddyImg").attr("src", `${buddy.avatarUrl}`);
+                    $("#buddyImg").on('error', () => {
+                        $("#buddyImg").attr("src", `/assets/images/whitesmile.png`);
+                    });
 
-                                // TODO id of the random Buddy is placed as the id of the card.. change eventually
-                                $(".card").attr("id", buddy.id);
-                                $("#buddyDescription").text(buddy.description);
-                                $("#buddyImg").attr("src", `${buddy.avatarUrl}`);
-                                $("#buddyImg").on('error', () => {
-                                    $("#buddyImg").attr("src", `/assets/images/whitesmile.png`);
-                                });
-
-                            });
-
-
-                        }
+                    addBuddyButton.prop("disabled", false);
+                    if(me.buddies.length === users.length -2) {
+                        skipBuddyButton.prop("disabled", true);
                     }
-
-                } else {
-                    if(me.buddies.length === users.length-1){
-                        $("#buddyName").text("NO_FURTHER_OPTIONS");
-                        $(".card").attr("id", "NO_FURTHER_OPTIONS");
-                        $("#buddyDescription").text();
-                        $("#buddyImg").attr("src", `NO_FURTHER_OPTIONS`);
-                        return;
-                    }
-                    let randomIndex = Math.floor((Math.random() * users.length));
-                    return randomBuddy(users[randomIndex].id);
-
-                }
-            } catch (e) {
-                console.log(e);
-
-
+                });
             }
-        })
-    });
+        }
 
+    } else {
+        if (me.buddies.length === users.length - 1) {
+            $("#buddyName").text("NO_FURTHER_OPTIONS");
+            $(".card").attr("id", "NO_FURTHER_OPTIONS");
+            $("#buddyDescription").text("");
+            $("#buddyImg").attr("src", `NO_FURTHER_OPTIONS`);
+            addBuddyButton.prop("disabled", true);
+            skipBuddyButton.prop("disabled", true);
+            return;
+        }
+        let randomIndex = Math.floor((Math.random() * users.length));
+        return randomBuddy(users[randomIndex].id);
 
+    }
 }

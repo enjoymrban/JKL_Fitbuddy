@@ -1,6 +1,6 @@
 let url = "http://localhost:9000";
 
-let myId = 1;
+let myId = 5;
 
 $().ready(() => {
     minDate();
@@ -11,6 +11,7 @@ $().ready(() => {
 });
 
 // loading the options of sports for the create Event Form
+// ToDo maybe sort alphabetically
 function loadSportOptionsForCreateEventForm() {
     $("#sportEventForm").empty();
     $.ajax({
@@ -40,6 +41,8 @@ function loadUser() {
     getUser(myId).done((json) => {
         $("#userLastName").text(json.lastName);
         $("#userFullname").text(json.fullName);
+        $("#profilePicture").attr('src', json.avatarUrl);
+
     });
 
 }

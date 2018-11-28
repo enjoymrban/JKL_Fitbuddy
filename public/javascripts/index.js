@@ -182,11 +182,12 @@ map.on('popupopen', function (e) {
     for (const mobj of markers) {
         if (mobj.marker === e.popup._source) {
             popUpOpens(mobj);
+            return;
         }
     }
 });
 
-// Funktion wird mehrfach aufgerufen z.B wenn sich der Benutzer auf der Map bewegt oder hinein und herauszoomt evt. beheben
+// function is called multiple times. on map zoom or move
 function popUpOpens(mobj) {
 
 

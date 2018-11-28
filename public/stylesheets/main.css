@@ -37,6 +37,11 @@ html, body {
     right: 0;
 }
 
+#profilePicture{
+    max-width: 100px;
+    max-height: 100px;
+}
+
 /*footer {
     position: absolute;
     bottom: 0;
