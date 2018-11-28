@@ -48,4 +48,7 @@ public interface EventService {
      * @return updated event
      */
     CompletionStage<Event> change(final Event changeEvent);
+
+    //Get one user from entity manager
+    Event getOneEvent(final Long id);
 }

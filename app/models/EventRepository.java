@@ -43,7 +43,8 @@ public class EventRepository {
         return supplyAsync(() -> wrap(em -> remove(em, id)));
     }
 
-
+    //get one event object
+    public Event findOneEvent(Long id) { return wrap(em -> find(em, id)); }
     private Event find(EntityManager em, Long id) {
         return em.find(Event.class, id);
     }
@@ -86,4 +87,5 @@ public class EventRepository {
         }
         return false;
     }
+
 }

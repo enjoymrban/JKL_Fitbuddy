@@ -15,6 +15,9 @@ POST	/api/event                  controllers.EventController.addEvent()
 PUT		/api/event/:id              controllers.EventController.changeEvent(id: Long)
 DELETE	/api/event/:id              controllers.EventController.deleteEvent(id: Long)
 
+GET     /api/joinEvent/:id          controllers.EventController.joinEvent(id: Long)
+GET     /api/leaveEvent/:id         controllers.EventController.leaveEvent(id: Long)
+
 # User
 GET		/api/user                  controllers.UserController.getAllUsers()
 GET		/api/user/:id              controllers.UserController.getOneUser(id: Long)
@@ -35,6 +38,9 @@ GET        /userAware           @controllers.Application.userAware
 GET        /only-facebook        @controllers.Application.onlyFacebook
 GET        /link-result         @controllers.Application.linkResult
 GET        /current-user        @controllers.Application.currentUser
+
+# Login Route für uns
+GET         /auth/login         controllers.SinglePageController.index
 
 # Map static resources from the /public folder to the /assets URL path
 GET        /assets/*file        controllers.Assets.at(path="/public", file)

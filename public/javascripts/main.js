@@ -1,8 +1,11 @@
 let url = "http://localhost:9000";
 
-let myId = 5;
+let myId = 13;
 
 $().ready(() => {
+    if(window.location.pathname === "/auth/login"){
+    $('#loginModal').modal('toggle')
+    }
     minDate();
     loadSportOptionsForCreateEventForm();
     loadUser();

@@ -16,8 +16,11 @@ import services.FitUserService;
 
 import javax.inject.Inject;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
+
+import static java.nio.ByteBuffer.wrap;
 
 
 public class EventController extends Controller {
@@ -81,5 +84,53 @@ public class EventController extends Controller {
             return removed ? ok() : internalServerError();
         }, ec.current());
     }
+
+    @SecuredAction
+    public Result joinEvent(Long id) {
+        //Get the user and the event he wants to change
+        User actualUser = (User) ctx().args.get(SecureSocial.USER_KEY);
+        Event eventToChange = eventService.getOneEvent(id);
+
+        //Check if the user is already interested, if true: abort!
+        List<User> interUsers = eventToChange.getInterested();
+        for (User u : interUsers) {
+            if (u.getAuthUserId().equals(actualUser.getAuthUserId())) {
+                System.out.println("user already interested");
+                return ok("you already interested");
+            }
+        }
+        //Add the User to the interested List
+        System.out.println("add the user");
+        interUsers.add(actualUser);
+
+        //Change the Event on in the repository
+        eventToChange.setInterested(interUsers);
+        eventService.change(eventToChange);
+        return ok("you are now interested in this event");
+    }
+
+    @SecuredAction
+    public Result leaveEvent(Long id) {
+        //Get the user and the event he wants to change
+        User actualUser = (User) ctx().args.get(SecureSocial.USER_KEY);
+        Event eventToChange = eventService.getOneEvent(id);
+
+        //Check if the user is  interested and delete him from interestedlist
+        List<User> interUsers = eventToChange.getInterested();
+        List<User> finalInterUsers = null;
+        for (User u : interUsers) {
+            if (!u.getAuthUserId().equals(actualUser.getAuthUserId())) {
+                finalInterUsers.add(u);
+            }
+        }
+        //Change the Event on in the repository
+        eventToChange.setInterested(finalInterUsers);
+        eventService.change(eventToChange);
+        return ok("you are not interested anymore");
+    }
+
+
+
+
 
 }
