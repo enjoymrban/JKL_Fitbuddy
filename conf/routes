@@ -15,6 +15,9 @@ POST	/api/event                  controllers.EventController.addEvent()
 PUT		/api/event/:id              controllers.EventController.changeEvent(id: Long)
 DELETE	/api/event/:id              controllers.EventController.deleteEvent(id: Long)
 
+GET     /api/joinEvent/:id          controllers.EventController.joinEvent(id: Long)
+GET     /api/leaveEvent/:id         controllers.EventController.leaveEvent(id: Long)
+
 # User
 GET		/api/user                  controllers.UserController.getAllUsers()
 GET		/api/user/:id              controllers.UserController.getOneUser(id: Long)

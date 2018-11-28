@@ -37,5 +37,6 @@ public class DefaultEventService implements EventService{
             return eventRepository.change(changeEvent);
         }
 
-
+        @Override
+        public Event getOneEvent(Long id){return eventRepository.findOneEvent(id);}
 }
