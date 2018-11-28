@@ -11,7 +11,7 @@ $().ready(() => {
 });
 
 // loading the options of sports for the create Event Form
-// ToDo maybe sort alphabetically
+// ToDo  sort alphabetically
 function loadSportOptionsForCreateEventForm() {
     $("#sportEventForm").empty();
     $.ajax({
