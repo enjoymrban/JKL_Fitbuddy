@@ -1,0 +1,12 @@
+#recommendationDiv{
+    position: absolute;
+    bottom: 30px;
+
+}
+
+.sportRecommendation {
+    height: 48px;
+    width: 200px;
+    background-color: transparent;
+
+}
