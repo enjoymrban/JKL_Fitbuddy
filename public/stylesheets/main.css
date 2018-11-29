@@ -42,7 +42,7 @@ html, body {
     max-height: 100px;
 }
 
-#navbar-notloggedin, #navbar-notloggedin{
+#navbar-notloggedin, #navbar-loggedin{
     display: none;
 }
 

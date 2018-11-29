@@ -18,8 +18,11 @@ let newEventLat;
 
 $().ready(() => {
     // when the user visits the site, check geodata
-    getLocation();
-    createEvent();
+
+        getLocation();
+        createEvent();
+
+
 });
 
 // get Current Location

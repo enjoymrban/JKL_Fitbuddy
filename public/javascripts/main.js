@@ -132,7 +132,7 @@ function userAware(){
         url: url+"/userAware",
         dataType: 'json',
         success: function(data){
-            console.log("you are logged in as"+data.fullName);
+            console.log("you are logged in as: "+data.fullName);
             $("#navbar-notloggedin").hide();
             $("#userLastName").text(data.lastName);
             $("#userFullname").text(data.fullName);
