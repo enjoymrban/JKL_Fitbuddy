@@ -65,24 +65,42 @@ public class EventController extends Controller {
     public CompletionStage<Result> changeEvent(Long id) throws IOException {
         final JsonNode jsonRequest = request().body().asJson();
 
-        //Check if the user is the creater of the event
+        //SECURITY FIRST: Check if the user is the real creater of the event
         User actualUser = (User) ctx().args.get(SecureSocial.USER_KEY);
-        Long requestedEventId = jsonRequest.get("id").asLong();
-        Event eventToChange = null;
-        Long creatorId = jsonRequest.get("creator.id").asLong();
-        if(actualUser.getId()==creatorId) {
+        Long reqEventId = jsonRequest.get("id").asLong();
+        Event eventToChange = eventService.getOneEvent(reqEventId);
+        User eventOwner = eventToChange.getCreator();
+
+        if(actualUser.getAuthUserId().equals(eventOwner.getAuthUserId())){
             return eventService.change(userIdHandler.getCustomEventFromJson(jsonRequest, id)).thenApplyAsync(event -> {
+                System.out.println("Event updatet; Event ID: "+reqEventId);
                 return ok("Event updated!");
             }, ec.current());
         }else{
-            return null;
+            return eventService.get(reqEventId).thenApplyAsync(event -> {
+                System.out.println("Event not updatet; user is not owner");
+                return ok("sorry, you are not the creator of this event");
+            }, ec.current());
         }
     }
     @SecuredAction
     public CompletionStage<Result> deleteEvent(Long id) {
-        return eventService.delete(id).thenApplyAsync(removed -> {
-            return removed ? ok() : internalServerError();
-        }, ec.current());
+        //SECURITY FIRST: Check if the user is the real creater of the event
+        User actualUser = (User) ctx().args.get(SecureSocial.USER_KEY);
+        Event eventToChange = eventService.getOneEvent(id);
+        User eventOwner = eventToChange.getCreator();
+
+        if(actualUser.getAuthUserId().equals(eventOwner.getAuthUserId())){
+            return eventService.delete(id).thenApplyAsync(removed -> {
+                System.out.println("Delete Event with id: "+id);
+                return removed ? ok() : internalServerError();
+            }, ec.current());
+        }else{
+            return eventService.get(id).thenApplyAsync(event -> {
+                System.out.println("Dont delete event "+id+" User is not the owner");
+                return ok("sorry, you are not the creator of this event");
+            }, ec.current());
+        }
     }
 
     @SecuredAction
