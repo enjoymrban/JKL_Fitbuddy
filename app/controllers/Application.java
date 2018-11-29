@@ -19,6 +19,7 @@ package controllers;
 import com.google.inject.Inject;
 import models.User;
 import play.Logger;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import securesocial.core.BasicProfile;
@@ -79,11 +80,16 @@ public class Application extends Controller {
                 userName = user.fullName().get();
             } else {
                 userName = "authenticated user";
+
             }
+            return ok(Json.toJson(demoUser));
+
         } else {
             userName = "guest";
+            return ok("not authenticated");
         }
-        return ok("Hello " + userName + ", you are seeing a public page");
+//        return ok("Hello " + userName + ", you are seeing a public page");
+
     }
 
     @SecuredAction(authorization = WithProvider.class, params = {"facebook"})

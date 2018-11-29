@@ -1,14 +1,15 @@
 let url = "http://localhost:9000";
 
-let myId = 13;
+let myId = 5;
 
 $().ready(() => {
     if(window.location.pathname === "/auth/login"){
     $('#loginModal').modal('toggle')
     }
+    userAware();
     minDate();
     loadSportOptionsForCreateEventForm();
-    loadUser();
+    //loadUser();
 
 
 });
@@ -121,7 +122,31 @@ function updateUser(myId,updatedUser){
         url: url+"/api/user/"+myId,
         data: JSON.stringify(updatedUser),
         contentType: "application/json",
+    }).catch(err => console.log(err))
+}
 
-    })
+
+function userAware(){
+    return $.ajax({
+        type: "Get",
+        url: url+"/userAware",
+        dataType: 'json',
+        success: function(data){
+            console.log("you are logged in as"+data.fullName);
+            $("#navbar-notloggedin").hide();
+            $("#userLastName").text(data.lastName);
+            $("#userFullname").text(data.fullName);
+            $("#profilePicture").attr('src', data.avatarUrl);
+            $("#navbar-loggedin").show();
+            myId = data.id;
+
+
+        },
+        error: function(){
+            $("#navbar-notloggedin").show();
+            $("#navbar-loggedin").hide();
+            console.log("you are not logged in!");
+        }
+    }).catch(err => console.log(err))
 }
 

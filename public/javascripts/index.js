@@ -207,35 +207,50 @@ function popUpOpens(mobj) {
             $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
         }
 
-        let updatedInterestedArray = event.interested;
-        updatedInterestedArray.push(myId);
-        let eventUpdated = {
-            description: event.description,
-            category: event.category,
-            creator: event.creator,
-            date: event.date,
-            nrOfPlayers: event.nrOfPlayers,
-            coordinateX: event.coordinateX,
-            coordinateY: event.coordinateY,
-            interested: updatedInterestedArray,
-            participants: event.participants
-        };
-
         $('#interestedInEvent' + id).unbind();
         $('#interestedInEvent' + id).click(() => {
-
             $.ajax({
-                type: "PUT",
-                url: url + "/api/event/" + mobj.eventId,
-                data: JSON.stringify(eventUpdated),
-                contentType: "application/json",
+                type: "GET",
+                url: url + "/api/joinEvent/" + id
             }).done(msg => {
                 console.log("I'm interested in this event");
                 popUpOpens(mobj);
             }).catch(err => {
                 console.log(err);
             });
+
+
         })
+
+        // let updatedInterestedArray = event.interested;
+        // updatedInterestedArray.push(myId);
+        // let eventUpdated = {
+        //     description: event.description,
+        //     category: event.category,
+        //     creator: event.creator,
+        //     date: event.date,
+        //     nrOfPlayers: event.nrOfPlayers,
+        //     coordinateX: event.coordinateX,
+        //     coordinateY: event.coordinateY,
+        //     interested: updatedInterestedArray,
+        //     participants: event.participants
+        // };
+        //
+        // $('#interestedInEvent' + id).unbind();
+        // $('#interestedInEvent' + id).click(() => {
+        //
+        //     $.ajax({
+        //         type: "PUT",
+        //         url: url + "/api/event/" + mobj.eventId,
+        //         data: JSON.stringify(eventUpdated),
+        //         contentType: "application/json",
+        //     }).done(msg => {
+        //         console.log("I'm interested in this event");
+        //         popUpOpens(mobj);
+        //     }).catch(err => {
+        //         console.log(err);
+        //     });
+        // })
     }).catch(err => {
         console.log(err)
     });

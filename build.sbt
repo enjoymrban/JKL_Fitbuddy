@@ -34,15 +34,15 @@ libraryDependencies ++= Seq(
     javaJpa,
     "org.hibernate" % "hibernate-entitymanager" % "5.1.0.Final",
     "com.h2database" % "h2" % "1.4.192",
-  
+
   // PostgreSQL
-  "org.postgresql" % "postgresql" % "42.2.5",
-  
+    "org.postgresql" % "postgresql" % "42.2.5",
+
   //SecureSocial
     "ws.securesocial" %% "securesocial" % "master-SNAPSHOT",
     javaCore,
     ehcache
-  
+
   )
 
 herokuAppName in Compile := "jklfitbuddy"

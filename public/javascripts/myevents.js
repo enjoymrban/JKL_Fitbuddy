@@ -71,6 +71,7 @@ function addEventToInterested(event) {
         console.log("update event, remove me from interested");
         interested.splice(interested.indexOf(myId), 1);
         $(`#tableRow${id}`).remove();
+        // TODO there is a new Route for leaving the interested Array of an Event!
         updateEvent(event).done(() => {
                 // We need to check whether the removed event was one of our buddies, in that case it needs to be but back to the events of my buddies table
                 addEventToEventOfMyBuddies(event);

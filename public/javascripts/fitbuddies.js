@@ -20,7 +20,7 @@ $().ready(() => {
 
     addBuddyButton.click(() => {
         let buddyToAddId = $(".card").attr("id");
-       addBuddyButton.prop("disabled", true);
+        addBuddyButton.prop("disabled", true);
 
         if (buddyToAddId !== "NO_FURTHER_OPTIONS") {
             getUser(buddyToAddId).done((buddy) => {
@@ -105,7 +105,7 @@ function randomBuddy(buddyId = myId) {
                     });
 
                     addBuddyButton.prop("disabled", false);
-                    if(me.buddies.length === users.length -2) {
+                    if (me.buddies.length === users.length - 2) {
                         skipBuddyButton.prop("disabled", true);
                     }
                 });

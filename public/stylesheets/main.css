@@ -42,6 +42,10 @@ html, body {
     max-height: 100px;
 }
 
+#navbar-notloggedin, #navbar-notloggedin{
+    display: none;
+}
+
 /*footer {
     position: absolute;
     bottom: 0;
