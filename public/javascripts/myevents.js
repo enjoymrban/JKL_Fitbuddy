@@ -1,7 +1,7 @@
+myId = sessionStorage.getItem('myId');
+
 $().ready(() => {
     fillEventTables();
-
-
 });
 
 function fillEventTables() {
@@ -20,7 +20,7 @@ function fillEventTables() {
                 let {id, description, category, nrOfPlayers, date, creator, interested, participants} = event;
                 let {title} = category;
 
-                if (creator.id === myId) {
+                if (creator.id === Number(myId)) {
                     let tableRow = (tableRowTemplateMyEvents(id, description, title, nrOfPlayers, date, interested, participants));
 
                     $("#myEventsTBody").append(tableRow);
@@ -35,26 +35,23 @@ function fillEventTables() {
                         deleteEvent(id).done(() => {
                             $(`#tableRow${id}`).remove();
                         });
-
-
                     });
 
-                } else if (interested.indexOf(myId) !== -1) {
+                } else if (interested.indexOf(Number(myId)) !== -1) {
                     addEventToInterested(event);
 
-                } else if (participants.indexOf(myId) !== -1) {
+                } else if (participants.indexOf(Number(myId)) !== -1) {
                     let tableRow = (tableRowTemplate(id, description, title, nrOfPlayers, date, participants));
                     $("#joinedTBody").append(tableRow);
                     $(`#trash${id}`).click(() => {
                         console.log("update event, remove me from participating");
-                        participants.splice(participants.indexOf(myId), 1);
+                        participants.splice(participants.indexOf(Number(myId)), 1);
                         updateEvent(event).done(() => {
                             $(`#tableRow${id}`).remove();
                         });
                     });
                 } else {
                     addEventToEventOfMyBuddies(event);
-
                 }
             }).catch(err => console.log(err));
         })
@@ -68,16 +65,12 @@ function addEventToInterested(event) {
     let tableRow = (tableRowTemplate(id, description, title, nrOfPlayers, date, participants));
     $("#interestedTBody").append(tableRow);
     $(`#trash${id}`).click(() => {
-        console.log("update event, remove me from interested");
-        interested.splice(interested.indexOf(myId), 1);
-        $(`#tableRow${id}`).remove();
-
         $.ajax({
             type: "GET",
             url: url + "/api/leaveEvent/" + id
         }).done(msg => {
             console.log("I'm not interested in this event anymore");
-
+            $(`#tableRow${id}`).remove();
             // We need to check whether this event belongs to a fitbuddy of mine, if so after removel but it in the table of mybuddies
             addEventToEventOfMyBuddies(event);
         }).catch(err => {
@@ -90,16 +83,14 @@ function addEventToEventOfMyBuddies(event) {
     let {id, description, category, nrOfPlayers, date, creator, interested, participants} = event;
     let {title} = category;
 
-    return getUser(myId).done((json) => {
-
+    return getUser(Number(myId)).done((json) => {
         for (const mb  of json.buddies) {
             if (mb === creator.id) {
                 let tableRow = (tableRowTemplateBuddies(id, description, title, nrOfPlayers, date, participants));
                 $("#buddieTBody").append(tableRow);
                 $(`#interestedinevent${id}`).click(() => {
                     console.log("I'm interested in this event!");
-                    interested.push(myId);
-                    updateEvent(event).done(() => {
+                    imInterested(id).done(() => {
                         $(`#tableRow${id}`).remove();
                     }).done(() => {
                         addEventToInterested(event);

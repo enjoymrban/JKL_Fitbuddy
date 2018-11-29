@@ -1,10 +1,10 @@
 let url = "http://localhost:9000";
 
-let myId = 7;
+let myId;
 
 $().ready(() => {
-    if(window.location.pathname === "/auth/login"){
-    $('#loginModal').modal('toggle')
+    if (window.location.pathname === "/auth/login") {
+        $('#loginModal').modal('toggle')
     }
     userAware();
     minDate();
@@ -99,50 +99,57 @@ function getEvents() {
         url: url + "/api/event",
         type: "GET",
         dataType: "json"
-    }).done(()=>{
+    }).done(() => {
         console.log("Events feched");
     }).catch(err => console.log(err))
 }
 
-function getUsers(){
+function getUsers() {
     return $.ajax({
         url: url + "/api/user",
         type: "GET",
         dataType: "json"
-    }).done(()=>{
+    }).done(() => {
         console.log("Users feched");
     }).catch(err => console.log(err))
 }
 
 
-function updateUser(myId,updatedUser){
-     return $.ajax({
+function updateUser(myId, updatedUser) {
+    return $.ajax({
 
         type: "PUT",
-        url: url+"/api/user/"+myId,
+        url: url + "/api/user/" + myId,
         data: JSON.stringify(updatedUser),
         contentType: "application/json",
     }).catch(err => console.log(err))
 }
 
 
-function userAware(){
+function userAware() {
     return $.ajax({
         type: "Get",
-        url: url+"/userAware",
+        url: url + "/userAware",
         dataType: 'json',
-        success: function(data){
-            console.log("you are logged in as: "+data.fullName);
+        success: function (data) {
+            console.log("you are logged in as: " + data.fullName + " and id: " + data.id);
             $("#navbar-notloggedin").hide();
             $("#userLastName").text(data.lastName);
             $("#userFullname").text(data.fullName);
             $("#profilePicture").attr('src', data.avatarUrl);
             $("#navbar-loggedin").show();
-            myId = data.id;
+
+            if (typeof(Storage) !== "undefined") {
+                // Code for localStorage/sessionStorage.
+                sessionStorage.setItem("myId", data.id);
+                myId = sessionStorage.getItem("myId");
+            } else {
+                // Sorry! No Web Storage support..
+            }
 
 
         },
-        error: function(){
+        error: function () {
             $("#navbar-notloggedin").show();
             $("#navbar-loggedin").hide();
             console.log("you are not logged in!");
@@ -150,3 +157,14 @@ function userAware(){
     }).catch(err => console.log(err))
 }
 
+
+function imInterested(eventId){
+    return $.ajax({
+        type: "GET",
+        url: url + "/api/joinEvent/" + eventId
+    }).done(msg => {
+        console.log("I'm interested in this event");
+    }).catch(err => {
+        console.log(err);
+    });
+}

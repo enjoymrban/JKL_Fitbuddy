@@ -8,6 +8,7 @@ let selectFavoriteSports = $('#selectFavoriteSports');
 let sendProfileChangesB = $('#sendProfileChanges');
 let myFavorites = [];
 let myProfile = "";
+myId = sessionStorage.getItem('myId');
 
 
 

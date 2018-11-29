@@ -3,10 +3,11 @@ let users;
 
 let addBuddyButton = $('#addBuddy');
 let skipBuddyButton = $('#skipBuddy');
-
+myId = sessionStorage.getItem('myId');
 
 $().ready(() => {
     getUser(myId).done((myData) => {
+
         me = myData;
 
         getUsers().done((allUsers) => {
@@ -90,7 +91,7 @@ function addBuddyToList(buddy) {
 
 function randomBuddy(buddyId = myId) {
     skipBuddyButton.prop("disabled", false);
-    if (me.buddies.indexOf(buddyId) === -1 && buddyId !== myId) {
+    if (me.buddies.indexOf(Number(buddyId)) === -1 && String(buddyId) !== myId) {
         for (const u of users) {
             if (u.id === buddyId) {
                 getUser(buddyId).done((buddy) => {

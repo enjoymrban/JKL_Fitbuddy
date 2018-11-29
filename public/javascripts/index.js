@@ -15,6 +15,7 @@ let createEventPopupMarker = undefined;
 let newEventLong;
 let newEventLat;
 
+myId = sessionStorage.getItem('myId');
 
 $().ready(() => {
     // when the user visits the site, check geodata
@@ -198,11 +199,11 @@ function popUpOpens(mobj) {
         let {id, description, date, creator, interested, nrOfPlayers, participants} = event;
         $('#popupInfoLarge' + id).empty();
 
-        if (creator.id === myId) {
+        if (creator.id === Number(myId)) {
             let popupInfoLargeCreator = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b> | Spots open: <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p>`;
             $('#popupInfoLarge' + id).append(popupInfoLargeCreator);
             return;
-        } else if (interested.indexOf(myId) !== -1) {
+        } else if (interested.indexOf(Number(myId)) !== -1) {
             let popupInfoLargeInterested = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b>| Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" disabled>I'm interested!</button>`;
             $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
         } else {
@@ -212,17 +213,9 @@ function popUpOpens(mobj) {
 
         $('#interestedInEvent' + id).unbind();
         $('#interestedInEvent' + id).click(() => {
-            $.ajax({
-                type: "GET",
-                url: url + "/api/joinEvent/" + id
-            }).done(msg => {
-                console.log("I'm interested in this event");
+            imInterested(id).done(()=>{
                 popUpOpens(mobj);
-            }).catch(err => {
-                console.log(err);
             });
-
-
         })
 
         // let updatedInterestedArray = event.interested;
@@ -276,7 +269,7 @@ function createEvent() {
                 title: $('#sportEventForm').find(":selected").text() // id doesn't suffice since the returned json wouldn't contain the title.
             },
             creator: {
-                id: myId
+                id: Number(myId)
             },
 
             date: $('#dateEventForm').val(),
