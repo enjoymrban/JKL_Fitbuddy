@@ -71,15 +71,18 @@ function addEventToInterested(event) {
         console.log("update event, remove me from interested");
         interested.splice(interested.indexOf(myId), 1);
         $(`#tableRow${id}`).remove();
-        // TODO there is a new Route for leaving the interested Array of an Event!
-        updateEvent(event).done(() => {
-                // We need to check whether the removed event was one of our buddies, in that case it needs to be but back to the events of my buddies table
-                addEventToEventOfMyBuddies(event);
 
-            }
-        );
+        $.ajax({
+            type: "GET",
+            url: url + "/api/leaveEvent/" + id
+        }).done(msg => {
+            console.log("I'm not interested in this event anymore");
 
-
+            // We need to check whether this event belongs to a fitbuddy of mine, if so after removel but it in the table of mybuddies
+            addEventToEventOfMyBuddies(event);
+        }).catch(err => {
+            console.log(err);
+        });
     });
 }
 
@@ -148,8 +151,6 @@ function closeInterestedModal() {
         $('#interestedModal').modal('toggle')
     }
 }
-
-
 
 
 function tableRowTemplateMyEvents(id, description, sport, nrOfPlayers, date, interested, participants) {
