@@ -149,12 +149,12 @@ function userAware() {
 
 
         },
-        error: function () {
+        error: function (error) {
             $("#navbar-notloggedin").show();
             $("#navbar-loggedin").hide();
-            console.log("you are not logged in!");
+            console.log(error.responseText);
         }
-    }).catch(err => console.log(err))
+    })
 }
 
 
