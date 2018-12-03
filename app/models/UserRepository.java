@@ -83,18 +83,18 @@ public class UserRepository {
     private User change(EntityManager em, User user) {
         User userToChange = em.find(User.class, user.getId());
         userToChange.setDescription(user.getDescription());
-        userToChange.setFirstName(user.getFirstName());
-        userToChange.setLastName(user.getLastName());
-        userToChange.setFullName(user.getFullName());
-        userToChange.setEmail(user.getEmail());
-        userToChange.setAvatarUrl(user.getAvatarUrl());
+        //userToChange.setFirstName(user.getFirstName());
+        //userToChange.setLastName(user.getLastName());
+        //userToChange.setFullName(user.getFullName());
+        //userToChange.setEmail(user.getEmail());
+        //userToChange.setAvatarUrl(user.getAvatarUrl());
         userToChange.setCategories(user.getCategories());
         userToChange.setBuddies(user.getBuddies());
         userToChange.setFollowing(user.getFollowing());
         userToChange.setInterestingEvents(user.getInterestingEvents());
         userToChange.setParticipatingEvent(user.getParticipatingEvent());
-        userToChange.setProviderId(user.getProviderId());
-        userToChange.setAuthUserId(user.getAuthUserId());
+        //userToChange.setProviderId(user.getProviderId());
+        //userToChange.setAuthUserId(user.getAuthUserId());
         return userToChange;
     }
 

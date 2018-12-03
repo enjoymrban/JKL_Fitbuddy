@@ -27,9 +27,7 @@ import securesocial.core.RuntimeEnvironment;
 import securesocial.core.java.SecureSocial;
 import securesocial.core.java.SecuredAction;
 import securesocial.core.java.UserAwareAction;
-import services.DemoUser;
-//import views.html.index;
-import views.html.linkResult;
+
 
 import java.util.concurrent.CompletionStage;
 import java.util.function.Function;
@@ -58,16 +56,7 @@ public class Application extends Controller {
      * @return
      */
 
-    /*
-    @SecuredAction
-    public Result index() {
-        if(logger.isDebugEnabled()){
-            logger.debug("access granted to index");
-        }
-        DemoUser user = (DemoUser) ctx().args.get(SecureSocial.USER_KEY);
-        return ok(index.render(user, SecureSocial.env()));
-    }
-    */
+
     @UserAwareAction
     public Result userAware() {
         User demoUser = (User) ctx().args.get(SecureSocial.USER_KEY);
@@ -97,11 +86,6 @@ public class Application extends Controller {
         return ok("You are seeing this because you logged in using Facebook");
     }
 
-    @SecuredAction
-    public Result linkResult() {
-        DemoUser current = (DemoUser) ctx().args.get(SecureSocial.USER_KEY);
-        return ok(linkResult.render(current, current.identities));
-    }
 
     /**
      * Sample use of SecureSocial.currentUser. Access the /current-user to test it

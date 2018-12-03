@@ -16,11 +16,10 @@ import services.FitUserService;
 
 import javax.inject.Inject;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
-
-import static java.nio.ByteBuffer.wrap;
 
 
 public class EventController extends Controller {
@@ -44,10 +43,26 @@ public class EventController extends Controller {
             return ok(userIdHandler.getCustomJsonFromEvent(event));
         }, ec.current());
     }
-    //@UserAwareAction
+    @UserAwareAction
     public CompletionStage<Result> getAllEvents() {
         return eventService.getAll().thenApplyAsync(personStream -> {
-            return ok(Json.toJson(personStream.collect(Collectors.toList())));
+            User actualUser = (User) ctx().args.get(SecureSocial.USER_KEY);
+            if(actualUser!=null){
+                return ok(Json.toJson(personStream.collect(Collectors.toList())));
+            }else{}
+                //Filter information in events for guests
+                List<Event> realEvents = personStream.collect(Collectors.toList());
+                List<Event> filterdEvents= new ArrayList<Event>();
+                for (Event e : realEvents){
+                    Event filterd = new Event();
+                    filterd.setId(e.getId());
+                    filterd.setNrOfPlayers(e.getNrOfPlayers());
+                    filterd.setCategory(e.getCategory());
+                    filterd.setCoordinateX(e.getCoordinateX());
+                    filterd.setCoordinateY(e.getCoordinateY());
+                    filterdEvents.add(filterd);
+                }
+                return ok(Json.toJson(Json.toJson(filterdEvents)));
         }, ec.current());
     }
 
@@ -146,9 +161,4 @@ public class EventController extends Controller {
         eventService.change(eventToChange);
         return ok("you are not interested anymore");
     }
-
-
-
-
-
 }
