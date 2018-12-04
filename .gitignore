@@ -84,3 +84,6 @@ server.pid
 *.eml
 /dist/
 .cache
+
+# Whitelist
+!/target/universal/stage
