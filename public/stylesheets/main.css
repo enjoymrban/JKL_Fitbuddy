@@ -15,7 +15,10 @@ html, body {
 
 #content {
    padding: 15px 0 0 0;
+}
 
+.notIndex{
+    margin: 10px 10px 10px;
 }
 
 /*Nav*/
@@ -177,3 +180,20 @@ div[id^="popupInfoLarge"]{
     display: none;
 }
 
+
+
+.imgCardSize{
+    max-width: 450px;
+}
+
+
+/*My Events*/
+.thead-orange{
+    background-color: orange;
+    border-color: orange;
+}
+
+.thread-green{
+    background-color: green;
+    border-color: green;
+}

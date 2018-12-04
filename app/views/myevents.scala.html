@@ -6,10 +6,11 @@
     <script src="@routes.Assets.versioned("javascripts/myevents.js")" type="text/javascript"></script>
 }
 @main("My Events", scripts) {
+    <section class="notIndex">
     <div class="table-responsive-md">
         <h1>My events</h1>
         <table id="myEventsTable" class="table">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
                     <th scope="col">description</th>
                     <th scope="col">interested</th>
@@ -29,7 +30,7 @@
     <div class="table-responsive-md">
         <h1>Interested</h1>
         <table id="interestedTable" class="table">
-            <thead>
+            <thead class="thead-orange">
                 <tr>
                     <th scope="col">description</th>
                     <th scope="col">sport</th>
@@ -47,7 +48,7 @@
     <div class="table-responsive-md">
         <h1>Joined</h1>
         <table id="joinedTable" class="table">
-            <thead>
+            <thead class="thread-green">
                 <tr>
                     <th scope="col">description</th>
                     <th scope="col">sport</th>
@@ -109,4 +110,5 @@
             </div>
         </div>
     </div>
+    </section>
 }
