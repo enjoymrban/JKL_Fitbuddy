@@ -1,5 +1,5 @@
-# Tour schema
-# --- !Ups
+--- # Tour schema
+--- # --- !Ups
 
 create table category (
   id BIGSERIAL NOT NULL PRIMARY KEY,
@@ -110,15 +110,11 @@ INSERT INTO Interested (event_id, fitUser_id) VALUES (1,1);
 
 INSERT INTO Participants (event_id, fitUser_id) VALUES (2,2);
 
-# --- !Downs
+--- # --- !Downs
   drop table event cascade;
-  --drop table event;
   drop table category cascade;
-  --drop table category;
   drop table fitUser cascade;
-  --drop table fitUser;
   drop table Favorite_Categories cascade;
- -- drop table Buddies;
   drop table Buddies cascade;
   drop table Interested cascade;
   drop table Participants cascade;
