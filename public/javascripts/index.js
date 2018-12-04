@@ -164,8 +164,9 @@ function addMarkerToMap(event, wasNewlyCreated = false) {
         } else {
             getEvent(event.id).done((singleEvent) => {
                 const {interested, participants, nrOfPlayers} = singleEvent;
-                if (participants === nrOfPlayers - 1) {
+                if (participants.length === nrOfPlayers) {
                     color = redIcon;
+
                     placeMarker(event, color, wasNewlyCreated);
 
                 } else if (interested.indexOf(Number(myId)) !== -1) {
@@ -259,7 +260,7 @@ map.on('zoom move', function () {
             let popup = mobj.marker.getPopup();
             if (popup.isOpen()) {
                 console.log("popup already open");
-            }else{
+            } else {
                 let {eventId, marker} = mobj;
                 let {lat, lng} = mobj.marker._latlng;
                 if (_northEast.lat > lat && lat > _southWest.lat && _northEast.lng > lng && lng > _southWest.lng) {
@@ -294,7 +295,7 @@ function popUpOpens(mobj) {
                     $('#popupInfoLarge' + id).append(popupInfoLargeCreator);
                     return;
                 } else if (interested.indexOf(Number(myId)) !== -1) {
-                    let popupInfoLargeInterested = `<p>Description: <b>${description}</b><br> Date: <b>${date}</b> <br>Creator:  <b>${creator.fullName}</b><br>Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="desinterestedInEvent${id}" class="btn btn-default" type="button" >I'm NOT interested!</button>`;
+                    let popupInfoLargeInterested = `<p>Description: <b>${description}</b><br> Date: <b>${date}</b> <br>Creator:  <b>${creator.fullName}</b><br>Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button  id="desinterestedInEvent${id}" class="interB btn btn-default" type="button" >I'm NOT interested!</button>`;
                     $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
 
                     $('#desinterestedInEvent' + id).unbind();
@@ -316,7 +317,7 @@ function popUpOpens(mobj) {
                         }
                     )
                 } else {
-                    let popupInfoLargeInterested = `<p>Description: <b>${description}</b><br>Date: <b>${date}</b> <br>Creator:  <b>${creator.fullName}</b><br>Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`;
+                    let popupInfoLargeInterested = `<p>Description: <b>${description}</b><br>Date: <b>${date}</b> <br>Creator:  <b>${creator.fullName}</b><br>Spots open:  <b id="openSpots${id}">${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`;
                     $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
 
                     $('#interestedInEvent' + id).unbind();
@@ -328,6 +329,16 @@ function popUpOpens(mobj) {
                         });
                     })
                 }
+                if (participants.length === nrOfPlayers) {
+                    if (document.getElementById(`interestedInEvent${id}`) != null) {
+                        document.getElementById(`interestedInEvent${id}`).remove();
+                    } else {
+                        document.getElementById(`desinterestedInEvent${id}`).remove();
+                    }
+
+
+                }
+
             }
         ).catch(err => {
             console.log(err)
