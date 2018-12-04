@@ -1,3 +1,54 @@
+// Create Event
+let blueIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+// Available Events
+let greenIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+// Full Events
+let redIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+// Waiting for Response
+let orangeIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+// myEvents
+let blackIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+
 let endZoom = 13;
 let startZoom = 10;
 let map = L.map('mapid', {zoomControl: false}).setView([0, 0], startZoom);
@@ -20,8 +71,8 @@ myId = sessionStorage.getItem('myId');
 $().ready(() => {
     // when the user visits the site, check geodata
 
-        getLocation();
-        createEvent();
+    getLocation();
+    createEvent();
 
 
 });
@@ -33,6 +84,7 @@ function getLocation() {
 
     } else {
         console.log("Geolocation is not supported by this browser.");
+        createMap(51, 9);
     }
 }
 
@@ -48,16 +100,19 @@ function showError(error) {
     switch (error.code) {
         case error.PERMISSION_DENIED:
             console.log("User denied the request for Geolocation.");
-            createMap();
+            createMap(51, 9);
             break;
         case error.POSITION_UNAVAILABLE:
             console.log("Location information is unavailable.");
+            createMap(51, 9);
             break;
         case error.TIMEOUT:
             console.log("The request to get user location timed out.");
+            createMap(51, 9);
             break;
         default:
             console.log("An unknown error occurred.");
+            createMap(51, 9);
             break;
     }
 }
@@ -99,11 +154,39 @@ function placeEventsOnMap() {
 
 
 function addMarkerToMap(event, wasNewlyCreated = false) {
+
+    let color = blueIcon;
+
+    if (myId !== "null") {
+        if (event.creator.id === Number(myId)) {
+            color = blackIcon;
+            placeMarker(event, color, wasNewlyCreated);
+        } else {
+            getEvent(event.id).done((singleEvent) => {
+                const {interested, participants, nrOfPlayers} = singleEvent;
+                if (participants === nrOfPlayers - 1) {
+                    color = redIcon;
+                    placeMarker(event, color, wasNewlyCreated);
+
+                } else if (interested.indexOf(Number(myId)) !== -1) {
+                    color = orangeIcon;
+                    placeMarker(event, color, wasNewlyCreated);
+
+                } else {
+                    placeMarker(event, color, wasNewlyCreated);
+                }
+
+            })
+        }
+    } else {
+        placeMarker(event, color, wasNewlyCreated);
+    }
+}
+
+function placeMarker(event, color, wasNewlyCreated) {
     let {id, category, nrOfPlayers, coordinateX, coordinateY} = event;
     let {title} = category;
-
-
-    let marker = L.marker([coordinateX, coordinateY]);
+    let marker = L.marker([coordinateX, coordinateY], {icon: color});
     marker.bindPopup(`<div class="clickable" id="popupInfo${id}"><div id="popupInfoShort${id}"><p>Sport: <b>${title}</b> | Requested buddies: <b>${nrOfPlayers}</b></p></div><div id="popupInfoLarge${id}"></div></div>`, {
         closeOnClick: false,
         autoClose: false,
@@ -123,6 +206,7 @@ function addMarkerToMap(event, wasNewlyCreated = false) {
     if (wasNewlyCreated) {
         marker.openPopup();
     }
+
 }
 
 
@@ -137,6 +221,7 @@ map.on('click', function (e) {
     }
 
     createEventPopupMarker = L.marker(popLocation);
+    createEventPopupMarker.setIcon(blueIcon);
     createEventPopupMarker.addTo(map);
     createEventPopupMarker.bindPopup(`<div><button id="createEventButton${id}" class="btn btn-default" type="button">Create event here!</button></p></div>`, {
         closeButton: false,
@@ -171,11 +256,16 @@ map.on('zoom move', function () {
 
     else {
         for (const mobj of markers) {
-            let {eventId, marker} = mobj;
-            let {lat, lng} = mobj.marker._latlng;
-            if (_northEast.lat > lat && lat > _southWest.lat && _northEast.lng > lng && lng > _southWest.lng) {
-                marker.openPopup();
-                popUpOpens(mobj);
+            let popup = mobj.marker.getPopup();
+            if (popup.isOpen()) {
+                console.log("popup already open");
+            }else{
+                let {eventId, marker} = mobj;
+                let {lat, lng} = mobj.marker._latlng;
+                if (_northEast.lat > lat && lat > _southWest.lat && _northEast.lng > lng && lng > _southWest.lng) {
+                    marker.openPopup();
+                    popUpOpens(mobj);
+                }
             }
         }
     }
@@ -194,68 +284,68 @@ map.on('popupopen', function (e) {
 // function is called multiple times. on map zoom or move
 function popUpOpens(mobj) {
 
+    if (myId !== "null") {
+        getEvent(mobj.eventId).done((event) => {
+                let {id, description, date, creator, interested, nrOfPlayers, participants} = event;
+                $('#popupInfoLarge' + id).empty();
 
-    getEvent(mobj.eventId).done((event) => {
-        let {id, description, date, creator, interested, nrOfPlayers, participants} = event;
-        $('#popupInfoLarge' + id).empty();
+                if (creator.id === Number(myId)) {
+                    let popupInfoLargeCreator = `<p>Description: <b>${description}</b> <br>Date: <b>${date}</b> <br>Creator:  <b>${creator.fullName}</b><br>Spots open: <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p>`;
+                    $('#popupInfoLarge' + id).append(popupInfoLargeCreator);
+                    return;
+                } else if (interested.indexOf(Number(myId)) !== -1) {
+                    let popupInfoLargeInterested = `<p>Description: <b>${description}</b><br> Date: <b>${date}</b> <br>Creator:  <b>${creator.fullName}</b><br>Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="desinterestedInEvent${id}" class="btn btn-default" type="button" >I'm NOT interested!</button>`;
+                    $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
 
-        if (creator.id === Number(myId)) {
-            let popupInfoLargeCreator = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b> | Spots open: <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p>`;
-            $('#popupInfoLarge' + id).append(popupInfoLargeCreator);
-            return;
-        } else if (interested.indexOf(Number(myId)) !== -1) {
-            let popupInfoLargeInterested = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b>| Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" disabled>I'm interested!</button>`;
-            $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
-        } else {
-            let popupInfoLargeInterested = `<p>Description: <b>${description}</b> | Date: <b>${date}</b> | Creator:  <b>${creator.fullName}</b>| Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`;
-            $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
-        }
+                    $('#desinterestedInEvent' + id).unbind();
+                    $('#desinterestedInEvent' + id).click(() => {
 
-        $('#interestedInEvent' + id).unbind();
-        $('#interestedInEvent' + id).click(() => {
-            imInterested(id).done(()=>{
-                popUpOpens(mobj);
-            });
-        })
 
-        // let updatedInterestedArray = event.interested;
-        // updatedInterestedArray.push(myId);
-        // let eventUpdated = {
-        //     description: event.description,
-        //     category: event.category,
-        //     creator: event.creator,
-        //     date: event.date,
-        //     nrOfPlayers: event.nrOfPlayers,
-        //     coordinateX: event.coordinateX,
-        //     coordinateY: event.coordinateY,
-        //     interested: updatedInterestedArray,
-        //     participants: event.participants
-        // };
-        //
-        // $('#interestedInEvent' + id).unbind();
-        // $('#interestedInEvent' + id).click(() => {
-        //
-        //     $.ajax({
-        //         type: "PUT",
-        //         url: url + "/api/event/" + mobj.eventId,
-        //         data: JSON.stringify(eventUpdated),
-        //         contentType: "application/json",
-        //     }).done(msg => {
-        //         console.log("I'm interested in this event");
-        //         popUpOpens(mobj);
-        //     }).catch(err => {
-        //         console.log(err);
-        //     });
-        // })
-    }).catch(err => {
-        console.log(err)
-    });
-    $('#popupInfo' + mobj.eventId).unbind();
-    $('#popupInfo' + mobj.eventId).click(() => {
-        console.log("show large info div");
-        $('#popupInfoLarge' + mobj.eventId).show();
+                            $.ajax({
+                                type: "GET",
+                                url: url + "/api/leaveEvent/" + id
+                            }).done(msg => {
+                                // popup is loaded again so that the i'm interested button is updated to disabled
+                                popUpOpens(mobj);
+                                mobj.marker.setIcon(blueIcon);
+                            }).catch(err => {
+                                console.log(err);
+                            });
 
-    });
+
+                        }
+                    )
+                } else {
+                    let popupInfoLargeInterested = `<p>Description: <b>${description}</b><br>Date: <b>${date}</b> <br>Creator:  <b>${creator.fullName}</b><br>Spots open:  <b>${nrOfPlayers - participants.length}/${nrOfPlayers}</b></p><button id="interestedInEvent${id}" class="btn btn-default" type="button" >I'm interested!</button>`;
+                    $('#popupInfoLarge' + id).append(popupInfoLargeInterested);
+
+                    $('#interestedInEvent' + id).unbind();
+                    $('#interestedInEvent' + id).click(() => {
+                        imInterested(id).done(() => {
+                            // popup is loaded again so that the i'm interested button is updated to disabled
+                            popUpOpens(mobj);
+                            mobj.marker.setIcon(orangeIcon);
+                        });
+                    })
+                }
+            }
+        ).catch(err => {
+            console.log(err)
+        });
+
+        $('#popupInfo' + mobj.eventId).unbind();
+        $('#popupInfo' + mobj.eventId).click(() => {
+            console.log("show large info div");
+            $('#popupInfoLarge' + mobj.eventId).show();
+
+        });
+
+    } else {
+        $('#popupInfo' + mobj.eventId).unbind();
+        $('#popupInfo' + mobj.eventId).click(() => {
+            $('#loginModal').modal('toggle')
+        });
+    }
 }
 
 

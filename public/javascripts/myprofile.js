@@ -1,6 +1,7 @@
 // For multiselect
 // https://developer.snapappointments.com/bootstrap-select/
 
+let avatar = $('#avatarProfile');
 let fullName = $('#fullName');
 let email = $('#email');
 let descriptionToUpdate = $('#description');
@@ -80,6 +81,7 @@ function fillFavSportsSelect(){
 function fillProfileForm(){
     getUser(myId).done((json) => {
         myProfile = json;
+        avatar.attr('src', json.avatarUrl);
         fullName.attr('placeholder',json.fullName);
         email.attr('placeholder',json.email);
         descriptionToUpdate.text(json.description);

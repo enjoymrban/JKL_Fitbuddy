@@ -37,7 +37,7 @@ function buildOverpassApiUrl(map, overpassQuery) {
     let nodeQuery = 'node[sport= ' + overpassQuery + '](' + bounds + ');';
     let wayQuery = 'way[sport=' + overpassQuery + '](' + bounds + ');';
     let relationQuery = 'relation[sport=' + overpassQuery + '](' + bounds + ');';
-    let query = '?data=[out:json][timeout:2][maxsize:1000000];(' + nodeQuery + wayQuery + relationQuery + ');out body geom;';
+    let query = '?data=[out:json][timeout:2][maxsize:1000000];(' + nodeQuery + wayQuery + relationQuery + ');out body bb 2;';
     return query;
 
 }
