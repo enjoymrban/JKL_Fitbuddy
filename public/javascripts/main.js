@@ -153,6 +153,8 @@ function userAware() {
             $("#navbar-notloggedin").show();
             $("#navbar-loggedin").hide();
             console.log(error.responseText);
+            sessionStorage.setItem("myId", null);
+            myId = sessionStorage.getItem("myId");
         }
     })
 }
@@ -168,3 +170,6 @@ function imInterested(eventId){
         console.log(err);
     });
 }
+
+
+
