@@ -86,4 +86,4 @@ server.pid
 .cache
 
 # Whitelist
-!target/universal/stage/
+!/target/universal/stage/
