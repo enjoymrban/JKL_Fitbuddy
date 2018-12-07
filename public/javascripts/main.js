@@ -1,4 +1,4 @@
-let url = "http://localhost:9000";
+let url = "https://jklfitbuddy.herokuapp.com/";
 
 let myId;
 
