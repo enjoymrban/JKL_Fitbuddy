@@ -3,20 +3,22 @@ let users;
 
 let addBuddyButton = $('#addBuddy');
 let skipBuddyButton = $('#skipBuddy');
-myId = sessionStorage.getItem('myId');
 
 $().ready(() => {
-    getUser(myId).done((myData) => {
+    userAware().done(()=>{
+        getUser(myId).done((myData) => {
 
-        me = myData;
+            me = myData;
 
-        getUsers().done((allUsers) => {
-            users = allUsers;
+            getUsers().done((allUsers) => {
+                users = allUsers;
 
-            fillBuddyTable();
-            randomBuddy();
+                fillBuddyTable();
+                randomBuddy();
+            });
         });
     });
+
 
 
     addBuddyButton.click(() => {

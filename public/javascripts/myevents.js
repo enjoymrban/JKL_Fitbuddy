@@ -1,7 +1,8 @@
-myId = sessionStorage.getItem('myId');
-
 $().ready(() => {
-    fillEventTables();
+    userAware().done(()=>{
+        fillEventTables();
+    });
+
 });
 
 function fillEventTables() {
