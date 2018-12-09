@@ -41,7 +41,10 @@ libraryDependencies ++= Seq(
   //SecureSocial
     "ws.securesocial" %% "securesocial" % "master-SNAPSHOT",
     javaCore,
-    ehcache
+    ehcache,
+
+  //Slick
+    "org.webjars" % "slick" % "1.6.0"
 
   )
 
