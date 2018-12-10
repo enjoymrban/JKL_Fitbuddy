@@ -3,24 +3,43 @@ let recomPolygons = [];
 myId = sessionStorage.getItem('myId');
 let sportData;
 
+$('#carouselExample').on('slide.bs.carousel', function (e) {
+
+
+    let $e = $(e.relatedTarget);
+    let idx = $e.index();
+    let itemsPerSlide = 4;
+    let totalItems = $('.carousel-item').length;
+
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        let it = itemsPerSlide - (totalItems - idx);
+        for (let i=0; i<it; i++) {
+            // append slides to end
+            if (e.direction=="left") {
+                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+            }
+            else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+            }
+        }
+    }
+});
+
+
+
+
 
 $().ready(() => {
-
-    $(".slider").slick({
-        autoplay: true,
-        dots: true,
-        responsive: [{
-            breakpoint: 500,
-            settings: {
-                dots: false,
-                arrows: false,
-                infinite: false,
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }]
+    /* show lightbox when clicking a thumbnail */
+    $('a.thumb').click(function(event){
+        event.preventDefault();
+        let content = $('.modal-body');
+        content.empty();
+        let title = $(this).attr("title");
+        $('.modal-title').html(title);
+        content.html($(this).html());
+        $(".modal-profile").modal({show:true});
     });
-
 
     // Load all Nodes that contain a sport within Switzerland
     let query = "http://overpass-api.de/api/interpreter?data=%2F*%0AThis%20has%20been%20generated%20by%20the%20overpass-turbo%20wizard.%0AThe%20original%20search%20was%3A%0A%E2%80%9Csport%3D*%20and%20country%3DSwitzerland%E2%80%9D%0A*%2F%0A%0A%5Bout%3Ajson%5D%5Bmaxsize%3A1073741824%5D%3B%0Aarea%283600051701%29-%3E.searchArea%3B%28node%5B%22sport%22%5D%28area.searchArea%29%3B%3E%3B%29%3Bout%20bb%3B";
