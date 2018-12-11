@@ -3,18 +3,29 @@ let recomPolygons = [];
 myId = sessionStorage.getItem('myId');
 let sportData;
 
+
+// Contains rectangles and circles --> used to show and hide for leaflet
 let recommendations = L.layerGroup();
 
+// Contains all rectangles and circles with id for personal us connecting with popups
 let recommendationLayers = [];
 
-$('#carouselExample').on('slide.bs.carousel', function (e) {
+// Carousel Parts
+let entireCarousel = $('#carouselExample');
+let carouselBody= $("#carouselBody");
 
+// Notification Parts
+let recomInfoDiv = $('#recomInfoDiv');
+let recomInfo = $('#recomInfo');
+
+// Initialisation of the bootstrap carousel
+entireCarousel.on('slide.bs.carousel', function (e) {
 
     let $e = $(e.relatedTarget);
     let idx = $e.index();
     let itemsPerSlide = 4;
     let totalItems = $('.carousel-item').length;
-    console.log('hallo');
+
 
     if (idx >= totalItems - (itemsPerSlide - 1)) {
         let it = itemsPerSlide - (totalItems - idx);
@@ -33,14 +44,16 @@ $('#carouselExample').on('slide.bs.carousel', function (e) {
 
 $().ready(() => {
 
+    // hide recommendations for small screens, it takes too much space
+    // TODO change bootstrap css so that it fits on smaller screens
     window.onresize = function () {
         if ($(window).width() < 500) {
 
-            $('#recomInfoDiv').hide();
-            $('#recomInfo').hide();
+            recomInfoDiv.hide();
+            recomInfo.hide();
         } else {
-            $('#recomInfoDiv').show();
-            $('#recomInfo').show();
+            recomInfoDiv.show();
+            recomInfo.show();
         }
     };
 
@@ -57,23 +70,24 @@ $().ready(() => {
     }).done((json) => {
 
 
+        // Checks if User is logged in if not don't show any recommendations
         userAware().done(() => {
             sportData = json;
             buildRecommendations();
-            $('#recomInfo').text("Enjoy your recommendations!");
+            recomInfo.text("No recommendatons found! Add more favorite sports to your profile!");
+            entireCarousel.hide();
             if ($(window).width() < 500) {
                 recommendations.clearLayers();
-                $('#carouselExample').hide();
-                $('#recomInfo').hide();
+                entireCarousel.hide();
+                recomInfo.hide();
             }
             map.on('zoomend moveend', function () {
                 if (map.getZoom() <= 12 || $(window).width() < 500) {
-                    $('#recomInfo').text("Zoom closer for recommendations!");
+                    recomInfo.text("Zoom closer for recommendations!");
                     recommendations.clearLayers();
-                    $('#carouselExample').hide();
+                    entireCarousel.hide();
                 } else {
-                    $('#carouselExample').show();
-                    $('#recomInfo').text("Enjoy your recommendations!");
+                    entireCarousel.show();
                     buildRecommendations();
                 }
             });
@@ -82,8 +96,8 @@ $().ready(() => {
             // If the user is not logged in hide carousel and show
         }).catch(err => {
             console.log("You're not logged in!", err);
-            $('#recomInfo').text("Log in for recommendations!");
-            $('#carouselExample').hide();
+            recomInfo.text("Log in for recommendations!");
+            entireCarousel.hide();
         });
     }).catch(err => console.log(err));
 
@@ -106,6 +120,7 @@ function buildRecommendations() {
 }
 
 
+// translation array needed to translate the categories of the app to the english words which are used in the overpass api json
 let sportTranslation = [{
     cat: "Fussball", eng: "soccer", icon: "fa fa-futbol"
 }
@@ -117,7 +132,7 @@ let sportTranslation = [{
 function loadSportLocations(categories) {
 
     let bounds = map.getBounds();
-    console.log(bounds);
+    // contains all the sport translations relevant for this user
     let sports = [];
 
     for (let i = 0; i < sportTranslation.length; i++) {
@@ -132,77 +147,140 @@ function loadSportLocations(categories) {
         sportFilter.push(s.eng);
     }
 
-
+    // reset all data
     recommendations.clearLayers();
+
+    // key value pair  key = id of the node or the way  value = rectangle or circle
     recommendationLayers = [];
-    $('#carouselBody').empty();
+
+
+    entireCarousel.hide();
+    carouselBody.empty();
+
+
+    // Loop through every element in the data "sport locations"
     $.each(sportData.elements, (key, value) => {
         let {tags, type} = value;
-        if (tags !== undefined && value !== undefined) {
+
+        // Ignore nodes without any tag
+        if (tags !== undefined) {
+
+            // If the type is a node create a cyrcle
             if (type === "node") {
                 let {lat, lon} = value;
                 if (sportFilter.includes(tags.sport) && bounds._southWest.lat < lat && bounds._northEast.lat > lat && bounds._southWest.lng < lon && bounds._northEast.lng > lon) {
 
+
+                    // find the icon to use in the popup
                     let icon = sports[(sportFilter.indexOf(tags.sport))].icon;
-                    let circle = L.circle([lat, lon], {radius: 25, color: 'red'});
-                    recommendationLayers.push({id: value.id, layer: circle, tags: tags});
-                    recommendations.addLayer(circle).bindPopup(`<div id="recomPopup${value.id}"><p><i class="${icon}"></i>   <b>${tags.sport}</b></p><div><p id="recomTags${value.id}"></p></div><button id="createEventInRecom" class="btn btn-default" type="button">Create event here!</button></div>`, {
+                    let circle = L.circle([lat, lon], {
+                        radius: 25,
+                        color: 'red'
+                    }).bindPopup(`<div id="recomPopup${value.id}"><p><i class="${icon}"></i><b>${tags.sport}</b></p><div><p id="recomTags${value.id}"></p></div><button id="createEventInRecom${value.id}" class="btn btn-default" type="button">Create event here!</button></div>`, {
                         maxWidth: "auto", minWidth: 135
                     });
-                    $('#carouselBody').append(createCarouselSlide(tags.sport));
+                    recommendations.addLayer(circle);
+
+                    // create Slide and add it to the carousel
+                    carouselBody.append(createCarouselSlide(tags.sport));
                     circle.on('click', () => {
                         let keys = Object.keys(tags);
                         for (const k in keys) {
-                            if (keys[k] === "name" || keys[k] === "operator" || keys[k] === "opening_hours") {
-                                $(`#recomTags${value.id}`).append(`<b>${keys[k]}:</b>${tags[keys[k]]}<br>`);
-                            }
-                        }
-
-                    });
-
-
-                }
-            } else if (type === "way") {
-                if (sportFilter.includes(tags.sport) && bounds._southWest.lat < value.bounds.minlat && bounds._northEast.lat > value.bounds.maxlat && bounds._southWest.lng < value.bounds.minlon && bounds._northEast.lng > value.bounds.maxlon) {
-                    let latlngs = [[value.bounds.minlat, value.bounds.minlon], [value.bounds.maxlat, value.bounds.maxlon]];
-
-                    let icon = sports[(sportFilter.indexOf(tags.sport))].icon;
-                    let polygon = L.rectangle(latlngs, {color: 'red'}).bindPopup(`<div id="recomPopup${value.id}"><p><i class="${icon}"></i>   <b>${tags.sport}</b></p><div ><p id="recomTags${value.id}"></p></div><button id="createEventInRecom" class="btn btn-default" type="button">Create event here!</button></div>`, {
-                        maxWidth: "auto", minWidth: 135
-                    });
-                    recommendationLayers.push({id: value.id, layer: polygon, tags: tags});
-                    recommendations.addLayer(polygon);
-                    $('#carouselBody').append(createCarouselSlide(tags.sport));
-                    polygon.on('click', () => {
-                        let keys = Object.keys(tags);
-                        for (const k in keys) {
-                            // if(keys[k] === "name" || keys[k] === "operator" || keys[k] === "opening_hours" ){
+                            // TODO Filter for only relevant Data? All relevant?
+                            // if (keys[k] === "name" || keys[k] === "operator" || keys[k] === "opening_hours") {
                             $(`#recomTags${value.id}`).append(`<b>${keys[k]}:</b>${tags[keys[k]]}<br>`);
                             // }
                         }
 
+                        $(`#createEventInRecom${value.id}`).click(() => {
+                            // Assign values to the create event form
+                            newEventLat = (value.lat);
+                            newEventLong = (value.lon);
+
+                            $("#createEventModal").modal("show");
+                        });
+
                     });
+                    //recommendationLayers.push({id: value.id, layer: circle, tags: tags});
+                    recommendationLayers[value.id]= circle;
+                }
+
+                // If the type is a way create a rectangle with the min and max coordinates
+                // TODO instead of a rectangle a polygon could be used but you would have to loop through the array again to get the coordinates of every node
+            } else if (type === "way") {
+
+                if (sportFilter.includes(tags.sport) && bounds._southWest.lat < value.bounds.minlat && bounds._northEast.lat > value.bounds.maxlat && bounds._southWest.lng < value.bounds.minlon && bounds._northEast.lng > value.bounds.maxlon) {
+                    let latlngs = [[value.bounds.minlat, value.bounds.minlon], [value.bounds.maxlat, value.bounds.maxlon]];
+
+                    // find the icon to use in the popup
+                    let icon = sports[(sportFilter.indexOf(tags.sport))].icon;
+                    let rectangle = L.rectangle(latlngs, {color: 'red'}).bindPopup(`<div id="recomPopup${value.id}"><p><i class="${icon}"></i>   <b>${tags.sport}</b></p><div ><p id="recomTags${value.id}"></p></div><button id="createEventInRecom${value.id}" class="btn btn-default" type="button">Create event here!</button></div>`, {
+                        maxWidth: "auto", minWidth: 135
+                    });
+
+                    recommendations.addLayer(rectangle);
+                    // create Slide and add it to the carousel
+                    carouselBody.append(createCarouselSlide(value.id,tags.sport));
+
+                    // Clicking on the Img inside of the carousel should open the popup of the rectangle
+                    $(`#recommendationInCarousel${value.id}`).click(()=>{
+                        console.log(recommendationLayers[value.id]);
+                        recommendationLayers[value.id].openPopup();
+                        fillPopup();
+                    });
+                    rectangle.on('click', () => {
+
+                        fillPopup();
+                    });
+
+                    function fillPopup(){
+                        let keys = Object.keys(tags);
+                        for (const k in keys) {
+                            // TODO Filter for only relevant Data? All relevant?
+                            // if(keys[k] === "name" || keys[k] === "operator" || keys[k] === "opening_hours" ){
+                            $(`#recomTags${value.id}`).append(`<b>${keys[k]}:</b>${tags[keys[k]]}<br>`);
+                            // }
+                            $(`#createEventInRecom${value.id}`).click(() => {
+
+                                // calculating the middle of the rectangle
+                                let randomLat = (value.bounds.maxlat - value.bounds.minlat)/2+value.bounds.minlat;
+                                let randomLon = (value.bounds.maxlon - value.bounds.minlon)/2+value.bounds.minlon;
+
+                                // Assign values to the create event form
+                                newEventLat = randomLat;
+                                newEventLong = randomLon;
+
+                                $("#createEventModal").modal("show");
+                            });
+                        }
+                    }
+                    //recommendationLayers.push({id: value.id, layer: rectangle, tags: tags});
+                    recommendationLayers[value.id]= rectangle;
                 }
             }
-
         }
-
     });
 
-    if ($("#carouselBody").children().length === 0) {
 
-        $('#recomInfo').text("No recommendatons found! Add more favorite sports to your profile!");
-        $('#carouselExample').hide();
+    // If no recommendations are found show notification, if there are give active class to the first element in the carousel
+    if (carouselBody.children().length === 0) {
+
+        recomInfo.text("No recommendatons found! Add more favorite sports to your profile!");
+
+    } else {
+        recomInfo.text("Enjoy your recommendations!");
+        $("#carouselBody div:first-child").addClass("active");
+
+        // add Layer to the leaflet map --> shows all the recommendations on the map
+        map.addLayer(recommendations);
+        entireCarousel.show();
     }
-
-    $("#carouselBody div:first-child").addClass("active");
-    map.addLayer(recommendations);
 
 
 }
 
-function createCarouselSlide(sport) {
-    let template = `<div class="carousel-item col-3"><div class="panel panel-default"><div class="panel-thumbnail"><a href="#" title="image 1" class="thumb"><img class="img-fluid mx-auto d-block" src="/assets/images/recommendations/${sport}.jpg" alt="slide 1"></a></div></div></div>`;
-    return template;
+function createCarouselSlide(id, sport) {
+    return template = `<div class="carousel-item col-3"><div class="panel panel-default"><div class="panel-thumbnail"><img id="recommendationInCarousel${id}" class="img-fluid mx-auto d-block" src="/assets/images/recommendations/${sport}.jpg" alt="${sport}"></div></div></div>`;
+
 }
 

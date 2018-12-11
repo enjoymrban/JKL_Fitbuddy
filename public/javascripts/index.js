@@ -164,7 +164,11 @@ function addMarkerToMap(event, wasNewlyCreated = false) {
         } else {
             getEvent(event.id).done((singleEvent) => {
                 const {interested, participants, nrOfPlayers} = singleEvent;
-                if (participants.length === nrOfPlayers) {
+                if (participants.indexOf(Number(myId)) !== -1) {
+                    color = greenIcon;
+                    placeMarker(event, color, wasNewlyCreated);
+
+                } else if (participants.length === nrOfPlayers) {
                     color = redIcon;
 
                     placeMarker(event, color, wasNewlyCreated);
@@ -390,6 +394,7 @@ function createEvent() {
         }).done(msg => {
 
             addMarkerToMap(msg, true);
+            if(createEventPopupMarker)
             map.removeLayer(createEventPopupMarker);
             $('#createEventModal').modal('toggle')
 
