@@ -1,13 +1,11 @@
-let recomId = 0;
-let recomPolygons = [];
 myId = sessionStorage.getItem('myId');
 let sportData;
 
-
 // Contains rectangles and circles --> used to show and hide for leaflet
+// A LayerGroup can be added or removed completeley form the map
 let recommendations = L.layerGroup();
 
-// Contains all rectangles and circles with id for personal us connecting with popups
+// Contains all rectangles and circles with id for personal use e.g. connecting with popups
 let recommendationLayers = [];
 
 // Carousel Parts
@@ -19,15 +17,13 @@ let recomInfoDiv = $('#recomInfoDiv');
 let recomInfo = $('#recomInfo');
 
 // Initialisation of the bootstrap carousel
+// TODO a bug does stop the carousel in certain situations --> not identified yet
 entireCarousel.on('slide.bs.carousel', function (e) {
 
     let $e = $(e.relatedTarget);
     let idx = $e.index();
     let itemsPerSlide = 4;
     let totalItems = $('.carousel-item').length;
-
-
-
 
     if (idx >= totalItems - (itemsPerSlide - 1)) {
         let it = itemsPerSlide - (totalItems - idx);
@@ -102,15 +98,10 @@ $().ready(() => {
             entireCarousel.hide();
         });
     }).catch(err => console.log(err));
-
-
-})
-;
+});
 
 
 function buildRecommendations() {
-    recomId = 0;
-    recomPolygons = [];
     $("#recommendationDiv").empty();
     getUser(myId).done((user) => {
         let categoriesForRecom = [];
@@ -123,11 +114,13 @@ function buildRecommendations() {
 
 
 // translation array needed to translate the categories of the app to the english words which are used in the overpass api json
+// This data would normally be inside the database --> will not be done since this are two different projects
+// With the pro account of font-awesome a lager variety of icons could be used, sports without an icon have the icon ?
 let sportTranslation =
-    [{id: 1, cat: "Fussball", eng: "soccer", icon: "fa fa-futbol"}
-        , {id: 2, cat: "Basketball", eng: "basketball", icon: "fa fa-basketball-ball"}
-        , {id: 3, cat: "Tennis", eng: "tennis", icon: "fa fa-question"}
-        , {id: 4, cat: "Jogging", eng: "athletics", icon: "fas fa-walking"}];
+    [{id: 1, cat: "Fussball", eng: "soccer", icon: "fa fa-futbol", img: "soccer.jpg"}
+        , {id: 2, cat: "Basketball", eng: "basketball", icon: "fa fa-basketball-ball", img: "basketball.jpg"}
+        , {id: 3, cat: "Tennis", eng: "tennis", icon: "fa fa-question", img: "tennis.jpg"}
+        , {id: 4, cat: "Jogging", eng: "athletics", icon: "fas fa-walking", img: "athletics.jpg"}];
 
 
 function loadSportLocations(categories) {
@@ -183,7 +176,8 @@ function loadSportLocations(categories) {
                     recommendations.addLayer(circle);
 
                     // create Slide and add it to the carousel
-                    carouselBody.append(createCarouselSlide(value.id, tags.sport));
+                    let img = sports[(sportFilter.indexOf(tags.sport))].img;
+                    carouselBody.append(createCarouselSlide(value.id, tags.sport, img));
 
 
                     // Clicking on the Img inside of the carousel should open the popup of the rectangle
@@ -224,10 +218,12 @@ function loadSportLocations(categories) {
                 }
 
                 // If the type is a way create a rectangle with the min and max coordinates
-                // TODO instead of a rectangle a polygon could be used but you would have to loop through the array again to get the coordinates of every node
+                // TODO instead of a rectangle a polygon could be used but you would have to loop through all data again to get the coordinates of every node
             } else if (type === "way") {
 
-                if (sportFilter.includes(tags.sport) && bounds._southWest.lat < value.bounds.minlat && bounds._northEast.lat > value.bounds.maxlat && bounds._southWest.lng < value.bounds.minlon && bounds._northEast.lng > value.bounds.maxlon) {
+
+                // -0.01 so its not under the recommendation carousel
+                if (sportFilter.includes(tags.sport) && bounds._southWest.lat < value.bounds.minlat && bounds._northEast.lat-0.005 > value.bounds.maxlat && bounds._southWest.lng < value.bounds.minlon && bounds._northEast.lng > value.bounds.maxlon) {
                     let latlngs = [[value.bounds.minlat, value.bounds.minlon], [value.bounds.maxlat, value.bounds.maxlon]];
 
                     // find the icon to use in the popup
@@ -238,10 +234,15 @@ function loadSportLocations(categories) {
 
                     recommendations.addLayer(rectangle);
                     // create Slide and add it to the carousel
-                    carouselBody.append(createCarouselSlide(value.id, tags.sport));
+                    let img = sports[(sportFilter.indexOf(tags.sport))].img;
+                    carouselBody.append(createCarouselSlide(value.id, tags.sport, img));
 
                     // Clicking on the Img inside of the carousel should open the popup of the rectangle
-                    $(`#recommendationInCarousel${value.id}`).click(() => {
+                    /* TODO Would be nice if you could hover over a picture in the carousel and it would show the popup on the map and on leave the popup would close.
+                       Seems not to be possible without storing a boolean for every "marker". A possibility is to tune the recommendationLayer and make the value an array with "marker" and boolean.
+                       https://gis.stackexchange.com/questions/271602/show-popup-on-marker-hover-mouseover-hide-on-mouseout-and-keep-open-on-click?rq=1
+                    */
+                    $(`#recommendationInCarousel${value.id}`).on('click',() => {
                         console.log(recommendationLayers[value.id]);
                         recommendationLayers[value.id].openPopup();
                         fillPopup();
@@ -300,8 +301,8 @@ function loadSportLocations(categories) {
 
 }
 
-function createCarouselSlide(id, sport) {
-    return template = `<div class="carousel-item col-3"><div class="panel panel-default"><div class="panel-thumbnail"><img id="recommendationInCarousel${id}" class="img-fluid mx-auto d-block" src="/assets/images/recommendations/${sport}.jpg" alt="${sport}"></div></div></div>`;
+function createCarouselSlide(id, sport, img) {
+    return template = `<div class="carousel-item col-3"><div class="panel panel-default"><div class="panel-thumbnail"><img id="recommendationInCarousel${id}" class="img-fluid mx-auto d-block" src="/assets/images/recommendations/${img}" alt="${sport}"></div></div></div>`;
 
 }
 
