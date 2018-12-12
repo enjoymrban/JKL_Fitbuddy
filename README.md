@@ -1,8 +1,6 @@
 # JKL_Fitbuddy
-
-Das Ziel der Webapplikation ist es, eine Plattform zu schaffen, auf der sich Sportbegeisterte unkompliziert mit gleichgesinnten zum Sport verabreden können.
-Aus eigener Erfahrung wissen wir, dass es schwierig sein kann einen geeigneten Trainingspartner oder aber auch einfach einen Freizeitsportler zu finden. Durch die Webapplikation ergibt sich die Möglichkeit sein geliebtes Hobby mit unterschiedlichen Personen zu teilen ohne dabei seine Unabhängigkeit zu verlieren und auf eine andere Person angewiesen zu sein.
-
+The goal of this webapplication is to create a platform where sport enthusiasts can meet with others very easy.
+From our own experiences we know that it can be difficult to find a suitable sport buddy or just some hobby sport people. With this application, we created a place to share sport with different people without loosing our flexibility or being bound to another person.
 
 ## Getting Started
 
@@ -36,32 +34,91 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## API
 
-
 ### Single page routes
 ```
-(**)  GET     /                           controllers.SinglePageController.index
-
+(**)  GET     /                      
 ```
 - Response: index.html
 ```
-(*) GET     /fitbuddies                 controllers.SinglePageController.fitbuddies
+(*) GET     /fitbuddies                
 ```
 - Response: fitbuddies.html
 ```
-(*) GET     /myprofile                  controllers.SinglePageController.myprofile
+(*) GET     /myprofile                
 ```
 - Response: myprofile.html
 ```
-(*) GET     /myevents                   controllers.SinglePageController.myevents
+(*) GET     /myevents                   
 ```
 - Response: myevents.html 
 ### Events
 
+####Get all Users
 ```
-(**) GET     /api/event                  controllers.EventController.getAllEvents()
+(**) GET     /api/event               
 ```
- - Response:
- Logged in: returns all events 
+ - Response logged in:
+```javascript
+[{
+    id: 1,
+    category: {
+        id: 1,
+        title: "Fussball"
+    },
+    creator: {
+        id: 3,
+        description: "Bester Basler Export",
+        firstName: "Roger",
+        lastName: "Federer",
+        fullName: "Roger Federer",
+        email: "fedi@ch",
+        avatarUrl: "https://i.ytimg.com/vi/UV79c5Ubn7s/hqdefault.jpg",
+        providerId: "facebook",
+        authUserId: "632318664554645",
+        categories: [{
+                id: 3,
+                title: "Tennis"
+            },
+            {
+                id: 5,
+                title: "Sonstiges"
+            }
+        ]
+    },
+    description: "Fussballspielen mit Profis",
+    date: "12.09.2018",
+    nrOfPlayers: 22,
+    coordinateX: 12.3456789,
+    coordinateY: 98.7654321
+},{...}]
+```
+
+- Response not logged in:
+```javascript
+[{
+        id: 1,
+        category: {
+            id: 1,
+            title: "Fussball"
+        },
+        creator: null,
+        description: null,
+        date: null,
+        nrOfPlayers: 22,
+        coordinateX: 12.3456789,
+        coordinateY: 98.7654321
+    },{...}]
+ ```
+
+---
+
+#### Get a certain event
+```
+(*) GET     /api/event/:id             
+```
+- Params Required:
+`[id]=[eventId]`
+- Response logged in:
 ```javascript
 {
     id: 1,
@@ -93,56 +150,223 @@ End with an example of getting some data out of the system or using it for a lit
     date: "12.09.2018",
     nrOfPlayers: 22,
     coordinateX: 12.3456789,
-    coordinateY: 98.7654321
-},{...}
-```
- 
+    coordinateY: 98.7654321,
+    interested: [
+        1,
+        6
+    ],
+    participants: []
+}
  ```
- Not Logged in: returns all events but without 
+ - Response not logged in:
+    Status Code 303, redirect to the login page
+---
+#### Create an Event
+```
+(*) POST	/api/event                  
+```
 
+- Example Request:
+```javascript
+let event = {
+            description: "testDescription",
+            category: {
+                id: 1,
+                title: "Fussball" // Not necessary unless you want to use the entire event in the response
+            },
+            creator: {
+                id: 1
+            },
+            date: 2018-12-12,
+            nrOfPlayers: 22,
+            coordinateX: 47.5585247,
+            coordinateY: 9.2545698
+        };
+
+        $.ajax({
+            type: "POST",
+            url: url + "/api/event",
+            data: JSON.stringify(event),
+            contentType: "application/json",
+            dataType: 'json'
+        })
+ ```
+ The response contains the posted event
+
+- Response not logged in:
+        Status Code 303, redirect to the login page
+#### Update an event
 ```
-GET     /api/event/:id              controllers.EventController.getOneEvent(id: Long)
+(*) PUT	    /api/event/:id             
 ```
+- Params Required:
+`[id]=[eventId]`
+an event can only be updated by the creator of the event!
+- Example Request:
+```javascript
+same as the POST event request
 ```
-POST	/api/event                  controllers.EventController.addEvent()
+- Response not logged in:
+        Status Code 303, redirect to the login page
+
+#### Delete an event
 ```
+(*) DELETE	/api/event/:id             
 ```
-PUT	    /api/event/:id              controllers.EventController.changeEvent(id: Long)
+only the creator can delete his events
+- Response logged in: Status Code 200
+- Response not logged in:
+        Status Code 303, redirect to the login page
+        
+#### Route to show interest in an event        
 ```
+(*) GET     /api/joinEvent/:id         
 ```
-DELETE	/api/event/:id              controllers.EventController.deleteEvent(id: Long)
+Only the Id of the User calling the Request will be put into the interested array of the event
+
+- Params Required:
+`[id]=[eventId]`
+- Response not logged in:
+        Status Code 303, redirect to the login page
+        
+
+#### Route to withdraw the interest in an event
 ```
+(*) GET     /api/leaveEvent/:id       
 ```
-GET     /api/joinEvent/:id          controllers.EventController.joinEvent(id: Long)
-```
-```
-GET     /api/leaveEvent/:id         controllers.EventController.leaveEvent(id: Long)
-```
+Only the Id of the User calling the Request will be removed from the interested array of the event
+- Params Required:
+`[id]=[eventId]`
+- Response not logged in:
+        Status Code 303, redirect to the login page
+        
 
 ### User
+#### Get all Users
 ```
-GET		/api/user                  controllers.UserController.getAllUsers()
+(*) GET		/api/user                
 ```
+- Response logged in:
+````javascript
+[{
+        id: 1,
+        description: "Ehemalige Miss Ostschweiz",
+        firstName: "test",
+        lastName: "user",
+        fullName: "test user",
+        email: "test.user@bla.ch",
+        avatarUrl: "https://i.ytimg.com/vi/UV79c5Ubn7s/hqdefault.jpg",
+        providerId: "facebook",
+        authUserId: "029387450923475",
+        categories: [{
+                id: 1,
+                title: "Fussball"
+            },
+            {
+                id: 4,
+                title: "Jogging"
+            }
+        ]
+    },{...}]
+````
+- Response not logged in:
+        Status Code 303, redirect to the login page
+
+#### Get user by id
 ```
-GET		/api/user/:id              controllers.UserController.getOneUser(id: Long)
+(*) GET		/api/user/:id             
 ```
+- Params Required:
+`[id]=[userId]`
+- Response logged in:
+````javascript
+{
+        id: 1,
+        description: "Ehemalige Miss Ostschweiz",
+        firstName: "test",
+        lastName: "user",
+        fullName: "test user",
+        email: "test.user@bla.ch",
+        avatarUrl: "https://i.ytimg.com/vi/UV79c5Ubn7s/hqdefault.jpg",
+        providerId: "facebook",
+        authUserId: "029387450923475",
+        categories: [{
+                id: 1,
+                title: "Fussball"
+            },
+            {
+                id: 4,
+                title: "Jogging"
+            }
+        ]
+    }
+````
+
+- Response not logged in:
+        Status Code 303, redirect to the login page
+
+#### Update user
 ```
-PUT		/api/user/:id              controllers.UserController.changeUser(id: Long)
+(*) PUT		/api/user/:id            
 ```
+Only the user with the id :id is allowed to update his profile. He is allowed to update his description and his favorite sports.
+- Params Required:
+`[id]=[userId]`
+- Response not logged in:
+        Status Code 303, redirect to the login page
 
 
 ###Categories
+#### Get all categories
 ```
-GET     /api/category            controllers.CategoryController.category()
+GET     /api/category           
 ```
+- Response: 
+````javascript
+[{
+        id: 1,
+        title: "Fussball"
+    },
+    {
+        id: 2,
+        title: "Basketball"
+    },
+    {
+        id: 3,
+        title: "Tennis"
+    },
+    {
+        id: 4,
+        title: "Jogging"
+    },
+    {
+        id: 5,
+        title: "Sonstiges"
+    }]
+````
+#### Get category by id
 ```
-GET     /api/category/:id        controllers.CategoryController.getCategory(id: Long)
+GET     /api/category/:id        
 ```
+- Params Required:
+`[id]=[categoryId]`
+- Response:
+````javascript
+    {
+        id: 1,
+        title: "Fussball"
+                        }
+````
+
+
 
 ### SecureSocial
+#### Check whether or not a user is logged in
 ```
-GET        /userAware           @controllers.Application.userAware
+GET        /userAware          
 ```
+- Response logged in: Returns the User object
+- Response not logged in: Retuns `not authenticated` on a seperate page
 
 (\*)Route secured with SecureSocial and only accessible while logged in with a valid facebook account
 (\***) Route is aware if the user is logged in or not and serves him with different information
@@ -172,27 +396,19 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [leaflet 1.3.1](https://leafletjs.com/) - The javascript library used
+* [SecureSocial](https://maven.apache.org/) - Authentication for Play Framework Applications
+* [Bootstrap 4.0.0](https://getbootstrap.com/) - Toolkit for developing with HTML, CSS, JS
+* [Postgres 42.2.5](https://www.postgresql.org/) - Open Source Relational Database
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* [**Silvan Knecht**](https://github.com/enjoymrban)
+* [**Silvio Jäger**](https://github.com/silviojaeger)
+* [**Jann Lemm**](https://github.com/jannlemm0913)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+See also the list of [contributors](https://github.com/enjoymrban/JKL_Fitbuddy/graphs/contributors) who participated in this project.
 
 ## Acknowledgments
 
