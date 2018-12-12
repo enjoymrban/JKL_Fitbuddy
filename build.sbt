@@ -27,8 +27,7 @@ libraryDependencies ++= Seq(
   // leaflet map with tooltips
   "org.webjars" % "leaflet" % "1.3.1",
 
-  // Vue.js
-  "org.webjars" % "vue" % "2.5.16",
+  // Database
     evolutions,
     javaJdbc,
     javaJpa,
