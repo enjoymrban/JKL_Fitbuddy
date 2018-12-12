@@ -39,19 +39,20 @@ End with an example of getting some data out of the system or using it for a lit
 
 ### Single page routes
 ```
-GET     /                           controllers.SinglePageController.index
+(**)  GET     /                           controllers.SinglePageController.index
 ```
-* Returns the index page
+- Responds with the index.html page
+
 ```
-GET     /fitbuddies                 controllers.SinglePageController.fitbuddies
+(*) GET     /fitbuddies                 controllers.SinglePageController.fitbuddies
 ```
-* Returns the fitbuddies page
+- Responds with the fitbuddies.html page
 ```
-GET     /myprofile                  controllers.SinglePageController.myprofile
+(*) GET     /myprofile                  controllers.SinglePageController.myprofile
 ```
-* Returns the myprofile page
+- Responds with the myprofile.html page
 ```
-GET     /myevents                   controllers.SinglePageController.myevents
+(*) GET     /myevents                   controllers.SinglePageController.myevents
 ```
 * Returns the myevents page
 ### Events
@@ -103,7 +104,8 @@ GET     /api/category/:id        controllers.CategoryController.getCategory(id: 
 GET        /userAware           @controllers.Application.userAware
 ```
 
-
+(*) Route secured with SecureSocial and only accessible while logged in with a valid facebook account
+(**) Route is aware if the user is logged in or not and serves him with different information
 ## Running the tests
 
 Explain how to run the automated tests for this system
