@@ -1,4 +1,4 @@
-let url = "https://kaffistube.ch";
+let url = "http://localhost:9000";
 
 let myId;
 

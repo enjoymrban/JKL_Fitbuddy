@@ -40,26 +40,66 @@ End with an example of getting some data out of the system or using it for a lit
 ### Single page routes
 ```
 (**)  GET     /                           controllers.SinglePageController.index
-```
-- Responds with the index.html page
 
+```
+- Response: index.html
 ```
 (*) GET     /fitbuddies                 controllers.SinglePageController.fitbuddies
 ```
-- Responds with the fitbuddies.html page
+- Response: fitbuddies.html
 ```
 (*) GET     /myprofile                  controllers.SinglePageController.myprofile
 ```
-- Responds with the myprofile.html page
+- Response: myprofile.html
 ```
 (*) GET     /myevents                   controllers.SinglePageController.myevents
 ```
-* Returns the myevents page
+- Response: myevents.html 
 ### Events
 
 ```
-GET     /api/event                  controllers.EventController.getAllEvents()
+(**) GET     /api/event                  controllers.EventController.getAllEvents()
 ```
+ - Response:
+ Logged in: returns all events 
+```javascript
+{
+    id: 1,
+    category: {
+        id: 1,
+        title: "Fussball"
+    },
+    creator: {
+        id: 3,
+        description: "Bester Basler Export",
+        firstName: "Roger",
+        lastName: "Federer",
+        fullName: "Roger Federer",
+        email: "fedi@ch",
+        avatarUrl: "https://i.ytimg.com/vi/UV79c5Ubn7s/hqdefault.jpg",
+        providerId: "facebook",
+        authUserId: "632318664554645",
+        categories: [{
+                id: 3,
+                title: "Tennis"
+            },
+            {
+                id: 5,
+                title: "Sonstiges"
+            }
+        ]
+    },
+    description: "Fussballspielen mit Profis",
+    date: "12.09.2018",
+    nrOfPlayers: 22,
+    coordinateX: 12.3456789,
+    coordinateY: 98.7654321
+},{...}
+```
+ 
+ ```
+ Not Logged in: returns all events but without 
+
 ```
 GET     /api/event/:id              controllers.EventController.getOneEvent(id: Long)
 ```
@@ -104,8 +144,8 @@ GET     /api/category/:id        controllers.CategoryController.getCategory(id: 
 GET        /userAware           @controllers.Application.userAware
 ```
 
-(*) Route secured with SecureSocial and only accessible while logged in with a valid facebook account
-(**) Route is aware if the user is logged in or not and serves him with different information
+(\*)Route secured with SecureSocial and only accessible while logged in with a valid facebook account
+(\***) Route is aware if the user is logged in or not and serves him with different information
 ## Running the tests
 
 Explain how to run the automated tests for this system
