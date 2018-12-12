@@ -74,7 +74,7 @@ public class CategoryRepository {
     }
 
     private Stream<Category> list(EntityManager em) {
-        List<Category> categories = em.createQuery("select cat from category cat", Category.class).getResultList();
+        List<Category> categories = em.createQuery("select cat from models.Category cat", Category.class).getResultList();
         return categories.stream();
     }
 }

@@ -51,7 +51,7 @@ public class EventRepository {
 
 
     private Stream<Event> list(EntityManager em) {
-        List<Event> events = em.createQuery("select e from event e", Event.class).getResultList();
+        List<Event> events = em.createQuery("select e from models.Event e", Event.class).getResultList();
         return events.stream();
     }
 

@@ -7,12 +7,13 @@ import java.util.List;
 import securesocial.core.BasicProfile;
 
 
-@Entity(name = "fitUser")
+@Entity
+@Table(name = "FitUsers")
 public class User {
 
     @Id
-    @SequenceGenerator(name = "fitUser_id_seq", sequenceName = "fitUser_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "fitUser_id_seq")
+    @SequenceGenerator(name = "fitUsers_id_seq", sequenceName = "fitUsers_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "fitUsers_id_seq")
     private long id;
     private String description;
     private String firstName;

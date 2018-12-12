@@ -7,11 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Entity(name="category")
+@Entity
+@Table(name="Categories")
 public class Category {
     @Id
-    @SequenceGenerator(name="category_id_seq", sequenceName="category_id_seq",allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="category_id_seq")
+    @SequenceGenerator(name="categories_id_seq", sequenceName="categories_id_seq",allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="categories_id_seq")
     private Long id;
     private String title;
 

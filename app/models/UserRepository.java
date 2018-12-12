@@ -57,7 +57,7 @@ public class UserRepository {
     private User findByAuthId(EntityManager em, String authUserId) {
         User user;
         try {
-            user = em.createQuery("select u from fitUser u where u.authUserId=:authId", User.class).setParameter("authId",authUserId).getSingleResult();
+            user = em.createQuery("select u from models.User u where u.authUserId=:authId", User.class).setParameter("authId",authUserId).getSingleResult();
             return user;
         } catch (javax.persistence.NoResultException error) {
             return null;
@@ -67,7 +67,7 @@ public class UserRepository {
 
 
     private Stream<User> list(EntityManager em) {
-        List<User> user = em.createQuery("select u from fitUser u", User.class).getResultList();
+        List<User> user = em.createQuery("select u from models.User u", User.class).getResultList();
         return user.stream();
     }
 

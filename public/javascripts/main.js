@@ -1,4 +1,4 @@
-let url = "https://jklfitbuddy.herokuapp.com/";
+let url = "https://jklfitbuddy.herokuapp.com";
 
 let myId;
 
