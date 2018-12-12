@@ -8,6 +8,10 @@ html, body {
     width: 100%;
 }
 
+.sites2Colums{
+    max-width: 1100px;
+}
+
 #wrapper {
     position: relative;
     height: auto !important;
@@ -135,12 +139,7 @@ div[id^="popupInfoLarge"]{
 }
 
 
-#custom-search-input {
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-}
+
 
 #custom-search-input input {
     border: 0;

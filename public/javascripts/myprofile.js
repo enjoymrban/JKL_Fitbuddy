@@ -12,50 +12,52 @@ let myProfile = "";
 myId = sessionStorage.getItem('myId');
 
 
-
 $().ready(() => {
-    fillProfileForm();
+    userAware().done(() => {
 
 
-    sendProfileChangesB.on('click', ()=>{
-        let categoriesToUpdate = [];
-
-        for(const c of selectFavoriteSports.val()){
-            categoriesToUpdate.push({id:Number(c)})
-
-        }
-
-        let userToUpdate = {
-            description: descriptionToUpdate.val(),
-            firstName: myProfile.firstName,
-            lastName: myProfile.lastName,
-            fullName: myProfile.fullName,
-            email: myProfile.email,
-            avatarUrl: myProfile.avatarUrl,
-            categories: categoriesToUpdate,
-            buddies: myProfile.buddies
+        fillProfileForm();
 
 
-        };
+        sendProfileChangesB.on('click', () => {
+            let categoriesToUpdate = [];
 
-        updateUser(myId,userToUpdate).done(msg =>{
-            $("#sentSuccess").show();
-            $("#sentDanger").hide();
+            for (const c of selectFavoriteSports.val()) {
+                categoriesToUpdate.push({id: Number(c)})
 
-        }).catch(err =>{
-            $("#sentSuccess").hide();
-            $("#sentDanger").show();
-            console.log(err);
+            }
 
-        });
+            let userToUpdate = {
+                description: descriptionToUpdate.val(),
+                firstName: myProfile.firstName,
+                lastName: myProfile.lastName,
+                fullName: myProfile.fullName,
+                email: myProfile.email,
+                avatarUrl: myProfile.avatarUrl,
+                categories: categoriesToUpdate,
+                buddies: myProfile.buddies
 
-    })
 
+            };
+
+            updateUser(myId, userToUpdate).done(msg => {
+                $("#sentSuccess").show();
+                $("#sentDanger").hide();
+
+            }).catch(err => {
+                $("#sentSuccess").hide();
+                $("#sentDanger").show();
+                console.log(err);
+
+            });
+
+        })
+    });
 
 });
 
 
-function fillFavSportsSelect(){
+function fillFavSportsSelect() {
     selectFavoriteSports.empty();
     $.ajax({
         url: url + "/api/category",
@@ -78,15 +80,15 @@ function fillFavSportsSelect(){
 }
 
 
-function fillProfileForm(){
+function fillProfileForm() {
     getUser(myId).done((json) => {
         myProfile = json;
         avatar.attr('src', json.avatarUrl);
-        fullName.attr('placeholder',json.fullName);
-        email.attr('placeholder',json.email);
+        fullName.attr('placeholder', json.fullName);
+        email.attr('placeholder', json.email);
         descriptionToUpdate.text(json.description);
 
-        for(const c of json.categories){
+        for (const c of json.categories) {
             myFavorites.push(c.id);
         }
         fillFavSportsSelect();

@@ -43,6 +43,7 @@ libraryDependencies ++= Seq(
     javaCore,
     ehcache
 
+
   )
 
 herokuAppName in Compile := "jklfitbuddy"

@@ -49,7 +49,7 @@ let blackIcon = new L.Icon({
 });
 
 
-let endZoom = 13;
+let endZoom = 15;
 let startZoom = 10;
 let map = L.map('mapid', {zoomControl: false}).setView([0, 0], startZoom);
 
@@ -92,7 +92,6 @@ function getLocation() {
 function setPosition(position) {
     let myLatitude = position.coords.latitude;
     let myLongitude = position.coords.longitude;
-    console.log(myLatitude, myLongitude);
     createMap(myLatitude, myLongitude);
 }
 
@@ -164,7 +163,11 @@ function addMarkerToMap(event, wasNewlyCreated = false) {
         } else {
             getEvent(event.id).done((singleEvent) => {
                 const {interested, participants, nrOfPlayers} = singleEvent;
-                if (participants.length === nrOfPlayers) {
+                if (participants.indexOf(Number(myId)) !== -1) {
+                    color = greenIcon;
+                    placeMarker(event, color, wasNewlyCreated);
+
+                } else if (participants.length === nrOfPlayers) {
                     color = redIcon;
 
                     placeMarker(event, color, wasNewlyCreated);
@@ -259,7 +262,7 @@ map.on('zoom move', function () {
         for (const mobj of markers) {
             let popup = mobj.marker.getPopup();
             if (popup.isOpen()) {
-                console.log("popup already open");
+
             } else {
                 let {eventId, marker} = mobj;
                 let {lat, lng} = mobj.marker._latlng;
@@ -390,6 +393,7 @@ function createEvent() {
         }).done(msg => {
 
             addMarkerToMap(msg, true);
+            if(createEventPopupMarker)
             map.removeLayer(createEventPopupMarker);
             $('#createEventModal').modal('toggle')
 
