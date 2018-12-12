@@ -195,6 +195,8 @@ let event = {
 
 - Response not logged in:
         Status Code 303, redirect to the login page
+        
+---
 #### Update an event
 ```
 (*) PUT	    /api/event/:id             
@@ -208,7 +210,7 @@ same as the POST event request
 ```
 - Response not logged in:
         Status Code 303, redirect to the login page
-
+---
 #### Delete an event
 ```
 (*) DELETE	/api/event/:id             
@@ -217,7 +219,7 @@ only the creator can delete his events
 - Response logged in: Status Code 200
 - Response not logged in:
         Status Code 303, redirect to the login page
-        
+---        
 #### Route to show interest in an event        
 ```
 (*) GET     /api/joinEvent/:id         
@@ -229,7 +231,7 @@ Only the Id of the User calling the Request will be put into the interested arra
 - Response not logged in:
         Status Code 303, redirect to the login page
         
-
+---
 #### Route to withdraw the interest in an event
 ```
 (*) GET     /api/leaveEvent/:id       
@@ -240,7 +242,7 @@ Only the Id of the User calling the Request will be removed from the interested 
 - Response not logged in:
         Status Code 303, redirect to the login page
         
-
+---
 ### User
 #### Get all Users
 ```
@@ -271,7 +273,7 @@ Only the Id of the User calling the Request will be removed from the interested 
 ````
 - Response not logged in:
         Status Code 303, redirect to the login page
-
+---
 #### Get user by id
 ```
 (*) GET		/api/user/:id             
@@ -304,7 +306,7 @@ Only the Id of the User calling the Request will be removed from the interested 
 
 - Response not logged in:
         Status Code 303, redirect to the login page
-
+---
 #### Update user
 ```
 (*) PUT		/api/user/:id            
@@ -315,7 +317,7 @@ Only the user with the id :id is allowed to update his profile. He is allowed to
 - Response not logged in:
         Status Code 303, redirect to the login page
 
-
+---
 ###Categories
 #### Get all categories
 ```
@@ -344,6 +346,7 @@ GET     /api/category
         title: "Sonstiges"
     }]
 ````
+---
 #### Get category by id
 ```
 GET     /api/category/:id        
@@ -357,9 +360,7 @@ GET     /api/category/:id
         title: "Fussball"
                         }
 ````
-
-
-
+---
 ### SecureSocial
 #### Check whether or not a user is logged in
 ```
@@ -370,6 +371,7 @@ GET        /userAware
 
 (\*)Route secured with SecureSocial and only accessible while logged in with a valid facebook account
 (\***) Route is aware if the user is logged in or not and serves him with different information
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
