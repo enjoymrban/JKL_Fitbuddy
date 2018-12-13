@@ -53,7 +53,7 @@ End with an example of getting some data out of the system or using it for a lit
 - Response: myevents.html 
 ### Events
 
-####Get all Users
+####Get all Events
 ```
 (**) GET     /api/event               
 ```
@@ -112,7 +112,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 ---
 
-#### Get a certain event
+#### Get an event by id
 ```
 (*) GET     /api/event/:id             
 ```
@@ -199,9 +199,10 @@ let event = {
 ```
 (*) PUT	    /api/event/:id             
 ```
+an event can only be updated by its creator!
 - Params Required:
 `[id]=[eventId]`
-an event can only be updated by the creator of the event!
+
 - Example Request:
 ```javascript
 same as the POST event request

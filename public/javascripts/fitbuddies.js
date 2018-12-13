@@ -102,8 +102,8 @@ function randomBuddy(buddyId = myId) {
                     $(".card").attr("id", buddy.id);
                     $("#buddyDescription").text(buddy.description);
                     $("#buddyImg").attr("src", `${buddy.avatarUrl}`);
-                    let sportsInCommon = sportsInCommon(buddy.categories);
-                    $("#sportsInCommon").text(sportsInCommon);
+                    let sportsInCommonCount = sportsInCommon(buddy.categories);
+                    $("#sportsInCommon").text(sportsInCommonCount);
 
                     $("#buddyImg").on('error', () => {
                         $("#buddyImg").attr("src", `/assets/images/whitesmile.png`);
@@ -122,7 +122,7 @@ function randomBuddy(buddyId = myId) {
             $("#buddyName").text("NO_FURTHER_OPTIONS");
             $(".card").attr("id", "NO_FURTHER_OPTIONS");
             $("#buddyDescription").text("");
-            $("#buddyImg").attr("src", `NO_FURTHER_OPTIONS`);
+            $("#buddyImg").attr("src", `/assets/images/whitesmile.png`);
             addBuddyButton.prop("disabled", true);
             skipBuddyButton.prop("disabled", true);
             return;
