@@ -5,7 +5,7 @@ let addBuddyButton = $('#addBuddy');
 let skipBuddyButton = $('#skipBuddy');
 
 $().ready(() => {
-    userAware().done(()=>{
+    userAware().done(() => {
         getUser(myId).done((myData) => {
 
             me = myData;
@@ -18,7 +18,6 @@ $().ready(() => {
             });
         });
     });
-
 
 
     addBuddyButton.click(() => {
@@ -103,6 +102,9 @@ function randomBuddy(buddyId = myId) {
                     $(".card").attr("id", buddy.id);
                     $("#buddyDescription").text(buddy.description);
                     $("#buddyImg").attr("src", `${buddy.avatarUrl}`);
+                    let sportsInCommon = sportsInCommon(buddy.categories);
+                    $("#sportsInCommon").text(sportsInCommon);
+
                     $("#buddyImg").on('error', () => {
                         $("#buddyImg").attr("src", `/assets/images/whitesmile.png`);
                     });
@@ -129,4 +131,22 @@ function randomBuddy(buddyId = myId) {
         return randomBuddy(users[randomIndex].id);
 
     }
+}
+
+
+function sportsInCommon(buddyCategories) {
+    let myCategories = me.categories;
+    let incommonCount = 0;
+    if (buddyCategories.length === 0 || myCategories === 0) {
+        return 0;
+    } else {
+        for (let c = 0; c < myCategories.length; c++) {
+            for (let cb = 0; cb < buddyCategories.length; cb++) {
+                if(myCategories[c].id === buddyCategories[cb].id){
+                    incommonCount++;
+                }
+            }
+        }
+    }
+    return incommonCount;
 }

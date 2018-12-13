@@ -89,7 +89,6 @@ function getEvent(eventId) {
         type: "GET",
         dataType: "json"
     }).done((event) => {
-        console.log("Event fetched");
     }).catch(err => console.log(err))
 }
 
@@ -100,7 +99,6 @@ function getEvents() {
         type: "GET",
         dataType: "json"
     }).done(() => {
-        console.log("Events feched");
     }).catch(err => console.log(err))
 }
 
@@ -110,7 +108,6 @@ function getUsers() {
         type: "GET",
         dataType: "json"
     }).done(() => {
-        console.log("Users feched");
     }).catch(err => console.log(err))
 }
 

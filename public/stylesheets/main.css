@@ -30,6 +30,10 @@ html, body {
 }
 
 /*Nav*/
+
+.bg-lightblue{
+    background-color: lightblue;
+}
 .navbar-login{
     width: 305px;
     padding: 10px 10px 0 10px;
