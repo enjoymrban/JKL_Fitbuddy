@@ -99,7 +99,7 @@ function randomBuddy(buddyId = myId) {
                 getUser(buddyId).done((buddy) => {
                     $("#buddyName").text(buddy.fullName);
 
-                    // ToDo id of the random Buddy is placed as the id of the card.. change eventually
+                    // ToDo id of the random Buddy is placed as the id of the card.. looking for a better solution
                     $(".card").attr("id", buddy.id);
                     $("#buddyDescription").text(buddy.description);
                     $("#buddyImg").attr("src", `${buddy.avatarUrl}`);
