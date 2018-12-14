@@ -63,6 +63,10 @@ $().ready(() => {
     // Query to load everything sport=* from Switzerland
     let allData = "http://overpass-api.de/api/interpreter?data=%2F*%0AThis%20has%20been%20generated%20by%20the%20overpass-turbo%20wizard.%0AThe%20original%20search%20was%3A%0A%E2%80%9Csport%3D*%20and%20country%3D%22Switzerland%22%E2%80%9D%0A*%2F%0A%0A%5Bout%3Ajson%5D%5Bmaxsize%3A1073741824%5D%3B%0Aarea%283600051701%29-%3E.searchArea%3B%28node%5B%22sport%22%5D%28area.searchArea%29%3B%3E%3Bway%5B%22sport%22%5D%28area.searchArea%29%3B%3E%3Brelation%5B%22sport%22%5D%28area.searchArea%29%3B%3E%3B%29%3Bout%20bb%3B";
     // Local file with all data sport=* loads much faster!
+    /*
+    * Query for Overpass-API
+    [out:json][maxsize:1073741824];
+    {{geocodeArea:Switzerland}}->.searchArea;(node["sport"](area.searchArea);>;way["sport"](area.searchArea);>;relation["sport"](area.searchArea);>;);out bb;*/
     let localData = "/assets/recomData/export.json";
 
     $.ajax({
@@ -199,7 +203,7 @@ function loadSportLocations(categories) {
                         let keys = Object.keys(tags);
                         for (const k in keys) {
                             // TODO Filter for only relevant Data? All relevant?
-                            if (keys[k] !== "sport") {
+                            if (keys[k] !== "sport"&&!(/wiki/.test(keys[k]))) {
                                 $(`#recomTags${value.id}`).append(`<b>${keys[k]}:</b>${tags[keys[k]]}<br>`);
                             }
                         }
@@ -226,7 +230,6 @@ function loadSportLocations(categories) {
             } else if (type === "way") {
 
 
-
                 if (sportFilter.includes(tags.sport) && bounds._southWest.lat < value.bounds.minlat && bounds._northEast.lat > value.bounds.maxlat && bounds._southWest.lng < value.bounds.minlon && bounds._northEast.lng > value.bounds.maxlon) {
                     let latlngs = [[value.bounds.minlat, value.bounds.minlon], [value.bounds.maxlat, value.bounds.maxlon]];
 
@@ -246,7 +249,7 @@ function loadSportLocations(categories) {
                        Seems not to be possible without storing a boolean for every "marker". A possibility is to tune the recommendationLayer and make the value an array with "marker" and boolean.
                        https://gis.stackexchange.com/questions/271602/show-popup-on-marker-hover-mouseover-hide-on-mouseout-and-keep-open-on-click?rq=1
                     */
-                    $(`#recommendationInCarousel${value.id}`).on('click',() => {
+                    $(`#recommendationInCarousel${value.id}`).on('click', () => {
                         console.log(recommendationLayers[value.id]);
                         recommendationLayers[value.id].openPopup();
                         fillPopup();
@@ -260,7 +263,7 @@ function loadSportLocations(categories) {
                         let keys = Object.keys(tags);
                         for (const k in keys) {
                             // TODO Filter for only relevant Data? All relevant?
-                            if (keys[k] !== "sport") {
+                            if (keys[k] !== "sport"&&!(/wiki/.test(keys[k]))) {
                                 $(`#recomTags${value.id}`).append(`<b>${keys[k]}:</b>${tags[keys[k]]}<br>`);
                             }
                             $(`#createEventInRecom${value.id}`).click(() => {
