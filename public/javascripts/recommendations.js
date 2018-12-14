@@ -80,7 +80,7 @@ $().ready(() => {
         userAware().done(() => {
             sportData = json;
             buildRecommendations();
-            recomInfo.text("No recommendatons found! Add more favorite sports to your profile!");
+            recomInfo.text("No recommendations found! Add more favorite sports to your profile!");
             entireCarousel.hide();
             if ($(window).width() < 500) {
                 recommendations.clearLayers();
@@ -294,7 +294,7 @@ function loadSportLocations(categories) {
     // If no recommendations are found show notification, if there are give active class to the first element in the carousel
     if (carouselBody.children().length === 0) {
 
-        recomInfo.text("No recommendatons found! Add more favorite sports to your profile!");
+        recomInfo.text("No recommendations found! Add more favorite sports to your profile!");
 
     } else {
         recomInfo.text("Enjoy your recommendations!");
