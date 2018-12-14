@@ -1,3 +1,7 @@
+/*
+    MODUL INFORMATIONS VISUALISIERUNG!!!!!
+*/
+
 myId = sessionStorage.getItem('myId');
 let sportData;
 
@@ -16,6 +20,7 @@ let carouselBody = $("#carouselBody");
 let recomInfoDiv = $('#recomInfoDiv');
 let recomInfo = $('#recomInfo');
 
+/* Carousel source from https://bootsnipp.com/snippets/dl6ez and customised */
 // Initialisation of the bootstrap carousel
 // TODO a bug does stop the carousel in certain situations --> not identified yet
 entireCarousel.on('slide.bs.carousel', function (e) {
@@ -62,15 +67,19 @@ $().ready(() => {
     let nodesOnly = "http://overpass-api.de/api/interpreter?data=%2F*%0AThis%20has%20been%20generated%20by%20the%20overpass-turbo%20wizard.%0AThe%20original%20search%20was%3A%0A%E2%80%9Csport%3D*%20and%20country%3DSwitzerland%E2%80%9D%0A*%2F%0A%0A%5Bout%3Ajson%5D%5Bmaxsize%3A1073741824%5D%3B%0Aarea%283600051701%29-%3E.searchArea%3B%28node%5B%22sport%22%5D%28area.searchArea%29%3B%3E%3B%29%3Bout%20bb%3B";
     // Query to load everything sport=* from Switzerland
     let allData = "http://overpass-api.de/api/interpreter?data=%2F*%0AThis%20has%20been%20generated%20by%20the%20overpass-turbo%20wizard.%0AThe%20original%20search%20was%3A%0A%E2%80%9Csport%3D*%20and%20country%3D%22Switzerland%22%E2%80%9D%0A*%2F%0A%0A%5Bout%3Ajson%5D%5Bmaxsize%3A1073741824%5D%3B%0Aarea%283600051701%29-%3E.searchArea%3B%28node%5B%22sport%22%5D%28area.searchArea%29%3B%3E%3Bway%5B%22sport%22%5D%28area.searchArea%29%3B%3E%3Brelation%5B%22sport%22%5D%28area.searchArea%29%3B%3E%3B%29%3Bout%20bb%3B";
-    // Local file with all data sport=* loads much faster!
+
     /*
     * Query for Overpass-API
     [out:json][maxsize:1073741824];
     {{geocodeArea:Switzerland}}->.searchArea;(node["sport"](area.searchArea);>;way["sport"](area.searchArea);>;relation["sport"](area.searchArea);>;);out bb;*/
+    // Local file with all data sport=* loads much faster! 22MB
     let localData = "/assets/recomData/export.json";
 
+    // localData filtered for only relevant data 5MB CONTAINS ONLY THE ELEMENTS
+    let relevantNodes = "/assets/recomData/relevantNodes.json";
+
     $.ajax({
-        url: localData,
+        url: relevantNodes,
         type: "GET",
         dataType: "json"
     }).done((json) => {
@@ -121,7 +130,7 @@ function buildRecommendations() {
 }
 
 
-// translation array needed to translate the categories of the app to the english words which are used in the overpass api json
+// translation array --> contains english words, icons and images
 // This data would normally be inside the database --> will not be done since this are two different projects
 // With the pro account of font-awesome a lager variety of icons could be used, sports without an icon have the icon ?
 let sportTranslation =
@@ -161,7 +170,7 @@ function loadSportLocations(categories) {
 
 
     // Loop through every element in the data "sport locations"
-    $.each(sportData.elements, (key, value) => {
+    $.each(sportData, (key, value) => {
         let {tags, type} = value;
 
         // Ignore nodes without any tag

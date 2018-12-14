@@ -1,3 +1,7 @@
+/*
+    MODUL INFORMATIONS VISUALISIERUNG!!!!!
+*/
+
 .carouselFormat {
     display: none;
     background-color: white;
@@ -31,7 +35,7 @@
     margin: 0 auto;
 }
 
-
+/* Carousel source from https://bootsnipp.com/snippets/dl6ez and customised */
 @media (min-width: 500px){
 
     #carouselExample {
