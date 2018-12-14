@@ -4,34 +4,33 @@ From our own experiences we know that it can be difficult to find a suitable spo
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+You need a environment that can handle sbt projects. We recommend using Intelij.
+You also need to have sbt installed to run the application.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Clone the repository to your preferred folder.
 
 ```
-Give the example
+git clone https://github.com/enjoymrban/JKL_Fitbuddy
+```
+You also need to have the following system environment variable set:
+```
+SYSTEMENVIROMENTVARIABLE
 ```
 
-And repeat
+Now import the project to your enviroment. 
+To start the app just run:
 
 ```
-until finished
+sbt run
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
+The app should now be available on: http://localhost:9000
 ## API
 
 ### Single page routes
