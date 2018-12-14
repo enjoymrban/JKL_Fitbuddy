@@ -1,3 +1,7 @@
+/*
+    MODUL INFORMATIONS VISUALISIERUNG!!!!!
+*/
+
 myId = sessionStorage.getItem('myId');
 let sportData;
 
@@ -16,6 +20,7 @@ let carouselBody = $("#carouselBody");
 let recomInfoDiv = $('#recomInfoDiv');
 let recomInfo = $('#recomInfo');
 
+/* Carousel source from https://bootsnipp.com/snippets/dl6ez and customised */
 // Initialisation of the bootstrap carousel
 // TODO a bug does stop the carousel in certain situations --> not identified yet
 entireCarousel.on('slide.bs.carousel', function (e) {
@@ -125,7 +130,7 @@ function buildRecommendations() {
 }
 
 
-// translation array needed to translate the categories of the app to the english words which are used in the overpass api json
+// translation array --> contains english words, icons and images
 // This data would normally be inside the database --> will not be done since this are two different projects
 // With the pro account of font-awesome a lager variety of icons could be used, sports without an icon have the icon ?
 let sportTranslation =
