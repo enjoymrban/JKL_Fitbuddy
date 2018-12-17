@@ -177,7 +177,7 @@ function tableRowTemplateBuddies(id, description, sport, nrOfPlayers, date, part
                         <td>${sport}</td>
                         <td>${participants.length} /${nrOfPlayers}</td>
                         <td>${date}</td>
-                        <td><button id="interestedinevent${id}">I'm interested</button></td>
+                        <td><button id="interestedinevent${id}" class="btn btn-default">I'm interested</button></td>
                         </tr>`;
     return tableRow;
 }
