@@ -18,12 +18,17 @@ Clone the repository to your preferred folder.
 ```
 git clone https://github.com/enjoymrban/JKL_Fitbuddy
 ```
-You also need to have the following system environment variable set:
+You also need to have a PostgreSQL database on Heroku. Set the following 
+system environment variable on your computer:
 ```
-SYSTEMENVIRONMENTVARIABLE
+DATABASE_URL = your_database_url_from_heroku_with_user_and_password
 ```
+You will have to update this value when Heroku cycles your database credentials. This will 
+not be necessary on the Heroku server later when you deployed your application. If you wish not 
+to use a deployed database, you will have to use a local PostgreSQL database and provide the 
+needed information in conf/application.conf. The needed information is in comments, so it is easy to switch.
 
-Now import the project to your enviroment. 
+Now import the project to your environment. 
 To start the app just run:
 
 ```
@@ -372,11 +377,11 @@ GET        /userAware
 (\***) Route is aware if the user is logged in or not and serves him with different information
 ## Running the tests
 
-The tests for the project can be found in test.controllers.SecureSocialTests. The goal of the tests is to see if the routes are secured and only usable if logged in.
-There are certain routes that return a response to a non logged-in user (see Routes). To run the test simply right-click and press Run.
+The tests for the project can be found in test/controllers/SecureSocialTests. The goal of the tests is to see if the routes are secured and only usable if logged in.
+There are certain routes that return a response to a non logged-in user (see API). To run the test simply right-click and press Run.
 For the tests to be successful, there has to be a deployed database on Heroku that is used in the DATABASE_URL environment variable.
 
-### Break down into end to end tests
+### What is being tested
 
 If the route is secured with @SecuredAction it should return a status code of 303 See Other.
 
@@ -394,7 +399,8 @@ assertEquals(200, result.status());
 
 To deploy this application to Heroku, create an application with a PostgreSQL addon.Change the needed URLs to your 
 applications URL in public/javascripts/main.js and conf/securesocial.conf. 
-Additionaly, register your application on developers.facebook.com and generate a clientId and a clientSecret. 
+Additionaly, register your application on developers.facebook.com and generate a clientId and a clientSecret and set the values 
+in conf/securesocial.conf. 
 Then you can use 
 ```
 sbt stage deployHeroku
