@@ -20,7 +20,7 @@ git clone https://github.com/enjoymrban/JKL_Fitbuddy
 ```
 You also need to have the following system environment variable set:
 ```
-SYSTEMENVIROMENTVARIABLE
+SYSTEMENVIRONMENTVARIABLE
 ```
 
 Now import the project to your enviroment. 
@@ -372,27 +372,34 @@ GET        /userAware
 (\***) Route is aware if the user is logged in or not and serves him with different information
 ## Running the tests
 
-Explain how to run the automated tests for this system
+The tests for the project can be found in test.controllers.SecureSocialTests. The goal of the tests is to see if the routes are secured and only usable if logged in.
+There are certain routes that return a response to a non logged-in user (see Routes). To run the test simply right-click and press Run.
+For the tests to be successful, there has to be a deployed database on Heroku that is used in the DATABASE_URL environment variable.
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+If the route is secured with @SecuredAction it should return a status code of 303 See Other.
 
 ```
-Give an example
+assertEquals(303, result.status());
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+If the route is annotated with @UserAwareAction it should return a status code of 200 OK.
 
 ```
-Give an example
+assertEquals(200, result.status());
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+To deploy this application to Heroku, create an application with a PostgreSQL addon.Change the needed URLs to your 
+applications URL in public/javascripts/main.js and conf/securesocial.conf. 
+Additionaly, register your application on developers.facebook.com and generate a clientId and a clientSecret. 
+Then you can use 
+```
+sbt stage deployHeroku
+```
+to deploy your application. Make sure to use https when going to your application so the Facebook login works.
 
 ## Built With
 
