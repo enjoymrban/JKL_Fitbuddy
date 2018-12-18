@@ -46,9 +46,13 @@ function fillEventTables() {
                     $("#joinedTBody").append(tableRow);
                     $(`#trash${id}`).click(() => {
                         console.log("update event, remove me from participating");
-                        participants.splice(participants.indexOf(Number(myId)), 1);
-                        updateEvent(event).done(() => {
+                        $.ajax({
+                            type: "GET",
+                            url: url + "/api/leaveEvent/" + myId
+                        }).done(() => {
                             $(`#tableRow${id}`).remove();
+                        }).catch(err => {
+                            console.log(err);
                         });
                     });
                 } else {

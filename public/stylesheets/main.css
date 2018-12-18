@@ -204,10 +204,10 @@ div[id^="popupInfoLarge"]{
     border-color: green;
 }
 
-.fa a {
+td a{
     color: black;
 }
 
-.fa a:hover{
+td a:hover{
     color: darkgrey;
 }

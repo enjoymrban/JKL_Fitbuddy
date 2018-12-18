@@ -150,14 +150,25 @@ public class EventController extends Controller {
 
         //Check if the user is  interested and delete him from interestedlist
         List<User> interUsers = eventToChange.getInterested();
-        List<User> finalInterUsers = null;
+        List<User> finalInterUsers = new ArrayList<>();
         for (User u : interUsers) {
             if (!u.getAuthUserId().equals(actualUser.getAuthUserId())) {
                 finalInterUsers.add(u);
             }
         }
+
+        //Check if the user is  participant and delete him from participantlist
+        List<User> partUsers = eventToChange.getParticipants();
+        List<User> finalPartUsers = new ArrayList<>();
+        for (User u : partUsers) {
+            if (!u.getAuthUserId().equals(actualUser.getAuthUserId())) {
+                finalPartUsers.add(u);
+            }
+        }
+
         //Change the Event on in the repository
         eventToChange.setInterested(finalInterUsers);
+        eventToChange.setParticipants(finalPartUsers);
         eventService.change(eventToChange);
         return ok("you are not interested anymore");
     }
