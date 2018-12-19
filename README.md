@@ -425,7 +425,7 @@ to deploy your application. Make sure to use https when going to your applicatio
 
 See also the list of [contributors](https://github.com/enjoymrban/JKL_Fitbuddy/graphs/contributors) who participated in this project.
 
-## Futuere Work
+## Future Work
 
 ### Backend
 - automatically delete old events
