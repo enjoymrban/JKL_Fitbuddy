@@ -48,7 +48,7 @@ function fillEventTables() {
                         console.log("update event, remove me from participating");
                         $.ajax({
                             type: "GET",
-                            url: url + "/api/leaveEvent/" + myId
+                            url: url + "/api/leaveEvent/" + id
                         }).done(() => {
                             $(`#tableRow${id}`).remove();
                         }).catch(err => {
