@@ -57,7 +57,7 @@ The app should now be available on: http://localhost:9000
 - Response: myevents.html 
 ### Events
 
-####Get all Events
+#### Get all Events
 ```
 (**) GET     /api/event               
 ```
@@ -321,7 +321,7 @@ Only the user with the id :id is allowed to update his profile. He is allowed to
         Status Code 303, redirect to the login page
 
 
-###Categories
+### Categories
 #### Get all categories
 ```
 GET     /api/category           
