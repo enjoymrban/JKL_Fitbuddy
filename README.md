@@ -2,6 +2,8 @@
 The goal of this webapplication is to create a platform where sport enthusiasts can meet with others very easy.
 From our own experiences we know that it can be difficult to find a suitable sport buddy or just some hobby sport people. With this application, we created a place to share sport with different people without loosing our flexibility or being bound to another person.
 
+A live version can be found here: [Fitbuddy](https://jklfitbuddy.herokuapp.com/) 
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -423,11 +425,23 @@ to deploy your application. Make sure to use https when going to your applicatio
 
 See also the list of [contributors](https://github.com/enjoymrban/JKL_Fitbuddy/graphs/contributors) who participated in this project.
 
-## Acknowledgments
+## Futuere Work
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+### Backend
+- automatically delete old events
+- logging with other Accounts (Google, Twitter, Microsoft etc.)
+- Plugin for other Platfoms (Facebook, ...)
+- Add Time to events
+
+### Frontend
+- multilingual
+- detailed page for every event
+- "How it works" Page
+- Filters for events
+- function to add buddies from past events to the feed
+
+
+
 
 
 
