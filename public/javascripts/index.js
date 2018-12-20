@@ -236,7 +236,7 @@ map.on('click', function (e) {
 
 
     $(`#createEventButton${id}`).click(() => {
-        if(myId != null) {
+        if(myId !== "null") {
             newEventLat = (popLocation.lat);
             newEventLong = (popLocation.lng);
             $("#createEventModal").modal("show");
