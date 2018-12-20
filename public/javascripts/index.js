@@ -340,7 +340,9 @@ function popUpOpens(mobj) {
                     if (document.getElementById(`interestedInEvent${id}`) != null) {
                         document.getElementById(`interestedInEvent${id}`).remove();
                     } else {
-                        document.getElementById(`desinterestedInEvent${id}`).remove();
+                        if (document.getElementById(`desinterestedInEvent${id}`) != null) {
+                            document.getElementById(`desinterestedInEvent${id}`).remove();
+                        }
                     }
 
 
