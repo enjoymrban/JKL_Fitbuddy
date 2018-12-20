@@ -51,6 +51,7 @@ let blackIcon = new L.Icon({
 
 let endZoom = 15;
 let startZoom = 10;
+let popUpOpenZoom = 17;
 let map = L.map('mapid', {zoomControl: false}).setView([0, 0], startZoom);
 
 // markers Cluster Group for collecting marker plugin
@@ -256,7 +257,7 @@ map.on('zoom move', function () {
         map.removeLayer(createEventPopupMarker);
     }
 
-    if (map.getZoom() <= 13) {
+    if (map.getZoom() <= popUpOpenZoom-1) {
         for (const mobj of markers) {
             mobj.marker.closePopup();
         }
