@@ -236,9 +236,13 @@ map.on('click', function (e) {
 
 
     $(`#createEventButton${id}`).click(() => {
-        newEventLat = (popLocation.lat);
-        newEventLong = (popLocation.lng);
-        $("#createEventModal").modal("show");
+        if(myId != null) {
+            newEventLat = (popLocation.lat);
+            newEventLong = (popLocation.lng);
+            $("#createEventModal").modal("show");
+        }else{
+            $('#loginModal').modal('toggle');
+        }
     });
 });
 
@@ -357,7 +361,7 @@ function popUpOpens(mobj) {
     } else {
         $('#popupInfo' + mobj.eventId).unbind();
         $('#popupInfo' + mobj.eventId).click(() => {
-            $('#loginModal').modal('toggle')
+            $('#loginModal').modal('toggle');
         });
     }
 }
